@@ -18,6 +18,70 @@ export default function Home() {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
+  // JSON-LD Structured Data
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "BonusThoughts",
+    "url": "https://bonusthoughts.com",
+    "logo": "https://bonusthoughts.com/logo.png",
+    "description": "AI Program Director for executive teams",
+    "sameAs": [
+      "https://x.com/nlynch_ai"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "director@bonusthoughts.com",
+      "contactType": "Sales"
+    }
+  };
+
+  const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Nick Lynch",
+    "jobTitle": "AI Program Director",
+    "description": "Former NGA architect. Built AI systems powering federal operations. Veteran-led AI Program Director.",
+    "url": "https://bonusthoughts.com",
+    "sameAs": "https://x.com/nlynch_ai",
+    "credentials": [
+      "TS/SCI Security Clearance",
+      "SDVOSB Certified",
+      "SAM Registered"
+    ]
+  };
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "AI Program Direction",
+    "description": "Veteran-led AI program direction for executives with teams but no velocity. Direct your AI initiatives like military operations—10-16 weeks instead of 18 months.",
+    "provider": {
+      "@type": "Organization",
+      "name": "BonusThoughts",
+      "url": "https://bonusthoughts.com"
+    },
+    "areaServed": "US",
+    "priceRange": "$25000-$500000",
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Program Diagnostic",
+        "price": "25000",
+        "priceCurrency": "USD",
+        "description": "2-week AI audit + 90-day roadmap + hiring plan"
+      },
+      {
+        "@type": "Offer",
+        "name": "Director Retainer",
+        "price": "15000",
+        "priceCurrency": "USD",
+        "priceValidUntil": "2025-12-31",
+        "description": "Monthly retainer for ongoing AI program direction (6-18 months)"
+      }
+    ]
+  };
+
   const capabilities = [
     {
       name: "AI Strategy & Roadmap",
@@ -59,6 +123,20 @@ export default function Home() {
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-[#191919] text-[#F4EDE4]">
+      {/* JSON-LD Structured Data for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+
       {/* Animated gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#CC785C]/10 via-[#191919] to-[#8B6C59]/10" />
 
