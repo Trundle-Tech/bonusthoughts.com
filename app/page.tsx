@@ -602,18 +602,17 @@ export default function Home() {
           </div>
 
           <div className="mt-12 text-center">
-            <p className="mb-4 text-xl font-semibold text-[#F4EDE4]">
-              3 of 4 Directorship Seats Filled
-            </p>
             <p className="mb-6 text-lg text-[#D4C4B0]">
-              Taking 1 new directorship Q4 2025. Execs with real teams, real problems, real velocity.
+              <span className="font-semibold text-[#F4EDE4]">Selective New Engagement Q4 2025</span>
+              <br />
+              Ideal fit: $100M+ companies with solid engineering teams but zero AI velocity.
             </p>
             <Button
               size="lg"
               className="bg-gradient-to-r from-[#CC785C] to-[#E8956D] px-8 py-6 text-lg font-semibold text-[#191919] transition-all hover:scale-105 hover:shadow-2xl hover:shadow-[#CC785C]/50"
               onClick={() => window.open('https://calendly.com/nlynch-ai/30min', '_blank')}
             >
-              Apply for Directorship →
+              Book Program Diagnostic →
             </Button>
           </div>
         </motion.div>
