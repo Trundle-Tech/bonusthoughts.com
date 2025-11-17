@@ -18,42 +18,42 @@ export default function Home() {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
-  const industries = [
+  const capabilities = [
     {
-      name: "Healthcare",
+      name: "AI Strategy & Roadmap",
       icon: Heart,
       color: "from-[#CC785C]/20 to-[#E8956D]/20",
-      description: "AI-powered real-time health data analytics. Modernize VA/federal systems—prototype in 7 days, detect risks 40% faster."
+      description: "Where to start. What to kill. Prioritized 90-day roadmap. Get your team aligned on what actually matters."
     },
     {
-      name: "Finance",
+      name: "Architecture & Vendor Selection",
       icon: DollarSign,
       color: "from-[#D4A574]/20 to-[#E8C4A0]/20",
-      description: "Secure AI threat detection in milliseconds. Build custom agents for federal payments—$1.2M saved in fraud prevention."
+      description: "Grok vs. OpenAI vs. on-prem. Save 30–60% on tools. Make decisions that don't come back to haunt you."
     },
     {
-      name: "Manufacturing",
+      name: "Team & Hiring Plans",
       icon: Factory,
       color: "from-[#CC785C]/20 to-[#B86A51]/20",
-      description: "AI supply chain vulnerability scanner. Veteran-built for DIB resilience—deploy in weeks, not quarters."
+      description: "Who you actually need. When to hire. What titles make sense. Build the right team for the work."
     },
     {
-      name: "Energy",
+      name: "Conversational AI Agents",
       icon: Zap,
       color: "from-[#E8B88B]/20 to-[#D4A574]/20",
-      description: "AI-powered critical infrastructure protection. Grid modernization & real-time anomaly detection—30% faster response."
+      description: "Phone agents replacing IVRs. CRM-integrated workflows. 80%+ pipeline completion. Real customer interaction."
     },
     {
-      name: "Agriculture",
+      name: "Geospatial & Computer Vision",
       icon: Wheat,
       color: "from-[#A8826B]/20 to-[#8B6C59]/20",
-      description: "Food security analytics with AI. Connect rural infrastructure to federal systems—prototype in 5 days."
+      description: "Intelligence from imagery. Real-time analysis. Mission-critical insights. Proven at scale."
     },
     {
-      name: "Transportation",
+      name: "Data Integrity & Reporting",
       icon: Rocket,
       color: "from-[#CC785C]/20 to-[#D99473]/20",
-      description: "AI logistics optimization & risk detection. Transportation systems modernization—visibility in real-time."
+      description: "Zero-loss data pipelines. Ground truth reporting. Board-ready ROI dashboards. No surprises."
     },
   ];
 
@@ -130,10 +130,10 @@ export default function Home() {
             <div className="relative">
               <h1 className="text-7xl font-black tracking-tight sm:text-8xl md:text-9xl">
                 <span className="bg-gradient-to-r from-[#CC785C] via-[#E8956D] to-[#D4A574] bg-clip-text text-transparent">
-                  Executive AI,
+                  AI Program
                 </span>
                 <br />
-                <span className="text-[#F4EDE4]">Mission-Deployed.</span>
+                <span className="text-[#F4EDE4]">Director.</span>
               </h1>
               <motion.div
                 className="absolute -inset-4 -z-10 rounded-3xl bg-gradient-to-r from-[#CC785C]/30 to-[#D4A574]/30 blur-3xl"
@@ -156,8 +156,9 @@ export default function Home() {
             transition={{ duration: 1, delay: 0.8 }}
             className="mx-auto mb-8 max-w-2xl text-xl text-[#D4C4B0] sm:text-2xl"
           >
-            I unblock your AI ideas with secure, veteran-led MVPs—shipped in{" "}
-            <span className="font-semibold text-[#CC785C]">5–14 days</span>. TS/SCI cleared. No federal red tape, no $300K delays.
+            Former NGA architect. Built AI systems still powering federal ops. Now directing your team to ship real AI in 10–16 weeks instead of 18 months.
+            <br />
+            <span className="font-semibold text-[#CC785C]">No endless pilots. No failed vendors. Just results.</span>
           </motion.p>
 
           {/* Trust Signals */}
@@ -201,13 +202,13 @@ export default function Home() {
               className="group relative overflow-hidden bg-gradient-to-r from-[#CC785C] to-[#E8956D] px-8 py-6 text-lg font-semibold text-[#191919] transition-all hover:scale-105 hover:shadow-2xl hover:shadow-[#CC785C]/50"
               onMouseEnter={() => setIsHovering(true)}
               onMouseLeave={() => setIsHovering(false)}
-              onClick={() => window.open('https://calendly.com/nlynch-ai/15min', '_blank')}
+              onClick={() => window.open('https://calendly.com/nlynch-ai/30min', '_blank')}
             >
               <motion.span
                 className="relative z-10"
                 animate={{ x: isHovering ? 5 : 0 }}
               >
-                Book 15-Min AI Stress-Test →
+                Book 30-Min Diagnostic →
               </motion.span>
               <motion.div
                 className="absolute inset-0 bg-gradient-to-r from-[#E8956D] to-[#CC785C]"
@@ -222,9 +223,65 @@ export default function Home() {
               className="border-2 border-[#CC785C]/40 bg-[#F4EDE4]/5 px-8 py-6 text-lg font-semibold text-[#F4EDE4] backdrop-blur-sm transition-all hover:border-[#CC785C]/70 hover:bg-[#F4EDE4]/10"
               onClick={() => document.getElementById('case-studies')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              See Portfolio
+              See Directorships
             </Button>
           </motion.div>
+        </motion.div>
+      </section>
+
+      {/* About/Background Section */}
+      <section className="relative z-10 mx-auto max-w-5xl px-6 py-24">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-center"
+        >
+          <h2 className="mb-8 text-4xl font-bold text-[#F4EDE4] sm:text-5xl">
+            Battle-Tested AI Leader
+          </h2>
+          <p className="mx-auto max-w-3xl text-lg leading-relaxed text-[#D4C4B0] mb-8">
+            Former intelligence analyst in the Special Operations Community.
+            Deployment Advisor at the National Geospatial Intelligence Agency. Built AI systems that power federal operations today.
+            <br />
+            <span className="font-semibold text-[#CC785C]">Now directing AI programs for executives who have teams but no velocity.</span>
+          </p>
+
+          <div className="grid gap-6 md:grid-cols-3 mt-12">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0 }}
+              className="rounded-lg border border-[#F4EDE4]/10 bg-[#F4EDE4]/5 p-6 backdrop-blur-sm"
+            >
+              <h3 className="mb-2 text-xl font-bold text-[#CC785C]">National Geospatial Intelligence</h3>
+              <p className="text-sm text-[#D4C4B0]">Built AI systems in classified environments. Still powering federal ops. TS/SCI cleared.</p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="rounded-lg border border-[#F4EDE4]/10 bg-[#F4EDE4]/5 p-6 backdrop-blur-sm"
+            >
+              <h3 className="mb-2 text-xl font-bold text-[#E8956D]">Special Operations Community</h3>
+              <p className="text-sm text-[#D4C4B0]">Intelligence targeting. Mission planning. Know how to move fast under pressure.</p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="rounded-lg border border-[#F4EDE4]/10 bg-[#F4EDE4]/5 p-6 backdrop-blur-sm"
+            >
+              <h3 className="mb-2 text-xl font-bold text-cyan-400">AimersionAI (Exited)</h3>
+              <p className="text-sm text-[#D4C4B0]">Head of Intelligent Systems. Shipped to production. Know what works + what fails fast.</p>
+            </motion.div>
+          </div>
         </motion.div>
       </section>
 
@@ -238,13 +295,12 @@ export default function Home() {
         >
           <h2 className="mb-16 text-center text-5xl font-bold">
             <span className="bg-gradient-to-r from-[#CC785C] to-[#E8956D] bg-clip-text text-transparent">
-              AI Wins
-            </span>{" "}
-            for Your Industry
+              What I Direct
+            </span>
           </h2>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {industries.map((industry, index) => (
+            {capabilities.map((industry, index) => (
               <motion.div
                 key={industry.name}
                 initial={{ opacity: 0, y: 50 }}
@@ -430,39 +486,57 @@ export default function Home() {
 
           <div className="relative z-10">
             <h2 className="mb-12 text-center text-4xl font-bold text-[#F4EDE4] sm:text-5xl">
-              From AI Sketch to Secure MVP in Weeks
+              Engagement Model
             </h2>
 
             <div className="grid gap-8 md:grid-cols-3">
               <div className="rounded-xl border border-[#F4EDE4]/10 bg-[#F4EDE4]/5 p-6 backdrop-blur-sm">
-                <h3 className="mb-2 text-2xl font-bold text-[#CC785C]">$10K</h3>
-                <p className="mb-4 font-semibold text-[#F4EDE4]">Tier 1: Idea → MVP</p>
-                <p className="text-[#D4C4B0]">5 days. Proof-of-concept AI. Sales agents, data analyzers, custom chatbots.</p>
+                <h3 className="mb-2 text-2xl font-bold text-[#CC785C]">$25K–$35K</h3>
+                <p className="mb-4 font-semibold text-[#F4EDE4]">Program Diagnostic</p>
+                <p className="text-sm text-[#D4C4B0] mb-2">2-week audit</p>
+                <ul className="text-sm text-[#D4C4B0] space-y-1">
+                  <li>• Full AI audit</li>
+                  <li>• 90-day roadmap</li>
+                  <li>• Hiring plan</li>
+                  <li>• Vendor recommendations</li>
+                </ul>
               </div>
 
               <div className="rounded-xl border border-[#E8956D]/20 bg-[#E8956D]/10 p-6 backdrop-blur-sm">
-                <h3 className="mb-2 text-2xl font-bold text-[#E8956D]">$25K</h3>
-                <p className="mb-4 font-semibold text-[#F4EDE4]">Tier 2: MVP + Pilot</p>
-                <p className="text-[#D4C4B0]">30-day pilot. Secure data pipeline. Integration & testing included.</p>
+                <h3 className="mb-2 text-2xl font-bold text-[#E8956D]">$15K–$40K/mo</h3>
+                <p className="mb-4 font-semibold text-[#F4EDE4]">Director Retainer</p>
+                <p className="text-sm text-[#D4C4B0] mb-2">6–18 months</p>
+                <ul className="text-sm text-[#D4C4B0] space-y-1">
+                  <li>• Weekly syncs</li>
+                  <li>• Architecture decisions</li>
+                  <li>• Vendor negotiation</li>
+                  <li>• Team coaching</li>
+                </ul>
               </div>
 
               <div className="rounded-xl border border-[#00E5FF]/20 bg-[#00E5FF]/5 p-6 backdrop-blur-sm">
-                <h3 className="mb-2 text-2xl font-bold text-cyan-400">$50K</h3>
-                <p className="mb-4 font-semibold text-[#F4EDE4]">Tier 3: Full Rollout</p>
-                <p className="text-[#D4C4B0]">Complete deployment + 90-day retainer. Scale & optimize your AI.</p>
+                <h3 className="mb-2 text-2xl font-bold text-cyan-400">$150K–$500K</h3>
+                <p className="mb-4 font-semibold text-[#F4EDE4]">Outcome Guarantee</p>
+                <p className="text-sm text-[#D4C4B0] mb-2">Fixed-price delivery</p>
+                <ul className="text-sm text-[#D4C4B0] space-y-1">
+                  <li>• End-to-end program</li>
+                  <li>• Your team + my oversight</li>
+                  <li>• Weekly sprints</li>
+                  <li>• Production-ready AI</li>
+                </ul>
               </div>
             </div>
 
             <div className="mt-10 text-center">
               <p className="text-[#D4C4B0] mb-6">
-                Fixed-price. No surprises. No endless pilots. Start your unblock today.
+                Choose based on your needs: Discovery → Ongoing direction → Full delivery guarantee
               </p>
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-[#CC785C] to-[#E8956D] px-8 py-6 text-lg font-semibold text-[#191919] transition-all hover:scale-105 hover:shadow-2xl hover:shadow-[#CC785C]/50"
-                onClick={() => window.open('https://calendly.com/nlynch-ai/15min', '_blank')}
+                onClick={() => window.open('https://calendly.com/nlynch-ai/30min', '_blank')}
               >
-                Start Your Unblock →
+                Book Program Diagnostic →
               </Button>
             </div>
           </div>
@@ -479,9 +553,8 @@ export default function Home() {
         >
           <h2 className="mb-16 text-center text-5xl font-bold">
             <span className="bg-gradient-to-r from-[#CC785C] to-[#E8956D] bg-clip-text text-transparent">
-              AI Wins
-            </span>{" "}
-            for Execs Like You
+              Current Directorships
+            </span>
           </h2>
 
           <div className="grid gap-6 sm:grid-cols-1 lg:grid-cols-3">
@@ -492,11 +565,11 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0 }}
               className="rounded-xl border border-[#F4EDE4]/10 bg-gradient-to-br from-[#CC785C]/10 to-[#E8956D]/10 p-8 backdrop-blur-sm hover:border-[#CC785C]/50 transition-all"
             >
-              <div className="mb-4 text-sm font-semibold text-[#CC785C]">PE FIRM</div>
-              <h3 className="mb-3 text-2xl font-bold text-[#F4EDE4]">AI Contract Reviewer</h3>
-              <p className="mb-4 text-[#D4C4B0]">Automated vendor contract analysis. Flagged risk clauses in seconds vs. hours.</p>
-              <p className="text-lg font-bold text-[#CC785C]">$1.2M/yr saved</p>
-              <p className="text-sm text-[#A8826B]">7-day build</p>
+              <div className="mb-4 text-sm font-semibold text-[#CC785C]">LOGISTICS & CRM</div>
+              <h3 className="mb-3 text-2xl font-bold text-[#F4EDE4]">Conversational AI Agents</h3>
+              <p className="mb-4 text-[#D4C4B0]">Phone agents replacing legacy IVR. CRM-integrated workflows. 80%+ pipeline completion without human touch.</p>
+              <p className="text-lg font-bold text-[#CC785C]">Real customer impact</p>
+              <p className="text-sm text-[#A8826B]">16-week director engagement</p>
             </motion.div>
 
             <motion.div
@@ -506,11 +579,11 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="rounded-xl border border-[#F4EDE4]/10 bg-gradient-to-br from-[#E8956D]/10 to-[#D4A574]/10 p-8 backdrop-blur-sm hover:border-[#E8956D]/50 transition-all"
             >
-              <div className="mb-4 text-sm font-semibold text-[#E8956D]">SAAS CRO</div>
-              <h3 className="mb-3 text-2xl font-bold text-[#F4EDE4]">Custom Email Agent</h3>
-              <p className="mb-4 text-[#D4C4B0]">Personalized outreach at scale. Qualified leads only.</p>
-              <p className="text-lg font-bold text-[#E8956D]">+4 meetings/week</p>
-              <p className="text-sm text-[#A8826B]">5-day build</p>
+              <div className="mb-4 text-sm font-semibold text-[#E8956D]">GEOSPATIAL INTELLIGENCE</div>
+              <h3 className="mb-3 text-2xl font-bold text-[#F4EDE4]">Computer Vision for Intel</h3>
+              <p className="mb-4 text-[#D4C4B0]">Automated analysis of classified imagery. Real-time threat detection. Mission-critical insights at scale.</p>
+              <p className="text-lg font-bold text-[#E8956D]">Proven in federal ops</p>
+              <p className="text-sm text-[#A8826B]">Ongoing directorship</p>
             </motion.div>
 
             <motion.div
@@ -520,25 +593,27 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="rounded-xl border border-[#F4EDE4]/10 bg-gradient-to-br from-[#00E5FF]/10 to-cyan-400/10 p-8 backdrop-blur-sm hover:border-cyan-400/50 transition-all"
             >
-              <div className="mb-4 text-sm font-semibold text-cyan-400">DEFENSE OPS</div>
-              <h3 className="mb-3 text-2xl font-bold text-[#F4EDE4]">Supply Chain AI Scanner</h3>
-              <p className="mb-4 text-[#D4C4B0]">Real-time vulnerability detection. Compliance-ready.</p>
-              <p className="text-lg font-bold text-cyan-400">30% risk reduction</p>
-              <p className="text-sm text-[#A8826B]">10-day build</p>
+              <div className="mb-4 text-sm font-semibold text-cyan-400">DATA INTEGRITY</div>
+              <h3 className="mb-3 text-2xl font-bold text-[#F4EDE4]">Zero-Loss Data Pipelines</h3>
+              <p className="mb-4 text-[#D4C4B0]">Ground-truth reporting from source. No data loss across comms channels. Board-ready ROI dashboards.</p>
+              <p className="text-lg font-bold text-cyan-400">Trust & accuracy</p>
+              <p className="text-sm text-[#A8826B]">Q4 2025 availability</p>
             </motion.div>
           </div>
 
           <div className="mt-12 text-center">
+            <p className="mb-4 text-xl font-semibold text-[#F4EDE4]">
+              3 of 4 Directorship Seats Filled
+            </p>
             <p className="mb-6 text-lg text-[#D4C4B0]">
-              More wins available on request. Book a call to explore yours.
+              Taking 1 new directorship Q4 2025. Execs with real teams, real problems, real velocity.
             </p>
             <Button
               size="lg"
-              variant="outline"
-              className="border-2 border-[#CC785C]/40 bg-[#F4EDE4]/5 px-8 py-6 text-lg font-semibold text-[#F4EDE4] backdrop-blur-sm transition-all hover:border-[#CC785C]/70 hover:bg-[#F4EDE4]/10"
-              onClick={() => window.open('https://calendly.com/nlynch-ai/15min', '_blank')}
+              className="bg-gradient-to-r from-[#CC785C] to-[#E8956D] px-8 py-6 text-lg font-semibold text-[#191919] transition-all hover:scale-105 hover:shadow-2xl hover:shadow-[#CC785C]/50"
+              onClick={() => window.open('https://calendly.com/nlynch-ai/30min', '_blank')}
             >
-              Book AI Consultation
+              Apply for Directorship →
             </Button>
           </div>
         </motion.div>
@@ -579,12 +654,12 @@ export default function Home() {
             <div className="flex flex-wrap items-center justify-center gap-6 text-sm">
               <motion.a
                 whileHover={{ y: -2 }}
-                href="https://calendly.com/nlynch-ai/15min"
+                href="https://calendly.com/nlynch-ai/30min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="transition-colors hover:text-[#CC785C]"
+                className="transition-colors hover:text-[#CC785C] font-semibold"
               >
-                Book a Call
+                Book Diagnostic
               </motion.a>
               <span className="text-[#F4EDE4]/20">|</span>
               <motion.a
@@ -599,14 +674,16 @@ export default function Home() {
               <span className="text-[#F4EDE4]/20">|</span>
               <motion.a
                 whileHover={{ y: -2 }}
-                href="mailto:idea@bonusthoughts.com"
+                href="mailto:director@bonusthoughts.com"
                 className="transition-colors hover:text-[#CC785C]"
               >
-                idea@bonusthoughts.com
+                director@bonusthoughts.com
               </motion.a>
             </div>
             <p className="text-[#A8826B] text-sm">
-              © 2024 BonusThoughts. Veteran-led AI consultancy for execs.
+              © 2024 BonusThoughts. AI Program Director for executives with teams but no velocity.
+              <br />
+              Former NGA | Special Operations Community | AimersionAI (Exited)
               <br />
               SDVOSB Certified | TS/SCI Cleared | SAM Registered
             </p>
