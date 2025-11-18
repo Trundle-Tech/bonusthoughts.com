@@ -282,7 +282,7 @@ export default function Home() {
               className="group relative overflow-hidden bg-gradient-to-r from-[#CC785C] to-[#E8956D] px-8 py-6 text-lg font-semibold text-[#191919] transition-all hover:scale-105 hover:shadow-2xl hover:shadow-[#CC785C]/50"
               onMouseEnter={() => setIsHovering(true)}
               onMouseLeave={() => setIsHovering(false)}
-              onClick={() => window.open('https://calendly.com/nlynch-ai/30min', '_blank')}
+              onClick={() => window.open('https://calendly.com/nicklynch-bonusthoughts', '_blank')}
             >
               <motion.span
                 className="relative z-10"
@@ -342,7 +342,7 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0 }}
               className="rounded-lg border border-[#F4EDE4]/10 bg-[#F4EDE4]/5 p-6 backdrop-blur-sm"
             >
-              <h3 className="mb-2 text-xl font-bold text-[#CC785C]">National Geospatial Intelligence</h3>
+              <h3 className="mb-2 text-xl font-bold text-[#CC785C]">Geospatial Intelligence</h3>
               <p className="text-sm text-[#D4C4B0]">Built AI systems in classified environments. Still powering federal ops. TS/SCI cleared.</p>
             </motion.div>
 
@@ -619,7 +619,7 @@ export default function Home() {
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-[#CC785C] to-[#E8956D] px-8 py-6 text-lg font-semibold text-[#191919] transition-all hover:scale-105 hover:shadow-2xl hover:shadow-[#CC785C]/50"
-                onClick={() => window.open('https://calendly.com/nlynch-ai/30min', '_blank')}
+                onClick={() => window.open('https://calendly.com/nicklynch-bonusthoughts', '_blank')}
               >
                 Book Program Diagnostic →
               </Button>
@@ -698,7 +698,7 @@ export default function Home() {
             <Button
               size="lg"
               className="bg-gradient-to-r from-[#CC785C] to-[#E8956D] px-8 py-6 text-lg font-semibold text-[#191919] transition-all hover:scale-105 hover:shadow-2xl hover:shadow-[#CC785C]/50"
-              onClick={() => window.open('https://calendly.com/nlynch-ai/30min', '_blank')}
+              onClick={() => window.open('https://calendly.com/nicklynch-bonusthoughts', '_blank')}
             >
               See open slots →
             </Button>
@@ -790,7 +790,7 @@ export default function Home() {
             <div className="flex flex-wrap items-center justify-center gap-6 text-sm">
               <motion.a
                 whileHover={{ y: -2 }}
-                href="https://calendly.com/nlynch-ai/30min"
+                href="https://calendly.com/nicklynch-bonusthoughts"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="transition-colors hover:text-[#CC785C] font-semibold"
