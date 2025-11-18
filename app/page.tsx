@@ -3,12 +3,14 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { LeadMagnetModal } from "@/components/lead-magnet-modal";
 import { useEffect, useState } from "react";
 import { Heart, DollarSign, Factory, Zap, Wheat, Rocket } from "lucide-react";
 
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
+  const [isPlaybookModalOpen, setIsPlaybookModalOpen] = useState(false);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -41,7 +43,7 @@ export default function Home() {
     "@type": "Person",
     "name": "Nick Lynch",
     "jobTitle": "AI Program Director",
-    "description": "Former NGA architect. Built AI systems powering federal operations. Veteran-led AI Program Director.",
+    "description": "Former Intelligence Community architect. Built AI systems powering federal operations. Veteran-led AI Program Director.",
     "url": "https://bonusthoughts.com",
     "sameAs": "https://x.com/nlynch_ai",
     "credentials": [
@@ -234,9 +236,9 @@ export default function Home() {
             transition={{ duration: 1, delay: 0.8 }}
             className="mx-auto mb-8 max-w-2xl text-xl text-[#D4C4B0] sm:text-2xl"
           >
-            Former NGA architect. Built AI systems still powering federal ops. Now directing your team to ship real AI in 10–16 weeks instead of 18 months.
+            Former Intelligence Community architect. Built AI systems still powering federal ops.
             <br />
-            <span className="font-semibold text-[#CC785C]">No endless pilots. No failed vendors. Just results.</span>
+            <span className="font-semibold text-[#CC785C]">Ship real AI in 10–16 weeks instead of 18 months.</span>
           </motion.p>
 
           {/* Trust Signals */}
@@ -304,6 +306,15 @@ export default function Home() {
               See Directorships
             </Button>
           </motion.div>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1.4 }}
+            className="mt-4 text-center text-sm text-[#D4C4B0]"
+          >
+            <span className="font-semibold text-[#CC785C]">15- or 30-minute call</span> · No pitch, just unblock your AI initiative · 100% confidential
+          </motion.p>
         </motion.div>
       </section>
 
@@ -317,13 +328,10 @@ export default function Home() {
           className="text-center"
         >
           <h2 className="mb-8 text-4xl font-bold text-[#F4EDE4] sm:text-5xl">
-            Battle-Tested AI Leader
+            Track Record That Speaks
           </h2>
           <p className="mx-auto max-w-3xl text-lg leading-relaxed text-[#D4C4B0] mb-8">
-            Former intelligence analyst in the Special Operations Community.
-            Deployment Advisor at the National Geospatial Intelligence Agency. Built AI systems that power federal operations today.
-            <br />
-            <span className="font-semibold text-[#CC785C]">Now directing AI programs for executives who have teams but no velocity.</span>
+            Built classified AI systems at the National Geospatial Intelligence Agency that still power federal ops today. Directed intelligence targeting in the Special Operations Community. Now running this playbook for executives building AI teams from scratch.
           </p>
 
           <div className="grid gap-6 md:grid-cols-3 mt-12">
@@ -473,14 +481,13 @@ export default function Home() {
               className="mb-8 text-center"
             >
               <h2 className="mb-4 text-4xl font-bold text-[#F4EDE4] sm:text-5xl">
-                Veteran-Led AI
+                Why It Works
                 <span className="bg-gradient-to-r from-[#CC785C] to-[#E8956D] bg-clip-text text-transparent">
-                  {" "}Consultancy
+                  {" "}(Operational Advantage)
                 </span>
               </h2>
               <p className="mx-auto max-w-3xl text-lg leading-relaxed text-[#D4C4B0]">
-                SDVOSB Certified. Active TS/SCI Clearances. SAM Registered.
-                Cleared & secure AI prototypes for classified ops—built by those who've shipped in the field.
+                Speed of military operations. Clarity of classified environments. Accountability that comes from shipping under real pressure. SDVOSB certified, TS/SCI cleared, SAM registered—but what matters is proven execution.
               </p>
             </motion.div>
 
@@ -616,6 +623,9 @@ export default function Home() {
               >
                 Book Program Diagnostic →
               </Button>
+              <p className="mt-4 text-sm text-[#D4C4B0]">
+                <span className="font-semibold text-[#CC785C]">15- or 30-minute call</span> · No pitch, just unblock your AI initiative · 100% confidential
+              </p>
             </div>
           </div>
         </motion.div>
@@ -675,13 +685,13 @@ export default function Home() {
               <h3 className="mb-3 text-2xl font-bold text-[#F4EDE4]">Zero-Loss Data Pipelines</h3>
               <p className="mb-4 text-[#D4C4B0]">Ground-truth reporting from source. No data loss across comms channels. Board-ready ROI dashboards.</p>
               <p className="text-lg font-bold text-cyan-400">Trust & accuracy</p>
-              <p className="text-sm text-[#A8826B]">Q4 2025 availability</p>
+              <p className="text-sm text-[#A8826B]">Q1 2026 availability</p>
             </motion.div>
           </div>
 
           <div className="mt-12 text-center">
             <p className="mb-6 text-lg text-[#D4C4B0]">
-              <span className="font-semibold text-[#F4EDE4]">Selective New Engagement Q4 2025</span>
+              <span className="font-semibold text-[#F4EDE4]">Selective New Engagement Q1 2026</span>
               <br />
               Ideal fit: $100M+ companies with solid engineering teams but zero AI velocity.
             </p>
@@ -690,9 +700,58 @@ export default function Home() {
               className="bg-gradient-to-r from-[#CC785C] to-[#E8956D] px-8 py-6 text-lg font-semibold text-[#191919] transition-all hover:scale-105 hover:shadow-2xl hover:shadow-[#CC785C]/50"
               onClick={() => window.open('https://calendly.com/nlynch-ai/30min', '_blank')}
             >
-              Book Program Diagnostic →
+              See open slots →
             </Button>
+            <p className="mt-4 text-sm text-[#D4C4B0]">
+              <span className="font-semibold text-[#CC785C]">15- or 30-minute call</span> · No pitch, just unblock your AI initiative · 100% confidential
+            </p>
           </div>
+        </motion.div>
+      </section>
+
+      {/* Lead Magnet CTA Section */}
+      <section className="relative z-10 mx-auto max-w-5xl px-6 py-24">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="overflow-hidden rounded-3xl border border-[#E8956D]/30 bg-gradient-to-br from-[#E8956D]/10 to-[#CC785C]/10 p-12 backdrop-blur-xl md:p-16 text-center"
+        >
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="mb-4 text-3xl font-bold text-[#F4EDE4] sm:text-4xl"
+          >
+            Not ready to book yet?
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mx-auto mb-8 max-w-2xl text-lg text-[#D4C4B0]"
+          >
+            Download the <span className="font-semibold text-[#CC785C]">C-Suite AI Playbook</span>: 7 MVPs that delivered 6-figure ROI in under 30 days. See the framework before committing to a call.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            <Button
+              size="lg"
+              className="bg-gradient-to-r from-[#E8956D] to-[#CC785C] px-8 py-6 text-lg font-semibold text-[#191919] transition-all hover:scale-105 hover:shadow-2xl hover:shadow-[#E8956D]/50"
+              onClick={() => setIsPlaybookModalOpen(true)}
+            >
+              Get Free Playbook →
+            </Button>
+          </motion.div>
         </motion.div>
       </section>
 
@@ -758,15 +817,17 @@ export default function Home() {
               </motion.a>
             </div>
             <p className="text-[#A8826B] text-sm">
-              © 2024 BonusThoughts. AI Program Director for executives with teams but no velocity.
-              <br />
-              Former NGA | Special Operations Community | AimersionAI (Exited)
-              <br />
-              SDVOSB Certified | TS/SCI Cleared | SAM Registered
+              © 2025 BonusThoughts. AI Program Director for teams with engineering but zero velocity.
             </p>
           </div>
         </div>
       </footer>
+
+      {/* Lead Magnet Modal */}
+      <LeadMagnetModal
+        isOpen={isPlaybookModalOpen}
+        onClose={() => setIsPlaybookModalOpen(false)}
+      />
     </div>
   );
 }
