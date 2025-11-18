@@ -331,7 +331,7 @@ export default function Home() {
             Track Record That Speaks
           </h2>
           <p className="mx-auto max-w-3xl text-lg leading-relaxed text-[#D4C4B0] mb-8">
-            Built classified AI systems at the National Geospatial Intelligence Agency that still power federal ops today. Directed intelligence targeting in the Special Operations Community. Now running this playbook for executives building AI teams from scratch.
+            Built classified AI systems that still power ops today. Directed intelligence targeting in the Special Operations Community. Now running this playbook for executives building AI teams from scratch.
           </p>
 
           <div className="grid gap-6 md:grid-cols-3 mt-12">
@@ -343,7 +343,7 @@ export default function Home() {
               className="rounded-lg border border-[#F4EDE4]/10 bg-[#F4EDE4]/5 p-6 backdrop-blur-sm"
             >
               <h3 className="mb-2 text-xl font-bold text-[#CC785C]">Geospatial Intelligence</h3>
-              <p className="text-sm text-[#D4C4B0]">Built AI systems in classified environments. Still powering federal ops. TS/SCI cleared.</p>
+              <p className="text-sm text-[#D4C4B0]">Computer Vision Techniques worthy of classified environments. TS/SCI cleared.</p>
             </motion.div>
 
             <motion.div
@@ -410,7 +410,7 @@ export default function Home() {
                         initial={{ opacity: 0, scale: 1 }}
                         whileHover={{
                           opacity: [0, 0.4, 0],
-                          scale: [1, 1.8],
+                          scale: [1, 1.1],
                         }}
                         transition={{
                           duration: 2.5,
@@ -436,7 +436,7 @@ export default function Home() {
                       >
                         <div className="absolute inset-0 rounded-full border-2 border-cyan-400/40" />
                       </motion.div>
-                      <industry.icon className="relative h-16 w-16 text-[#CC785C] stroke-[1.5] transition-colors group-hover:text-[#E8956D]" />
+                      <industry.icon className="relative h-16 w-16 text-[#CC785C] stroke-[1.1] transition-colors group-hover:text-[#E8956D]" />
                     </motion.div>
                     <h3 className="text-2xl font-bold text-[#F4EDE4]">
                       {industry.name}
@@ -499,9 +499,9 @@ export default function Home() {
               className="grid gap-8 md:grid-cols-3"
             >
               <div className="group rounded-2xl border border-[#F4EDE4]/10 bg-[#F4EDE4]/5 p-6 backdrop-blur-sm transition-all hover:border-[#CC785C]/30 hover:bg-[#F4EDE4]/10">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#CC785C]/20">
-                  <div className="relative h-3 w-3">
-                    <div className="absolute inset-0 h-3 w-3 animate-ping rounded-full bg-[#CC785C] opacity-75" />
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#CC785C]/10">
+                  <div className="relative h-2.5 w-2.5 rounded-full bg-[#CC785C]">
+                    <div className="absolute inset-0 h-2 w-2 animate-ping rounded-full bg-[#CC785C] opacity-75" />
                   </div>
                 </div>
                 <h3 className="mb-2 text-xl font-bold text-[#F4EDE4]">40+ MVPs Delivered</h3>
@@ -512,8 +512,8 @@ export default function Home() {
               </div>
 
               <div className="group rounded-2xl border border-[#F4EDE4]/10 bg-[#F4EDE4]/5 p-6 backdrop-blur-sm transition-all hover:border-cyan-400/30 hover:bg-[#F4EDE4]/10">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-cyan-400/20">
-                  <div className="relative h-3 w-3">
+                <div className="mb-4 flex h-4 w-4 items-center justify-center rounded-full bg-cyan-400/20">
+                  <div className="relative h-3.5 w-3.5 rounded-full bg-cyan-400">
                     <div className="absolute inset-0 h-3 w-3 animate-ping rounded-full bg-cyan-400 opacity-75" />
                   </div>
                 </div>
@@ -526,8 +526,8 @@ export default function Home() {
 
               <div className="group rounded-2xl border border-[#F4EDE4]/10 bg-[#F4EDE4]/5 p-6 backdrop-blur-sm transition-all hover:border-[#E8956D]/30 hover:bg-[#F4EDE4]/10">
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#E8956D]/20">
-                  <div className="relative h-3 w-3">
-                    <div className="absolute inset-0 h-3 w-3 animate-ping rounded-full bg-[#E8956D] opacity-75" />
+                  <div className="relative h-3.5 w-3.5 rounded-full bg-[#E8956D]">
+                    <div className="absolute inset-0 h-3 w-3 animate-ping rounded-full bg-[#E8956D] opacity-20" />
                   </div>
                 </div>
                 <h3 className="mb-2 text-xl font-bold text-[#F4EDE4]">
@@ -641,7 +641,7 @@ export default function Home() {
         >
           <h2 className="mb-16 text-center text-5xl font-bold">
             <span className="bg-gradient-to-r from-[#CC785C] to-[#E8956D] bg-clip-text text-transparent">
-              Current Directorships
+              Recent Directorships
             </span>
           </h2>
 
