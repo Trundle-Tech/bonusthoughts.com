@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { LeadMagnetModal } from "@/components/lead-magnet-modal";
 import { useEffect, useState } from "react";
-import { Heart, DollarSign, Factory, Zap, Wheat, Rocket } from "lucide-react";
+import { Route, DollarSign, Factory, Zap, Wheat, Rocket } from "lucide-react";
 
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -87,7 +87,7 @@ export default function Home() {
   const capabilities = [
     {
       name: "AI Strategy & Roadmap",
-      icon: Heart,
+      icon: Route,
       color: "from-[#4a7c59]/20 to-[#5a8a65]/20",
       description: "Where to start. What to kill. Prioritized 90-day roadmap. Get your team aligned on what actually matters."
     },
@@ -158,15 +158,15 @@ export default function Home() {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="sticky top-0 z-50 border-b border-[#F4EDE4]/10 backdrop-blur-xl"
       >
-        <div className="mx-auto max-w-7xl px-6 py-4">
+        <div className="mx-auto max-w-7xl px-4 py-3 sm:px-6 sm:py-4">
           <div className="flex items-center justify-between">
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="text-2xl font-bold bg-gradient-to-r from-[#4a7c59] to-[#5a8a65] bg-clip-text text-transparent"
+              className="text-lg font-bold bg-gradient-to-r from-[#4a7c59] to-[#5a8a65] bg-clip-text text-transparent sm:text-2xl"
             >
               BonusThoughts
             </motion.div>
-            <div className="flex gap-8 text-sm font-medium">
+            <div className="flex gap-4 text-xs font-medium sm:gap-8 sm:text-sm">
               <motion.a
                 whileHover={{ y: -2 }}
                 href="#industries"
@@ -194,7 +194,7 @@ export default function Home() {
       </motion.nav>
 
       {/* Hero Section */}
-      <section className="relative z-10 mx-auto max-w-7xl px-6 py-32">
+      <section className="relative z-10 mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-32">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -208,7 +208,7 @@ export default function Home() {
             className="mb-8 inline-block"
           >
             <div className="relative">
-              <h1 className="text-7xl font-black tracking-tight sm:text-8xl md:text-9xl">
+              <h1 className="text-5xl font-black tracking-tight sm:text-7xl md:text-8xl lg:text-9xl">
                 <span className="bg-gradient-to-r from-[#4a7c59] via-[#5a8a65] to-[#5a6b3e] bg-clip-text text-transparent">
                   Bespoke
                 </span>
@@ -234,11 +234,11 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.8 }}
-            className="mx-auto mb-8 max-w-2xl text-xl text-[#D4C4B0] sm:text-2xl"
+            className="mx-auto mb-8 max-w-2xl text-base text-[#D4C4B0] sm:text-xl md:text-2xl"
           >
-            Technology built for problems that don't fit templates.
+            Technology built for your actual needs, not templates.
             <br />
-            <span className="font-semibold text-[#5a8a65]">Making things that matter.</span>
+            <span className="font-semibold text-[#5a8a65]">Those ideas you've been collecting? We help you build them.</span>
           </motion.p>
 
           {/* Trust Signals */}
@@ -246,7 +246,7 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 1 }}
-            className="mb-10 flex flex-wrap items-center justify-center gap-6 text-sm"
+            className="mb-8 flex flex-wrap items-center justify-center gap-3 text-xs sm:gap-6 sm:text-sm"
           >
             <div className="flex items-center gap-2 rounded-full border border-[#4a7c59]/30 bg-[#4a7c59]/10 px-4 py-2 backdrop-blur-sm">
               <div className="relative">
@@ -279,7 +279,7 @@ export default function Home() {
           >
             <Button
               size="lg"
-              className="group relative overflow-hidden bg-gradient-to-r from-[#4a7c59] to-[#5a8a65] px-8 py-6 text-lg font-semibold text-[#191919] transition-all hover:scale-105 hover:shadow-2xl hover:shadow-[#4a7c59]/50"
+              className="group relative overflow-hidden bg-gradient-to-r from-[#4a7c59] to-[#5a8a65] px-6 py-4 text-base font-semibold text-[#191919] transition-all hover:scale-105 hover:shadow-2xl hover:shadow-[#4a7c59]/50 sm:px-8 sm:py-6 sm:text-lg"
               onMouseEnter={() => setIsHovering(true)}
               onMouseLeave={() => setIsHovering(false)}
               onClick={() => window.open('https://calendly.com/nicklynch-bonusthoughts', '_blank')}
@@ -300,7 +300,7 @@ export default function Home() {
             <Button
               size="lg"
               variant="outline"
-              className="border-2 border-[#4a7c59]/40 bg-[#F4EDE4]/5 px-8 py-6 text-lg font-semibold text-[#F4EDE4] backdrop-blur-sm transition-all hover:border-[#4a7c59]/70 hover:bg-[#F4EDE4]/10"
+              className="border-2 border-[#4a7c59]/40 bg-[#F4EDE4]/5 px-6 py-4 text-base font-semibold text-[#F4EDE4] backdrop-blur-sm transition-all hover:border-[#4a7c59]/70 hover:bg-[#F4EDE4]/10 sm:px-8 sm:py-6 sm:text-lg"
               onClick={() => document.getElementById('case-studies')?.scrollIntoView({ behavior: 'smooth' })}
             >
               See What We Build
@@ -319,7 +319,7 @@ export default function Home() {
       </section>
 
       {/* About/Background Section */}
-      <section className="relative z-10 mx-auto max-w-5xl px-6 py-24">
+      <section className="relative z-10 mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-24">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -328,10 +328,10 @@ export default function Home() {
           className="text-center"
         >
           <h2 className="mb-8 text-4xl font-bold text-[#F4EDE4] sm:text-5xl">
-            Built for Complexity
+            Built for How You Work
           </h2>
           <p className="mx-auto max-w-3xl text-lg leading-relaxed text-[#D4C4B0] mb-8">
-           Experience building technology for problems that don't have obvious answers. Now applying that approach to select clients with unique challenges.
+            Experience building technology for complex problems. From classified systems to production AI at scale. Now applying that approach to bring your ideas to life using the processes you already have.
           </p>
 
           <div className="grid gap-6 md:grid-cols-3 mt-12">
@@ -372,7 +372,7 @@ export default function Home() {
       </section>
 
       {/* Industries Section */}
-      <section id="industries" className="relative z-10 mx-auto max-w-7xl px-6 py-24">
+      <section id="industries" className="relative z-10 mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-24">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -396,7 +396,7 @@ export default function Home() {
                 whileHover={{ y: -10, scale: 1.02 }}
               >
                 <Card
-                  className={`group relative flex h-full min-h-[280px] flex-col overflow-hidden border-[#F4EDE4]/10 bg-gradient-to-br ${industry.color} p-8 backdrop-blur-sm transition-all hover:border-[#4a7c59]/50 hover:shadow-2xl hover:shadow-[#4a7c59]/20`}
+                  className={`group relative flex h-full min-h-[220px] sm:min-h-[280px] flex-col overflow-hidden border-[#F4EDE4]/10 bg-gradient-to-br ${industry.color} p-5 sm:p-8 backdrop-blur-sm transition-all hover:border-[#4a7c59]/50 hover:shadow-2xl hover:shadow-[#4a7c59]/20`}
                 >
                   {/* Organic background shapes - unique per card - hidden on mobile */}
                   {index === 0 && (
@@ -468,12 +468,12 @@ export default function Home() {
                       >
                         <div className="absolute inset-0 rounded-full border-2 border-cyan-400/40" />
                       </motion.div>
-                      <industry.icon className="relative h-16 w-16 text-[#4a7c59] stroke-[1.1] transition-colors group-hover:text-[#5a8a65]" />
+                      <industry.icon className="relative h-12 w-12 sm:h-16 sm:w-16 text-[#4a7c59] stroke-[1.1] transition-colors group-hover:text-[#5a8a65]" />
                     </motion.div>
-                    <h3 className="text-2xl font-bold text-[#F4EDE4]">
+                    <h3 className="text-xl sm:text-2xl font-bold text-[#F4EDE4]">
                       {industry.name}
                     </h3>
-                    <p className="mt-2 text-[#D4C4B0]">
+                    <p className="mt-2 text-sm sm:text-base text-[#D4C4B0]">
                       {industry.description}
                     </p>
                   </div>
@@ -489,13 +489,13 @@ export default function Home() {
       </section>
 
       {/* Mission-Critical Section */}
-      <section className="relative z-10 mx-auto max-w-7xl px-6 py-24">
+      <section className="relative z-10 px-0 py-12 sm:mx-auto sm:max-w-7xl sm:px-6 sm:py-24">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="relative overflow-hidden rounded-3xl border border-[#4a7c59]/20 bg-gradient-to-br from-[#191919] to-[#2a2a2a] p-12 backdrop-blur-xl md:p-16"
+          className="relative overflow-hidden rounded-none border-y border-[#4a7c59]/20 bg-gradient-to-br from-[#191919]/80 to-[#2a2a2a]/80 p-6 backdrop-blur-xl sm:rounded-3xl sm:border sm:from-[#191919] sm:to-[#2a2a2a] sm:p-12 md:p-16"
         >
           {/* Subtle geometric background pattern */}
           <div className="absolute inset-0 opacity-10">
@@ -515,11 +515,11 @@ export default function Home() {
               <h2 className="mb-4 text-4xl font-bold text-[#F4EDE4] sm:text-5xl">
                 Why Choose
                 <span className="bg-gradient-to-r from-[#4a7c59] to-[#5a8a65] bg-clip-text text-transparent">
-                  {" "}Bespoke
+                  {" "}BonusThoughts
                 </span>
               </h2>
               <p className="mx-auto max-w-3xl text-lg leading-relaxed text-[#D4C4B0]">
-                When off-the-shelf doesn't work. When your challenge requires someone who understands complexity. Taking on a limited number of clients means full attention to what makes your problem unique.
+                No assembly-line solutions. We build what you actually need, using the tools and processes you already have. Technology that adapts to your workflow, not the other way around.
               </p>
             </motion.div>
 
@@ -530,7 +530,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="grid gap-8 md:grid-cols-3"
             >
-              <div className="group rounded-2xl border border-[#F4EDE4]/10 bg-[#F4EDE4]/5 p-6 backdrop-blur-sm transition-all hover:border-[#4a7c59]/30 hover:bg-[#F4EDE4]/10">
+              <div className="group rounded-2xl border border-[#F4EDE4]/10 bg-[#F4EDE4]/0 p-6 backdrop-blur-sm transition-all hover:border-[#4a7c59]/30 hover:bg-[#F4EDE4]/5 sm:bg-[#F4EDE4]/5 sm:hover:bg-[#F4EDE4]/10">
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#4a7c59]/10">
                   <div className="relative h-2.5 w-2.5 rounded-full bg-[#4a7c59]">
                     <div className="absolute inset-0 h-2 w-2 animate-ping rounded-full bg-[#4a7c59] opacity-75" />
@@ -538,36 +538,36 @@ export default function Home() {
                 </div>
                 <h3 className="mb-2 text-xl font-bold text-[#F4EDE4]">Selective Engagement</h3>
                 <p className="text-[#D4C4B0]">
-                  Only a few clients at a time. Deep focus on problems that matter.
-                  No assembly line solutions.
+                  Only a few clients at a time. Deep focus on what actually matters.
+                  Custom solutions, not templates.
                 </p>
               </div>
 
-              <div className="group rounded-2xl border border-[#F4EDE4]/10 bg-[#F4EDE4]/5 p-6 backdrop-blur-sm transition-all hover:border-cyan-400/30 hover:bg-[#F4EDE4]/10">
+              <div className="group rounded-2xl border border-[#F4EDE4]/10 bg-[#F4EDE4]/0 p-6 backdrop-blur-sm transition-all hover:border-cyan-400/30 hover:bg-[#F4EDE4]/5 sm:bg-[#F4EDE4]/5 sm:hover:bg-[#F4EDE4]/10">
                 <div className="mb-4 flex h-4 w-4 items-center justify-center rounded-full bg-cyan-400/20">
                   <div className="relative h-3.5 w-3.5 rounded-full bg-cyan-400">
                     <div className="absolute inset-0 h-3 w-3 animate-ping rounded-full bg-cyan-400 opacity-75" />
                   </div>
                 </div>
-                <h3 className="mb-2 text-xl font-bold text-[#F4EDE4]">Built for Complexity</h3>
+                <h3 className="mb-2 text-xl font-bold text-[#F4EDE4]">Using What You Have</h3>
                 <p className="text-[#D4C4B0]">
-                  Classified environments. Special operations. Production systems.
-                  Experience with problems that have no template.
+                  Your existing tools. Your team's current workflow. Your daily processes.
+                  We build on top of what's already working.
                 </p>
               </div>
 
-              <div className="group rounded-2xl border border-[#F4EDE4]/10 bg-[#F4EDE4]/5 p-6 backdrop-blur-sm transition-all hover:border-[#5a8a65]/30 hover:bg-[#F4EDE4]/10">
+              <div className="group rounded-2xl border border-[#F4EDE4]/10 bg-[#F4EDE4]/0 p-6 backdrop-blur-sm transition-all hover:border-[#5a8a65]/30 hover:bg-[#F4EDE4]/5 sm:bg-[#F4EDE4]/5 sm:hover:bg-[#F4EDE4]/10">
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#5a8a65]/20">
                   <div className="relative h-3.5 w-3.5 rounded-full bg-[#5a8a65]">
                     <div className="absolute inset-0 h-3 w-3 animate-ping rounded-full bg-[#5a8a65] opacity-20" />
                   </div>
                 </div>
                 <h3 className="mb-2 text-xl font-bold text-[#F4EDE4]">
-                  Cleared & Certified
+                  Proven Experience
                 </h3>
                 <p className="text-[#D4C4B0]">
-                  TS/SCI cleared. SDVOSB certified. SAM registered.
-                  Can work on sensitive challenges when needed.
+                  Built systems for classified environments and production AI.
+                  TS/SCI cleared. SDVOSB certified. Real complexity.
                 </p>
               </div>
             </motion.div>
@@ -576,13 +576,13 @@ export default function Home() {
       </section>
 
       {/* Pricing & Process Section */}
-      <section id="innovation" className="relative z-10 mx-auto max-w-5xl px-6 py-32">
+      <section id="innovation" className="relative z-10 px-0 py-16 sm:mx-auto sm:max-w-5xl sm:px-6 sm:py-32">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="relative overflow-hidden rounded-3xl border border-[#F4EDE4]/10 bg-gradient-to-br from-[#4a7c59]/20 to-[#2d5945]/20 p-12 backdrop-blur-xl"
+          className="relative overflow-hidden rounded-none border-y border-[#F4EDE4]/10 bg-gradient-to-br from-[#4a7c59]/15 to-[#2d5945]/15 p-6 backdrop-blur-xl sm:rounded-3xl sm:border sm:from-[#4a7c59]/20 sm:to-[#2d5945]/20 sm:p-12"
         >
           <motion.div
             className="absolute -left-20 -top-20 h-40 w-40 rounded-full bg-[#4a7c59]/30 blur-3xl"
@@ -602,12 +602,16 @@ export default function Home() {
           />
 
           <div className="relative z-10">
-            <h2 className="mb-12 text-center text-4xl font-bold text-[#F4EDE4] sm:text-5xl">
+            <h2 className="mb-6 text-center text-4xl font-bold text-[#F4EDE4] sm:text-5xl">
               How We Work
             </h2>
 
+            <p className="max-w-2xl mx-auto text-center text-lg text-[#D4C4B0] mb-10">
+              Custom solutions built around your existing workflow. Understand → Design → Build.
+            </p>
+
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-              <div className="rounded-xl border border-[#F4EDE4]/10 bg-[#F4EDE4]/5 p-6 backdrop-blur-sm">
+              <div className="rounded-xl border border-[#F4EDE4]/10 bg-[#F4EDE4]/0 p-6 backdrop-blur-sm sm:bg-[#F4EDE4]/5">
                 <p className="mb-4 text-2xl font-bold text-[#4a7c59]">Program Diagnostic</p>
                 <p className="text-sm text-[#D4C4B0] mb-2">2-week audit</p>
                 <ul className="text-sm text-[#D4C4B0] space-y-1">
@@ -618,7 +622,7 @@ export default function Home() {
                 </ul>
               </div>
 
-              <div className="rounded-xl border border-[#5a8a65]/20 bg-[#5a8a65]/10 p-6 backdrop-blur-sm">
+              <div className="rounded-xl border border-[#5a8a65]/20 bg-[#5a8a65]/0 p-6 backdrop-blur-sm sm:bg-[#5a8a65]/10">
                 <p className="mb-4 text-2xl font-bold text-[#5a8a65]">Director Retainer</p>
                 <p className="text-sm text-[#D4C4B0] mb-2">6–18 months</p>
                 <ul className="text-sm text-[#D4C4B0] space-y-1">
@@ -629,7 +633,7 @@ export default function Home() {
                 </ul>
               </div>
 
-              <div className="rounded-xl border border-[#00E5FF]/20 bg-[#00E5FF]/5 p-6 backdrop-blur-sm">
+              <div className="rounded-xl border border-[#00E5FF]/20 bg-[#00E5FF]/0 p-6 backdrop-blur-sm sm:bg-[#00E5FF]/5">
                 <p className="mb-4 text-2xl font-bold text-cyan-400">Outcome Guarantee</p>
                 <p className="text-sm text-[#D4C4B0] mb-2">Fixed-price delivery</p>
                 <ul className="text-sm text-[#D4C4B0] space-y-1">
@@ -640,7 +644,7 @@ export default function Home() {
                 </ul>
               </div>
 
-              <div className="rounded-xl border border-[#4a7c59]/20 bg-[#4a7c59]/10 p-6 backdrop-blur-sm">
+              <div className="rounded-xl border border-[#4a7c59]/20 bg-[#4a7c59]/0 p-6 backdrop-blur-sm sm:bg-[#4a7c59]/10">
                 <p className="mb-4 text-2xl font-bold text-[#5a8a65]">Business Infrastructure</p>
                 <p className="text-sm text-[#D4C4B0] mb-2">Full stack setup</p>
                 <ul className="text-sm text-[#D4C4B0] space-y-1">
@@ -652,10 +656,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="mt-10 text-center">
-              <p className="text-[#D4C4B0] mb-6">
-                Every engagement is tailored. Start with a conversation to see if we're a fit.
-              </p>
+            <div className="mt-12 text-center">
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-[#4a7c59] to-[#5a8a65] px-8 py-6 text-lg font-semibold text-[#191919] transition-all hover:scale-105 hover:shadow-2xl hover:shadow-[#4a7c59]/50"
@@ -672,7 +673,7 @@ export default function Home() {
       </section>
 
       {/* Case Studies Section */}
-      <section id="case-studies" className="relative z-10 mx-auto max-w-7xl px-6 py-24">
+      <section id="case-studies" className="relative z-10 mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-24">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -750,13 +751,13 @@ export default function Home() {
       </section>
 
       {/* Lead Magnet CTA Section */}
-      <section className="relative z-10 mx-auto max-w-5xl px-6 py-24">
+      <section className="relative z-10 mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-24">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="overflow-hidden rounded-3xl border border-[#5a8a65]/30 bg-gradient-to-br from-[#5a8a65]/10 to-[#4a7c59]/10 p-12 backdrop-blur-xl md:p-16 text-center"
+          className="overflow-hidden rounded-3xl border border-[#5a8a65]/30 bg-gradient-to-br from-[#5a8a65]/10 to-[#4a7c59]/10 p-6 backdrop-blur-xl sm:p-12 md:p-16 text-center"
         >
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
