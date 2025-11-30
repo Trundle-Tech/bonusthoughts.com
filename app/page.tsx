@@ -88,37 +88,37 @@ export default function Home() {
     {
       name: "AI Strategy & Roadmap",
       icon: Heart,
-      color: "from-[#CC785C]/20 to-[#E8956D]/20",
+      color: "from-[#4a7c59]/20 to-[#5a8a65]/20",
       description: "Where to start. What to kill. Prioritized 90-day roadmap. Get your team aligned on what actually matters."
     },
     {
-      name: "Architecture & Vendor Selection",
+      name: "Technology Architecture",
       icon: DollarSign,
-      color: "from-[#D4A574]/20 to-[#E8C4A0]/20",
-      description: "Grok vs. OpenAI vs. on-prem. Save 30–60% on tools. Make decisions that don't come back to haunt you."
+      color: "from-[#5a6b3e]/20 to-[#6a9a75]/20",
+      description: "Design systems that fit your constraints. Make technical choices that align with your actual needs, not trends."
     },
     {
       name: "Team & Hiring Plans",
       icon: Factory,
-      color: "from-[#CC785C]/20 to-[#B86A51]/20",
+      color: "from-[#4a7c59]/20 to-[#3a5a47]/20",
       description: "Who you actually need. When to hire. What titles make sense. Build the right team for the work."
     },
     {
       name: "Conversational AI Agents",
       icon: Zap,
-      color: "from-[#E8B88B]/20 to-[#D4A574]/20",
+      color: "from-[#6a9a75]/20 to-[#5a6b3e]/20",
       description: "Phone agents replacing IVRs. CRM-integrated workflows. 80%+ pipeline completion. Real customer interaction."
     },
     {
       name: "Geospatial & Computer Vision",
       icon: Wheat,
-      color: "from-[#A8826B]/20 to-[#8B6C59]/20",
+      color: "from-[#3a5a47]/20 to-[#2d5945]/20",
       description: "Intelligence from imagery. Real-time analysis. Mission-critical insights. Proven at scale."
     },
     {
       name: "Data Integrity & Reporting",
       icon: Rocket,
-      color: "from-[#CC785C]/20 to-[#D99473]/20",
+      color: "from-[#4a7c59]/20 to-[#5a8a65]/20",
       description: "Zero-loss data pipelines. Ground truth reporting. Board-ready ROI dashboards. No surprises."
     },
   ];
@@ -140,13 +140,13 @@ export default function Home() {
       />
 
       {/* Animated gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#CC785C]/10 via-[#191919] to-[#8B6C59]/10" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#1a3a2e]/30 via-[#191919] to-[#2d5945]/20" />
 
       {/* Mouse follower effect */}
       <motion.div
         className="pointer-events-none fixed inset-0 z-0"
         animate={{
-          background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(204, 120, 92, 0.15), transparent 80%)`,
+          background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(74, 124, 89, 0.15), transparent 80%)`,
         }}
         transition={{ type: "tween", ease: "linear", duration: 0.2 }}
       />
@@ -162,7 +162,7 @@ export default function Home() {
           <div className="flex items-center justify-between">
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="text-2xl font-bold bg-gradient-to-r from-[#CC785C] to-[#E8956D] bg-clip-text text-transparent"
+              className="text-2xl font-bold bg-gradient-to-r from-[#4a7c59] to-[#5a8a65] bg-clip-text text-transparent"
             >
               BonusThoughts
             </motion.div>
@@ -170,21 +170,21 @@ export default function Home() {
               <motion.a
                 whileHover={{ y: -2 }}
                 href="#industries"
-                className="transition-colors hover:text-[#CC785C]"
+                className="transition-colors hover:text-[#5a8a65]"
               >
-                Industries
+                Capabilities
               </motion.a>
               <motion.a
                 whileHover={{ y: -2 }}
                 href="#innovation"
-                className="transition-colors hover:text-[#CC785C]"
+                className="transition-colors hover:text-[#5a8a65]"
               >
-                Innovation
+                Approach
               </motion.a>
               <motion.a
                 whileHover={{ y: -2 }}
                 href="#contact"
-                className="transition-colors hover:text-[#CC785C]"
+                className="transition-colors hover:text-[#5a8a65]"
               >
                 Contact
               </motion.a>
@@ -209,14 +209,14 @@ export default function Home() {
           >
             <div className="relative">
               <h1 className="text-7xl font-black tracking-tight sm:text-8xl md:text-9xl">
-                <span className="bg-gradient-to-r from-[#CC785C] via-[#E8956D] to-[#D4A574] bg-clip-text text-transparent">
-                  AI Program
+                <span className="bg-gradient-to-r from-[#4a7c59] via-[#5a8a65] to-[#5a6b3e] bg-clip-text text-transparent">
+                  Bespoke
                 </span>
                 <br />
-                <span className="text-[#F4EDE4]">Director.</span>
+                <span className="text-[#F4EDE4]">Solutions.</span>
               </h1>
               <motion.div
-                className="absolute -inset-4 -z-10 rounded-3xl bg-gradient-to-r from-[#CC785C]/30 to-[#D4A574]/30 blur-3xl"
+                className="absolute -inset-4 -z-10 rounded-3xl bg-gradient-to-r from-[#4a7c59]/30 to-[#5a6b3e]/30 blur-3xl"
                 animate={{
                   opacity: [0.5, 0.8, 0.5],
                   scale: [1, 1.05, 1],
@@ -236,9 +236,9 @@ export default function Home() {
             transition={{ duration: 1, delay: 0.8 }}
             className="mx-auto mb-8 max-w-2xl text-xl text-[#D4C4B0] sm:text-2xl"
           >
-            Former Intelligence Community architect. Built AI systems still powering federal ops.
+            Technology built for problems that don't fit templates.
             <br />
-            <span className="font-semibold text-[#CC785C]">Ship real AI in 10–16 weeks instead of 18 months.</span>
+            <span className="font-semibold text-[#5a8a65]">Making things that matter.</span>
           </motion.p>
 
           {/* Trust Signals */}
@@ -248,10 +248,10 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 1 }}
             className="mb-10 flex flex-wrap items-center justify-center gap-6 text-sm"
           >
-            <div className="flex items-center gap-2 rounded-full border border-[#CC785C]/30 bg-[#CC785C]/10 px-4 py-2 backdrop-blur-sm">
+            <div className="flex items-center gap-2 rounded-full border border-[#4a7c59]/30 bg-[#4a7c59]/10 px-4 py-2 backdrop-blur-sm">
               <div className="relative">
-                <div className="h-2 w-2 rounded-full bg-[#CC785C]" />
-                <div className="absolute inset-0 h-2 w-2 animate-ping rounded-full bg-[#CC785C] opacity-75" />
+                <div className="h-2 w-2 rounded-full bg-[#4a7c59]" />
+                <div className="absolute inset-0 h-2 w-2 animate-ping rounded-full bg-[#4a7c59] opacity-75" />
               </div>
               <span className="font-medium text-[#F4EDE4]">SDVOSB Certified</span>
             </div>
@@ -260,12 +260,12 @@ export default function Home() {
                 <div className="h-2 w-2 rounded-full bg-cyan-400" />
                 <div className="absolute inset-0 h-2 w-2 animate-ping rounded-full bg-cyan-400 opacity-75" />
               </div>
-              <span className="font-medium text-[#D4C4B0]">Active TS/SCI Clearances</span>
+              <span className="font-medium text-[#D4C4B0]">People First Tech</span>
             </div>
             <div className="flex items-center gap-2 rounded-full border border-[#F4EDE4]/20 bg-[#F4EDE4]/5 px-4 py-2 backdrop-blur-sm">
               <div className="relative">
-                <div className="h-2 w-2 rounded-full bg-[#E8956D]" />
-                <div className="absolute inset-0 h-2 w-2 animate-ping rounded-full bg-[#E8956D] opacity-75" />
+                <div className="h-2 w-2 rounded-full bg-[#5a8a65]" />
+                <div className="absolute inset-0 h-2 w-2 animate-ping rounded-full bg-[#5a8a65] opacity-75" />
               </div>
               <span className="font-medium text-[#D4C4B0]">SAM Registered</span>
             </div>
@@ -279,7 +279,7 @@ export default function Home() {
           >
             <Button
               size="lg"
-              className="group relative overflow-hidden bg-gradient-to-r from-[#CC785C] to-[#E8956D] px-8 py-6 text-lg font-semibold text-[#191919] transition-all hover:scale-105 hover:shadow-2xl hover:shadow-[#CC785C]/50"
+              className="group relative overflow-hidden bg-gradient-to-r from-[#4a7c59] to-[#5a8a65] px-8 py-6 text-lg font-semibold text-[#191919] transition-all hover:scale-105 hover:shadow-2xl hover:shadow-[#4a7c59]/50"
               onMouseEnter={() => setIsHovering(true)}
               onMouseLeave={() => setIsHovering(false)}
               onClick={() => window.open('https://calendly.com/nicklynch-bonusthoughts', '_blank')}
@@ -288,10 +288,10 @@ export default function Home() {
                 className="relative z-10"
                 animate={{ x: isHovering ? 5 : 0 }}
               >
-                Book 30-Min Diagnostic →
+                Start a Conversation →
               </motion.span>
               <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-[#E8956D] to-[#CC785C]"
+                className="absolute inset-0 bg-gradient-to-r from-[#5a8a65] to-[#4a7c59]"
                 initial={{ x: "100%" }}
                 animate={{ x: isHovering ? 0 : "100%" }}
                 transition={{ duration: 0.3 }}
@@ -300,10 +300,10 @@ export default function Home() {
             <Button
               size="lg"
               variant="outline"
-              className="border-2 border-[#CC785C]/40 bg-[#F4EDE4]/5 px-8 py-6 text-lg font-semibold text-[#F4EDE4] backdrop-blur-sm transition-all hover:border-[#CC785C]/70 hover:bg-[#F4EDE4]/10"
+              className="border-2 border-[#4a7c59]/40 bg-[#F4EDE4]/5 px-8 py-6 text-lg font-semibold text-[#F4EDE4] backdrop-blur-sm transition-all hover:border-[#4a7c59]/70 hover:bg-[#F4EDE4]/10"
               onClick={() => document.getElementById('case-studies')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              See Directorships
+              See What We Build
             </Button>
           </motion.div>
 
@@ -313,7 +313,7 @@ export default function Home() {
             transition={{ duration: 1, delay: 1.4 }}
             className="mt-4 text-center text-sm text-[#D4C4B0]"
           >
-            <span className="font-semibold text-[#CC785C]">15- or 30-minute call</span> · No pitch, just unblock your AI initiative · 100% confidential
+            <span className="font-semibold text-[#5a8a65]">Exploratory conversation</span> · See if we're a fit · No obligations
           </motion.p>
         </motion.div>
       </section>
@@ -328,10 +328,10 @@ export default function Home() {
           className="text-center"
         >
           <h2 className="mb-8 text-4xl font-bold text-[#F4EDE4] sm:text-5xl">
-            Track Record That Speaks
+            Built for Complexity
           </h2>
           <p className="mx-auto max-w-3xl text-lg leading-relaxed text-[#D4C4B0] mb-8">
-            Built classified AI systems that still power ops today. Directed intelligence targeting in the Special Operations Community. Now running this playbook for executives building AI teams from scratch.
+           Experience building technology for problems that don't have obvious answers. Now applying that approach to select clients with unique challenges.
           </p>
 
           <div className="grid gap-6 md:grid-cols-3 mt-12">
@@ -342,7 +342,7 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0 }}
               className="rounded-lg border border-[#F4EDE4]/10 bg-[#F4EDE4]/5 p-6 backdrop-blur-sm"
             >
-              <h3 className="mb-2 text-xl font-bold text-[#CC785C]">Geospatial Intelligence</h3>
+              <h3 className="mb-2 text-xl font-bold text-[#4a7c59]">Geospatial</h3>
               <p className="text-sm text-[#D4C4B0]">Computer Vision Techniques worthy of classified environments. TS/SCI cleared.</p>
             </motion.div>
 
@@ -353,8 +353,8 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="rounded-lg border border-[#F4EDE4]/10 bg-[#F4EDE4]/5 p-6 backdrop-blur-sm"
             >
-              <h3 className="mb-2 text-xl font-bold text-[#E8956D]">Special Operations Community</h3>
-              <p className="text-sm text-[#D4C4B0]">Intelligence targeting. Mission planning. Know how to move fast under pressure.</p>
+              <h3 className="mb-2 text-xl font-bold text-[#5a8a65]">All-Source Intelligence</h3>
+              <p className="text-sm text-[#D4C4B0]">High Value targeting. Mission planning. Know how to use data to meet the intent.</p>
             </motion.div>
 
             <motion.div
@@ -364,8 +364,8 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="rounded-lg border border-[#F4EDE4]/10 bg-[#F4EDE4]/5 p-6 backdrop-blur-sm"
             >
-              <h3 className="mb-2 text-xl font-bold text-cyan-400">AimersionAI (Exited)</h3>
-              <p className="text-sm text-[#D4C4B0]">Head of Intelligent Systems. Shipped to production. Know what works + what fails fast.</p>
+              <h3 className="mb-2 text-xl font-bold text-cyan-400">Production AI Systems</h3>
+              <p className="text-sm text-[#D4C4B0]">Solutions aren't complex platforms anymore. </p>
             </motion.div>
           </div>
         </motion.div>
@@ -380,8 +380,8 @@ export default function Home() {
           transition={{ duration: 0.8 }}
         >
           <h2 className="mb-16 text-center text-5xl font-bold">
-            <span className="bg-gradient-to-r from-[#CC785C] to-[#E8956D] bg-clip-text text-transparent">
-              What I Direct
+            <span className="bg-gradient-to-r from-[#4a7c59] to-[#5a8a65] bg-clip-text text-transparent">
+              What We Build
             </span>
           </h2>
 
@@ -396,8 +396,40 @@ export default function Home() {
                 whileHover={{ y: -10, scale: 1.02 }}
               >
                 <Card
-                  className={`group relative flex h-full min-h-[280px] flex-col overflow-hidden border-[#F4EDE4]/10 bg-gradient-to-br ${industry.color} p-8 backdrop-blur-sm transition-all hover:border-[#CC785C]/50 hover:shadow-2xl hover:shadow-[#CC785C]/20`}
+                  className={`group relative flex h-full min-h-[280px] flex-col overflow-hidden border-[#F4EDE4]/10 bg-gradient-to-br ${industry.color} p-8 backdrop-blur-sm transition-all hover:border-[#4a7c59]/50 hover:shadow-2xl hover:shadow-[#4a7c59]/20`}
                 >
+                  {/* Organic background shapes - unique per card - hidden on mobile */}
+                  {index === 0 && (
+                    <div className="absolute -right-12 -top-12 h-32 w-32 md:h-48 md:w-48 bg-[#4a7c59]/20 md:bg-[#4a7c59]/30 blur-2xl md:blur-3xl hidden sm:block" style={{ borderRadius: '40% 60% 70% 30% / 60% 30% 70% 40%' }} />
+                  )}
+                  {index === 1 && (
+                    <>
+                      <div className="absolute -left-4 top-4 md:-left-8 md:top-8 h-24 w-24 md:h-32 md:w-32 bg-[#5a8a65]/20 md:bg-[#5a8a65]/30 blur-2xl md:blur-3xl hidden sm:block" style={{ borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%' }} />
+                      <div className="absolute -right-2 bottom-8 md:-right-4 md:bottom-12 h-32 w-32 md:h-40 md:w-40 bg-[#2d5945]/20 md:bg-[#2d5945]/30 blur-2xl md:blur-3xl hidden sm:block" style={{ borderRadius: '30% 70% 70% 30% / 30% 60% 40% 70%' }} />
+                    </>
+                  )}
+                  {index === 2 && (
+                    <>
+                      <div className="absolute left-2 top-2 md:left-4 md:top-4 h-20 w-20 md:h-24 md:w-24 bg-[#5a8a65]/20 md:bg-[#5a8a65]/30 blur-xl md:blur-2xl hidden sm:block" style={{ borderRadius: '50% 50% 50% 50% / 60% 40% 60% 40%' }} />
+                      <div className="absolute right-4 top-12 md:right-8 md:top-16 h-24 w-24 md:h-28 md:w-28 bg-[#4a7c59]/20 md:bg-[#4a7c59]/30 blur-xl md:blur-2xl hidden sm:block" style={{ borderRadius: '40% 60% 60% 40% / 50% 50% 50% 50%' }} />
+                    </>
+                  )}
+                  {index === 3 && (
+                    <>
+                      <div className="absolute -left-4 top-1/4 md:-left-8 h-40 w-40 md:h-56 md:w-56 bg-[#5a8a65]/20 md:bg-[#5a8a65]/30 blur-2xl md:blur-3xl hidden sm:block" style={{ borderRadius: '40% 60% 60% 40% / 70% 30% 70% 30%' }} />
+                      <div className="absolute -right-4 bottom-1/4 md:-right-8 h-32 w-32 md:h-48 md:w-48 bg-[#4a7c59]/20 md:bg-[#4a7c59]/30 blur-2xl md:blur-3xl hidden sm:block" style={{ borderRadius: '60% 40% 40% 60% / 30% 70% 30% 70%' }} />
+                    </>
+                  )}
+                  {index === 4 && (
+                    <div className="absolute left-1/2 top-1/2 h-48 w-48 md:h-64 md:w-64 -translate-x-1/2 -translate-y-1/2 bg-[#2d5945]/20 md:bg-[#2d5945]/30 blur-2xl md:blur-3xl hidden sm:block" style={{ borderRadius: '50%' }} />
+                  )}
+                  {index === 5 && (
+                    <>
+                      <div className="absolute left-0 top-0 h-32 md:h-40 w-full bg-[#4a7c59]/20 md:bg-[#4a7c59]/30 blur-2xl md:blur-3xl hidden sm:block" style={{ borderRadius: '30% 70% 0% 0% / 30% 70% 0% 0%' }} />
+                      <div className="absolute bottom-0 right-0 h-32 md:h-40 w-1/2 md:w-2/3 bg-[#5a8a65]/20 md:bg-[#5a8a65]/30 blur-2xl md:blur-3xl hidden sm:block" style={{ borderRadius: '0% 0% 70% 30% / 0% 0% 70% 30%' }} />
+                    </>
+                  )}
+
                   <div className="relative z-10 flex flex-1 flex-col">
                     <motion.div
                       className="relative mb-4 inline-block"
@@ -436,7 +468,7 @@ export default function Home() {
                       >
                         <div className="absolute inset-0 rounded-full border-2 border-cyan-400/40" />
                       </motion.div>
-                      <industry.icon className="relative h-16 w-16 text-[#CC785C] stroke-[1.1] transition-colors group-hover:text-[#E8956D]" />
+                      <industry.icon className="relative h-16 w-16 text-[#4a7c59] stroke-[1.1] transition-colors group-hover:text-[#5a8a65]" />
                     </motion.div>
                     <h3 className="text-2xl font-bold text-[#F4EDE4]">
                       {industry.name}
@@ -446,7 +478,7 @@ export default function Home() {
                     </p>
                   </div>
                   <motion.div
-                    className="absolute inset-0 bg-gradient-to-br from-[#CC785C]/0 to-[#E8956D]/0 group-hover:from-[#CC785C]/10 group-hover:to-[#E8956D]/10"
+                    className="absolute inset-0 bg-gradient-to-br from-[#4a7c59]/0 to-[#5a8a65]/0 group-hover:from-[#4a7c59]/10 group-hover:to-[#5a8a65]/10"
                     transition={{ duration: 0.3 }}
                   />
                 </Card>
@@ -463,13 +495,13 @@ export default function Home() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="relative overflow-hidden rounded-3xl border border-[#CC785C]/20 bg-gradient-to-br from-[#191919] to-[#2a2a2a] p-12 backdrop-blur-xl md:p-16"
+          className="relative overflow-hidden rounded-3xl border border-[#4a7c59]/20 bg-gradient-to-br from-[#191919] to-[#2a2a2a] p-12 backdrop-blur-xl md:p-16"
         >
           {/* Subtle geometric background pattern */}
           <div className="absolute inset-0 opacity-10">
-            <div className="absolute left-10 top-10 h-32 w-32 rounded-full border border-[#CC785C]" />
+            <div className="absolute left-10 top-10 h-32 w-32 rounded-full border border-[#4a7c59]" />
             <div className="absolute bottom-10 right-10 h-24 w-24 rotate-45 border border-cyan-400" />
-            <div className="absolute right-1/4 top-1/3 h-16 w-16 border border-[#E8956D]" />
+            <div className="absolute right-1/4 top-1/3 h-16 w-16 border border-[#5a8a65]" />
           </div>
 
           <div className="relative z-10">
@@ -481,13 +513,13 @@ export default function Home() {
               className="mb-8 text-center"
             >
               <h2 className="mb-4 text-4xl font-bold text-[#F4EDE4] sm:text-5xl">
-                Why It Works
-                <span className="bg-gradient-to-r from-[#CC785C] to-[#E8956D] bg-clip-text text-transparent">
-                  {" "}(Operational Advantage)
+                Why Choose
+                <span className="bg-gradient-to-r from-[#4a7c59] to-[#5a8a65] bg-clip-text text-transparent">
+                  {" "}Bespoke
                 </span>
               </h2>
               <p className="mx-auto max-w-3xl text-lg leading-relaxed text-[#D4C4B0]">
-                Speed of military operations. Clarity of classified environments. Accountability that comes from shipping under real pressure. SDVOSB certified, TS/SCI cleared, SAM registered—but what matters is proven execution.
+                When off-the-shelf doesn't work. When your challenge requires someone who understands complexity. Taking on a limited number of clients means full attention to what makes your problem unique.
               </p>
             </motion.div>
 
@@ -498,16 +530,16 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="grid gap-8 md:grid-cols-3"
             >
-              <div className="group rounded-2xl border border-[#F4EDE4]/10 bg-[#F4EDE4]/5 p-6 backdrop-blur-sm transition-all hover:border-[#CC785C]/30 hover:bg-[#F4EDE4]/10">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#CC785C]/10">
-                  <div className="relative h-2.5 w-2.5 rounded-full bg-[#CC785C]">
-                    <div className="absolute inset-0 h-2 w-2 animate-ping rounded-full bg-[#CC785C] opacity-75" />
+              <div className="group rounded-2xl border border-[#F4EDE4]/10 bg-[#F4EDE4]/5 p-6 backdrop-blur-sm transition-all hover:border-[#4a7c59]/30 hover:bg-[#F4EDE4]/10">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#4a7c59]/10">
+                  <div className="relative h-2.5 w-2.5 rounded-full bg-[#4a7c59]">
+                    <div className="absolute inset-0 h-2 w-2 animate-ping rounded-full bg-[#4a7c59] opacity-75" />
                   </div>
                 </div>
-                <h3 className="mb-2 text-xl font-bold text-[#F4EDE4]">40+ MVPs Delivered</h3>
+                <h3 className="mb-2 text-xl font-bold text-[#F4EDE4]">Selective Engagement</h3>
                 <p className="text-[#D4C4B0]">
-                  Series C–F execs & PE portfolios in 2024–2025.
-                  Board-ready AI prototypes for your fastest growth needs.
+                  Only a few clients at a time. Deep focus on problems that matter.
+                  No assembly line solutions.
                 </p>
               </div>
 
@@ -517,25 +549,25 @@ export default function Home() {
                     <div className="absolute inset-0 h-3 w-3 animate-ping rounded-full bg-cyan-400 opacity-75" />
                   </div>
                 </div>
-                <h3 className="mb-2 text-xl font-bold text-[#F4EDE4]">5–14 Day Builds</h3>
+                <h3 className="mb-2 text-xl font-bold text-[#F4EDE4]">Built for Complexity</h3>
                 <p className="text-[#D4C4B0]">
-                  Skip endless pilots. Get secured, integrated AI prototypes.
-                  Fixed-price ($10K–$50K). No delays. Ship fast.
+                  Classified environments. Special operations. Production systems.
+                  Experience with problems that have no template.
                 </p>
               </div>
 
-              <div className="group rounded-2xl border border-[#F4EDE4]/10 bg-[#F4EDE4]/5 p-6 backdrop-blur-sm transition-all hover:border-[#E8956D]/30 hover:bg-[#F4EDE4]/10">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#E8956D]/20">
-                  <div className="relative h-3.5 w-3.5 rounded-full bg-[#E8956D]">
-                    <div className="absolute inset-0 h-3 w-3 animate-ping rounded-full bg-[#E8956D] opacity-20" />
+              <div className="group rounded-2xl border border-[#F4EDE4]/10 bg-[#F4EDE4]/5 p-6 backdrop-blur-sm transition-all hover:border-[#5a8a65]/30 hover:bg-[#F4EDE4]/10">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#5a8a65]/20">
+                  <div className="relative h-3.5 w-3.5 rounded-full bg-[#5a8a65]">
+                    <div className="absolute inset-0 h-3 w-3 animate-ping rounded-full bg-[#5a8a65] opacity-20" />
                   </div>
                 </div>
                 <h3 className="mb-2 text-xl font-bold text-[#F4EDE4]">
-                  Secure & Compliant
+                  Cleared & Certified
                 </h3>
                 <p className="text-[#D4C4B0]">
                   TS/SCI cleared. SDVOSB certified. SAM registered.
-                  AI built for sensitive ops & federal procurement.
+                  Can work on sensitive challenges when needed.
                 </p>
               </div>
             </motion.div>
@@ -550,10 +582,10 @@ export default function Home() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="relative overflow-hidden rounded-3xl border border-[#F4EDE4]/10 bg-gradient-to-br from-[#CC785C]/20 to-[#8B6C59]/20 p-12 backdrop-blur-xl"
+          className="relative overflow-hidden rounded-3xl border border-[#F4EDE4]/10 bg-gradient-to-br from-[#4a7c59]/20 to-[#2d5945]/20 p-12 backdrop-blur-xl"
         >
           <motion.div
-            className="absolute -left-20 -top-20 h-40 w-40 rounded-full bg-[#CC785C]/30 blur-3xl"
+            className="absolute -left-20 -top-20 h-40 w-40 rounded-full bg-[#4a7c59]/30 blur-3xl"
             animate={{
               scale: [1, 1.2, 1],
               opacity: [0.3, 0.5, 0.3],
@@ -561,7 +593,7 @@ export default function Home() {
             transition={{ duration: 4, repeat: Infinity }}
           />
           <motion.div
-            className="absolute -bottom-20 -right-20 h-40 w-40 rounded-full bg-[#E8956D]/30 blur-3xl"
+            className="absolute -bottom-20 -right-20 h-40 w-40 rounded-full bg-[#5a8a65]/30 blur-3xl"
             animate={{
               scale: [1.2, 1, 1.2],
               opacity: [0.5, 0.3, 0.5],
@@ -571,13 +603,12 @@ export default function Home() {
 
           <div className="relative z-10">
             <h2 className="mb-12 text-center text-4xl font-bold text-[#F4EDE4] sm:text-5xl">
-              Engagement Model
+              How We Work
             </h2>
 
-            <div className="grid gap-8 md:grid-cols-3">
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
               <div className="rounded-xl border border-[#F4EDE4]/10 bg-[#F4EDE4]/5 p-6 backdrop-blur-sm">
-                <h3 className="mb-2 text-2xl font-bold text-[#CC785C]">$25K–$35K</h3>
-                <p className="mb-4 font-semibold text-[#F4EDE4]">Program Diagnostic</p>
+                <p className="mb-4 text-2xl font-bold text-[#4a7c59]">Program Diagnostic</p>
                 <p className="text-sm text-[#D4C4B0] mb-2">2-week audit</p>
                 <ul className="text-sm text-[#D4C4B0] space-y-1">
                   <li>• Full AI audit</li>
@@ -587,9 +618,8 @@ export default function Home() {
                 </ul>
               </div>
 
-              <div className="rounded-xl border border-[#E8956D]/20 bg-[#E8956D]/10 p-6 backdrop-blur-sm">
-                <h3 className="mb-2 text-2xl font-bold text-[#E8956D]">$15K–$40K/mo</h3>
-                <p className="mb-4 font-semibold text-[#F4EDE4]">Director Retainer</p>
+              <div className="rounded-xl border border-[#5a8a65]/20 bg-[#5a8a65]/10 p-6 backdrop-blur-sm">
+                <p className="mb-4 text-2xl font-bold text-[#5a8a65]">Director Retainer</p>
                 <p className="text-sm text-[#D4C4B0] mb-2">6–18 months</p>
                 <ul className="text-sm text-[#D4C4B0] space-y-1">
                   <li>• Weekly syncs</li>
@@ -600,8 +630,7 @@ export default function Home() {
               </div>
 
               <div className="rounded-xl border border-[#00E5FF]/20 bg-[#00E5FF]/5 p-6 backdrop-blur-sm">
-                <h3 className="mb-2 text-2xl font-bold text-cyan-400">$150K–$500K</h3>
-                <p className="mb-4 font-semibold text-[#F4EDE4]">Outcome Guarantee</p>
+                <p className="mb-4 text-2xl font-bold text-cyan-400">Outcome Guarantee</p>
                 <p className="text-sm text-[#D4C4B0] mb-2">Fixed-price delivery</p>
                 <ul className="text-sm text-[#D4C4B0] space-y-1">
                   <li>• End-to-end program</li>
@@ -610,21 +639,32 @@ export default function Home() {
                   <li>• Production-ready AI</li>
                 </ul>
               </div>
+
+              <div className="rounded-xl border border-[#4a7c59]/20 bg-[#4a7c59]/10 p-6 backdrop-blur-sm">
+                <p className="mb-4 text-2xl font-bold text-[#5a8a65]">Business Infrastructure</p>
+                <p className="text-sm text-[#D4C4B0] mb-2">Full stack setup</p>
+                <ul className="text-sm text-[#D4C4B0] space-y-1">
+                  <li>• Website development</li>
+                  <li>• Google Workspace</li>
+                  <li>• Business tools & integrations</li>
+                  <li>• Operational foundation</li>
+                </ul>
+              </div>
             </div>
 
             <div className="mt-10 text-center">
               <p className="text-[#D4C4B0] mb-6">
-                Choose based on your needs: Discovery → Ongoing direction → Full delivery guarantee
+                Every engagement is tailored. Start with a conversation to see if we're a fit.
               </p>
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-[#CC785C] to-[#E8956D] px-8 py-6 text-lg font-semibold text-[#191919] transition-all hover:scale-105 hover:shadow-2xl hover:shadow-[#CC785C]/50"
+                className="bg-gradient-to-r from-[#4a7c59] to-[#5a8a65] px-8 py-6 text-lg font-semibold text-[#191919] transition-all hover:scale-105 hover:shadow-2xl hover:shadow-[#4a7c59]/50"
                 onClick={() => window.open('https://calendly.com/nicklynch-bonusthoughts', '_blank')}
               >
-                Book Program Diagnostic →
+                Start a Conversation →
               </Button>
               <p className="mt-4 text-sm text-[#D4C4B0]">
-                <span className="font-semibold text-[#CC785C]">15- or 30-minute call</span> · No pitch, just unblock your AI initiative · 100% confidential
+                <span className="font-semibold text-[#5a8a65]">Exploratory conversation</span> · See if we're a fit · No obligations
               </p>
             </div>
           </div>
@@ -640,8 +680,8 @@ export default function Home() {
           transition={{ duration: 0.8 }}
         >
           <h2 className="mb-16 text-center text-5xl font-bold">
-            <span className="bg-gradient-to-r from-[#CC785C] to-[#E8956D] bg-clip-text text-transparent">
-              Recent Directorships
+            <span className="bg-gradient-to-r from-[#4a7c59] to-[#5a8a65] bg-clip-text text-transparent">
+              Recent Work
             </span>
           </h2>
 
@@ -651,13 +691,13 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0 }}
-              className="rounded-xl border border-[#F4EDE4]/10 bg-gradient-to-br from-[#CC785C]/10 to-[#E8956D]/10 p-8 backdrop-blur-sm hover:border-[#CC785C]/50 transition-all"
+              className="rounded-xl border border-[#F4EDE4]/10 bg-gradient-to-br from-[#4a7c59]/10 to-[#5a8a65]/10 p-8 backdrop-blur-sm hover:border-[#4a7c59]/50 transition-all"
             >
-              <div className="mb-4 text-sm font-semibold text-[#CC785C]">LOGISTICS & CRM</div>
+              <div className="mb-4 text-sm font-semibold text-[#4a7c59]">LOGISTICS & CRM</div>
               <h3 className="mb-3 text-2xl font-bold text-[#F4EDE4]">Conversational AI Agents</h3>
               <p className="mb-4 text-[#D4C4B0]">Phone agents replacing legacy IVR. CRM-integrated workflows. 80%+ pipeline completion without human touch.</p>
-              <p className="text-lg font-bold text-[#CC785C]">Real customer impact</p>
-              <p className="text-sm text-[#A8826B]">16-week director engagement</p>
+              <p className="text-lg font-bold text-[#4a7c59]">Real customer impact</p>
+              <p className="text-sm text-[#3a5a47]">16-week engagement</p>
             </motion.div>
 
             <motion.div
@@ -665,13 +705,13 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="rounded-xl border border-[#F4EDE4]/10 bg-gradient-to-br from-[#E8956D]/10 to-[#D4A574]/10 p-8 backdrop-blur-sm hover:border-[#E8956D]/50 transition-all"
+              className="rounded-xl border border-[#F4EDE4]/10 bg-gradient-to-br from-[#5a8a65]/10 to-[#5a6b3e]/10 p-8 backdrop-blur-sm hover:border-[#5a8a65]/50 transition-all"
             >
-              <div className="mb-4 text-sm font-semibold text-[#E8956D]">GEOSPATIAL INTELLIGENCE</div>
+              <div className="mb-4 text-sm font-semibold text-[#5a8a65]">GEOSPATIAL INTELLIGENCE</div>
               <h3 className="mb-3 text-2xl font-bold text-[#F4EDE4]">Computer Vision for Intel</h3>
               <p className="mb-4 text-[#D4C4B0]">Automated analysis of classified imagery. Real-time threat detection. Mission-critical insights at scale.</p>
-              <p className="text-lg font-bold text-[#E8956D]">Proven in federal ops</p>
-              <p className="text-sm text-[#A8826B]">Ongoing directorship</p>
+              <p className="text-lg font-bold text-[#5a8a65]">Proven in production</p>
+              <p className="text-sm text-[#3a5a47]">Ongoing engagement</p>
             </motion.div>
 
             <motion.div
@@ -685,25 +725,25 @@ export default function Home() {
               <h3 className="mb-3 text-2xl font-bold text-[#F4EDE4]">Zero-Loss Data Pipelines</h3>
               <p className="mb-4 text-[#D4C4B0]">Ground-truth reporting from source. No data loss across comms channels. Board-ready ROI dashboards.</p>
               <p className="text-lg font-bold text-cyan-400">Trust & accuracy</p>
-              <p className="text-sm text-[#A8826B]">Q1 2026 availability</p>
+              <p className="text-sm text-[#3a5a47]">Q1 2026 availability</p>
             </motion.div>
           </div>
 
           <div className="mt-12 text-center">
             <p className="mb-6 text-lg text-[#D4C4B0]">
-              <span className="font-semibold text-[#F4EDE4]">Selective New Engagement Q1 2026</span>
+              <span className="font-semibold text-[#F4EDE4]">Taking on select new clients</span>
               <br />
-              Ideal fit: $100M+ companies with solid engineering teams but zero AI velocity.
+              Unique challenges that require thoughtful, custom solutions.
             </p>
             <Button
               size="lg"
-              className="bg-gradient-to-r from-[#CC785C] to-[#E8956D] px-8 py-6 text-lg font-semibold text-[#191919] transition-all hover:scale-105 hover:shadow-2xl hover:shadow-[#CC785C]/50"
+              className="bg-gradient-to-r from-[#4a7c59] to-[#5a8a65] px-8 py-6 text-lg font-semibold text-[#191919] transition-all hover:scale-105 hover:shadow-2xl hover:shadow-[#4a7c59]/50"
               onClick={() => window.open('https://calendly.com/nicklynch-bonusthoughts', '_blank')}
             >
-              See open slots →
+              Start a Conversation →
             </Button>
             <p className="mt-4 text-sm text-[#D4C4B0]">
-              <span className="font-semibold text-[#CC785C]">15- or 30-minute call</span> · No pitch, just unblock your AI initiative · 100% confidential
+              <span className="font-semibold text-[#5a8a65]">Exploratory conversation</span> · See if we're a fit · No obligations
             </p>
           </div>
         </motion.div>
@@ -716,7 +756,7 @@ export default function Home() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="overflow-hidden rounded-3xl border border-[#E8956D]/30 bg-gradient-to-br from-[#E8956D]/10 to-[#CC785C]/10 p-12 backdrop-blur-xl md:p-16 text-center"
+          className="overflow-hidden rounded-3xl border border-[#5a8a65]/30 bg-gradient-to-br from-[#5a8a65]/10 to-[#4a7c59]/10 p-12 backdrop-blur-xl md:p-16 text-center"
         >
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -735,7 +775,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mx-auto mb-8 max-w-2xl text-lg text-[#D4C4B0]"
           >
-            Download the <span className="font-semibold text-[#CC785C]">C-Suite AI Playbook</span>: 7 MVPs that delivered 6-figure ROI in under 30 days. See the framework before committing to a call.
+            Download the <span className="font-semibold text-[#5a8a65]">C-Suite AI Playbook</span>: 7 MVPs that delivered 6-figure ROI in under 30 days. See the framework before committing to a call.
           </motion.p>
 
           <motion.div
@@ -746,7 +786,7 @@ export default function Home() {
           >
             <Button
               size="lg"
-              className="bg-gradient-to-r from-[#E8956D] to-[#CC785C] px-8 py-6 text-lg font-semibold text-[#191919] transition-all hover:scale-105 hover:shadow-2xl hover:shadow-[#E8956D]/50"
+              className="bg-gradient-to-r from-[#4a7c59] to-[#5a8a65] px-8 py-6 text-lg font-semibold text-[#191919] transition-all hover:scale-105 hover:shadow-2xl hover:shadow-[#4a7c59]/50"
               onClick={() => setIsPlaybookModalOpen(true)}
             >
               Get Free Playbook →
@@ -759,11 +799,11 @@ export default function Home() {
       <footer className="relative z-10 border-t border-[#F4EDE4]/10 py-12">
         <div className="mx-auto max-w-7xl px-6">
           {/* Trust Signals */}
-          <div className="mb-8 flex flex-wrap items-center justify-center gap-4 text-sm text-[#A8826B]">
+          <div className="mb-8 flex flex-wrap items-center justify-center gap-4 text-sm text-[#3a5a47]">
             <div className="flex items-center gap-2">
               <div className="relative">
-                <div className="h-1.5 w-1.5 rounded-full bg-[#CC785C]" />
-                <div className="absolute inset-0 h-1.5 w-1.5 animate-ping rounded-full bg-[#CC785C] opacity-75" />
+                <div className="h-1.5 w-1.5 rounded-full bg-[#4a7c59]" />
+                <div className="absolute inset-0 h-1.5 w-1.5 animate-ping rounded-full bg-[#4a7c59] opacity-75" />
               </div>
               <span>SDVOSB Certified</span>
             </div>
@@ -778,8 +818,8 @@ export default function Home() {
             <div className="hidden text-[#F4EDE4]/20 sm:block">|</div>
             <div className="flex items-center gap-2">
               <div className="relative">
-                <div className="h-1.5 w-1.5 rounded-full bg-[#E8956D]" />
-                <div className="absolute inset-0 h-1.5 w-1.5 animate-ping rounded-full bg-[#E8956D] opacity-75" />
+                <div className="h-1.5 w-1.5 rounded-full bg-[#5a8a65]" />
+                <div className="absolute inset-0 h-1.5 w-1.5 animate-ping rounded-full bg-[#5a8a65] opacity-75" />
               </div>
               <span>Active Security Clearances</span>
             </div>
@@ -793,9 +833,9 @@ export default function Home() {
                 href="https://calendly.com/nicklynch-bonusthoughts"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="transition-colors hover:text-[#CC785C] font-semibold"
+                className="transition-colors hover:text-[#5a8a65] font-semibold"
               >
-                Book Diagnostic
+                Start a Conversation
               </motion.a>
               <span className="text-[#F4EDE4]/20">|</span>
               <motion.a
@@ -803,7 +843,7 @@ export default function Home() {
                 href="https://x.com/nlynch_ai"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="transition-colors hover:text-[#CC785C]"
+                className="transition-colors hover:text-[#5a8a65]"
               >
                 @nlynch_AI on X
               </motion.a>
@@ -811,13 +851,13 @@ export default function Home() {
               <motion.a
                 whileHover={{ y: -2 }}
                 href="mailto:director@bonusthoughts.com"
-                className="transition-colors hover:text-[#CC785C]"
+                className="transition-colors hover:text-[#5a8a65]"
               >
                 director@bonusthoughts.com
               </motion.a>
             </div>
-            <p className="text-[#A8826B] text-sm">
-              © 2025 BonusThoughts. AI Program Director for teams with engineering but zero velocity.
+            <p className="text-[#3a5a47] text-sm">
+              © 2025 BonusThoughts. Bespoke technology solutions for complex challenges.
             </p>
           </div>
         </div>

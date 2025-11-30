@@ -35,8 +35,8 @@ export function LeadMagnetModal({ isOpen, onClose }: LeadMagnetModalProps) {
 
       // Trigger PDF download
       const link = document.createElement("a");
-      link.href = "/playbooks/c-suite-ai-playbook.pdf";
-      link.download = "C-Suite-AI-Playbook.pdf";
+      link.href = "/playbooks/c-suite-ai-playbook-full.pdf";
+      link.download = "C-Suite-AI-Playbook-Full.pdf";
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -103,9 +103,9 @@ export function LeadMagnetModal({ isOpen, onClose }: LeadMagnetModalProps) {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 }}
-                  className="mb-6 rounded-lg border border-[#CC785C]/20 bg-[#CC785C]/10 p-4"
+                  className="mb-6 rounded-lg border border-[#4a7c59]/20 bg-[#4a7c59]/10 p-4"
                 >
-                  <p className="text-xs font-semibold text-[#CC785C] mb-2">
+                  <p className="text-xs font-semibold text-[#4a7c59] mb-2">
                     INSIDE THE PLAYBOOK:
                   </p>
                   <ul className="text-xs text-[#D4C4B0] space-y-1">
@@ -129,7 +129,7 @@ export function LeadMagnetModal({ isOpen, onClose }: LeadMagnetModalProps) {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="w-full rounded-lg border border-[#F4EDE4]/20 bg-[#F4EDE4]/5 px-4 py-3 text-sm text-[#F4EDE4] placeholder-[#A8826B] transition-colors focus:border-[#CC785C]/50 focus:outline-none focus:ring-1 focus:ring-[#CC785C]/50"
+                      className="w-full rounded-lg border border-[#F4EDE4]/20 bg-[#F4EDE4]/5 px-4 py-3 text-sm text-[#F4EDE4] placeholder-[#3a5a47] transition-colors focus:border-[#4a7c59]/50 focus:outline-none focus:ring-1 focus:ring-[#4a7c59]/50"
                     />
                   </motion.div>
 
@@ -145,7 +145,7 @@ export function LeadMagnetModal({ isOpen, onClose }: LeadMagnetModalProps) {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full rounded-lg border border-[#F4EDE4]/20 bg-[#F4EDE4]/5 px-4 py-3 text-sm text-[#F4EDE4] placeholder-[#A8826B] transition-colors focus:border-[#CC785C]/50 focus:outline-none focus:ring-1 focus:ring-[#CC785C]/50"
+                      className="w-full rounded-lg border border-[#F4EDE4]/20 bg-[#F4EDE4]/5 px-4 py-3 text-sm text-[#F4EDE4] placeholder-[#3a5a47] transition-colors focus:border-[#4a7c59]/50 focus:outline-none focus:ring-1 focus:ring-[#4a7c59]/50"
                     />
                   </motion.div>
 
@@ -161,7 +161,7 @@ export function LeadMagnetModal({ isOpen, onClose }: LeadMagnetModalProps) {
                       value={formData.company}
                       onChange={handleInputChange}
                       required
-                      className="w-full rounded-lg border border-[#F4EDE4]/20 bg-[#F4EDE4]/5 px-4 py-3 text-sm text-[#F4EDE4] placeholder-[#A8826B] transition-colors focus:border-[#CC785C]/50 focus:outline-none focus:ring-1 focus:ring-[#CC785C]/50"
+                      className="w-full rounded-lg border border-[#F4EDE4]/20 bg-[#F4EDE4]/5 px-4 py-3 text-sm text-[#F4EDE4] placeholder-[#3a5a47] transition-colors focus:border-[#4a7c59]/50 focus:outline-none focus:ring-1 focus:ring-[#4a7c59]/50"
                     />
                   </motion.div>
 
@@ -173,13 +173,13 @@ export function LeadMagnetModal({ isOpen, onClose }: LeadMagnetModalProps) {
                     <Button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full bg-gradient-to-r from-[#CC785C] to-[#E8956D] py-3 text-sm font-semibold text-[#191919] transition-all hover:scale-105 hover:shadow-lg hover:shadow-[#CC785C]/50 disabled:opacity-50"
+                      className="w-full bg-gradient-to-r from-[#4a7c59] to-[#5a8a65] py-3 text-sm font-semibold text-[#191919] transition-all hover:scale-105 hover:shadow-lg hover:shadow-[#4a7c59]/50 disabled:opacity-50"
                     >
                       {isSubmitting ? "Sending..." : "Get Instant Access →"}
                     </Button>
                   </motion.div>
 
-                  <p className="text-xs text-[#A8826B] text-center">
+                  <p className="text-xs text-[#3a5a47] text-center">
                     We'll send the playbook + a follow-up on open slots.
                   </p>
                 </form>
@@ -195,7 +195,7 @@ export function LeadMagnetModal({ isOpen, onClose }: LeadMagnetModalProps) {
                   transition={{ duration: 0.6 }}
                   className="mb-4 inline-block"
                 >
-                  <div className="h-12 w-12 rounded-full bg-[#CC785C]/20 flex items-center justify-center">
+                  <div className="h-12 w-12 rounded-full bg-[#4a7c59]/20 flex items-center justify-center">
                     <span className="text-2xl">✓</span>
                   </div>
                 </motion.div>
