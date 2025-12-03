@@ -210,7 +210,7 @@ export default function Home() {
             <div className="relative">
               <h1 className="text-5xl font-black tracking-tight sm:text-7xl md:text-8xl lg:text-9xl">
                 <span className="bg-gradient-to-r from-[#4a7c59] via-[#5a8a65] to-[#5a6b3e] bg-clip-text text-transparent">
-                  Bespoke
+                  Spatial
                 </span>
                 <br />
                 <span className="text-[#F4EDE4]">Solutions.</span>
@@ -858,7 +858,7 @@ export default function Home() {
               </motion.a>
             </div>
             <p className="text-[#3a5a47] text-sm">
-              © 2025 BonusThoughts. Bespoke technology solutions for complex challenges.
+              © 2025 BonusThoughts. Spatial technology solutions for complex challenges.
             </p>
           </div>
         </div>
