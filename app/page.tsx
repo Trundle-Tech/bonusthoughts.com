@@ -86,40 +86,40 @@ export default function Home() {
 
   const capabilities = [
     {
-      name: "AI Strategy & Roadmap",
+      name: "Strategy & Direction",
       icon: Route,
       color: "from-[#4a7c59]/20 to-[#5a8a65]/20",
-      description: "Where to start. What to kill. Prioritized 90-day roadmap. Get your team aligned on what actually matters."
+      description: "What you're actually trying to achieve. What to prioritize. How to sequence the work. Aligned leadership, clear roadmap."
     },
     {
-      name: "Technology Architecture",
+      name: "System Integration",
       icon: DollarSign,
       color: "from-[#5a6b3e]/20 to-[#6a9a75]/20",
-      description: "Design systems that fit your constraints. Make technical choices that align with your actual needs, not trends."
+      description: "Your existing tools aren't talking. I connect them. APIs, automations, unified workflows. Leverage what you have."
     },
     {
-      name: "Team & Hiring Plans",
+      name: "Custom Development",
       icon: Factory,
       color: "from-[#4a7c59]/20 to-[#3a5a47]/20",
-      description: "Who you actually need. When to hire. What titles make sense. Build the right team for the work."
+      description: "When optimization isn't enough, I build. Agents, pipelines, analysis engines. Purpose-built for your operation."
     },
     {
-      name: "Conversational AI Agents",
+      name: "Data & Intelligence",
       icon: Zap,
       color: "from-[#6a9a75]/20 to-[#5a6b3e]/20",
-      description: "Phone agents replacing IVRs. CRM-integrated workflows. 80%+ pipeline completion. Real customer interaction."
+      description: "Extract insight from your data. Geospatial analysis, imagery intelligence, real-time processing. Proven in classified environments."
     },
     {
-      name: "Geospatial & Computer Vision",
+      name: "Infrastructure Modernization",
       icon: Wheat,
       color: "from-[#3a5a47]/20 to-[#2d5945]/20",
-      description: "Intelligence from imagery. Real-time analysis. Mission-critical insights. Proven at scale."
+      description: "Outdated tools slow you down. I update your stack to current technologies and methodologies. Build on solid ground."
     },
     {
-      name: "Data Integrity & Reporting",
+      name: "Team & Execution",
       icon: Rocket,
       color: "from-[#4a7c59]/20 to-[#5a8a65]/20",
-      description: "Zero-loss data pipelines. Ground truth reporting. Board-ready ROI dashboards. No surprises."
+      description: "Direct a small team for ongoing programs. Deliver MVPs for execs without fast-twitch IT. I scale with your needs."
     },
   ];
 
@@ -210,10 +210,10 @@ export default function Home() {
             <div className="relative">
               <h1 className="text-5xl font-black tracking-tight sm:text-7xl md:text-8xl lg:text-9xl">
                 <span className="bg-gradient-to-r from-[#4a7c59] via-[#5a8a65] to-[#5a6b3e] bg-clip-text text-transparent">
-                  Spatial
+                  Solution
                 </span>
                 <br />
-                <span className="text-[#F4EDE4]">Solutions.</span>
+                <span className="text-[#F4EDE4]">Artist.</span>
               </h1>
               <motion.div
                 className="absolute -inset-4 -z-10 rounded-3xl bg-gradient-to-r from-[#4a7c59]/30 to-[#5a6b3e]/30 blur-3xl"
@@ -236,9 +236,9 @@ export default function Home() {
             transition={{ duration: 1, delay: 0.8 }}
             className="mx-auto mb-8 max-w-2xl text-base text-[#D4C4B0] sm:text-xl md:text-2xl"
           >
-            Technology built for your actual needs, not templates.
+            Your systems work. They're just not optimized.
             <br />
-            <span className="font-semibold text-[#5a8a65]">Those ideas you've been collecting? We help you build them.</span>
+            <span className="font-semibold text-[#5a8a65]">We embed, architect, and build what's missing.</span>
           </motion.p>
 
           {/* Trust Signals */}
@@ -313,7 +313,7 @@ export default function Home() {
             transition={{ duration: 1, delay: 1.4 }}
             className="mt-4 text-center text-sm text-[#D4C4B0]"
           >
-            <span className="font-semibold text-[#5a8a65]">Exploratory conversation</span> · See if we're a fit · No obligations
+            <span className="font-semibold text-[#5a8a65]">In-person embedding available</span> · Meet with our team · Let's explore what's possible
           </motion.p>
         </motion.div>
       </section>
@@ -328,10 +328,10 @@ export default function Home() {
           className="text-center"
         >
           <h2 className="mb-8 text-4xl font-bold text-[#F4EDE4] sm:text-5xl">
-            Built for How You Work
+            We Only Take Projects We're Genuinely Curious About
           </h2>
           <p className="mx-auto max-w-3xl text-lg leading-relaxed text-[#D4C4B0] mb-8">
-            Experience building technology for complex problems. From classified systems to production AI at scale. Now applying that approach to bring your ideas to life using the processes you already have.
+            That means complex operational challenges where your existing systems have potential but aren't optimized. Where building new tools—alongside modernizing what you have—creates real velocity.
           </p>
 
           <div className="grid gap-6 md:grid-cols-3 mt-12">
@@ -342,8 +342,8 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0 }}
               className="rounded-lg border border-[#F4EDE4]/10 bg-[#F4EDE4]/5 p-6 backdrop-blur-sm"
             >
-              <h3 className="mb-2 text-xl font-bold text-[#4a7c59]">Geospatial</h3>
-              <p className="text-sm text-[#D4C4B0]">Computer Vision Techniques worthy of classified environments. TS/SCI cleared.</p>
+              <h3 className="mb-2 text-xl font-bold text-[#4a7c59]">We Go In-Person</h3>
+              <p className="text-sm text-[#D4C4B0]">For full implementations, we embed in your operation. Understand your workflows, constraints, and opportunities firsthand.</p>
             </motion.div>
 
             <motion.div
@@ -353,8 +353,8 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="rounded-lg border border-[#F4EDE4]/10 bg-[#F4EDE4]/5 p-6 backdrop-blur-sm"
             >
-              <h3 className="mb-2 text-xl font-bold text-[#5a8a65]">All-Source Intelligence</h3>
-              <p className="text-sm text-[#D4C4B0]">High Value targeting. Mission planning. Know how to use data to meet the intent.</p>
+              <h3 className="mb-2 text-xl font-bold text-[#5a8a65]">We See Connections</h3>
+              <p className="text-sm text-[#D4C4B0]">Your stack likely has tools that aren't talking. We find where optimization and new building create synergy.</p>
             </motion.div>
 
             <motion.div
@@ -364,8 +364,8 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="rounded-lg border border-[#F4EDE4]/10 bg-[#F4EDE4]/5 p-6 backdrop-blur-sm"
             >
-              <h3 className="mb-2 text-xl font-bold text-cyan-400">Production AI Systems</h3>
-              <p className="text-sm text-[#D4C4B0]">Solutions aren't complex platforms anymore. </p>
+              <h3 className="mb-2 text-xl font-bold text-cyan-400">We Execute End-to-End</h3>
+              <p className="text-sm text-[#D4C4B0]">Build new systems, modernize existing ones, direct teams, deliver MVPs. Whatever your operation needs to move faster.</p>
             </motion.div>
           </div>
         </motion.div>
@@ -381,9 +381,12 @@ export default function Home() {
         >
           <h2 className="mb-16 text-center text-5xl font-bold">
             <span className="bg-gradient-to-r from-[#4a7c59] to-[#5a8a65] bg-clip-text text-transparent">
-              What We Build
+              Where Efficiency Emerges
             </span>
           </h2>
+          <p className="text-center text-[#D4C4B0] max-w-2xl mx-auto mb-12">
+            Every operation is different. These are the kinds of leverage points we typically identify and build.
+          </p>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {capabilities.map((industry, index) => (
@@ -513,13 +516,13 @@ export default function Home() {
               className="mb-8 text-center"
             >
               <h2 className="mb-4 text-4xl font-bold text-[#F4EDE4] sm:text-5xl">
-                Why Choose
+                How We Work
                 <span className="bg-gradient-to-r from-[#4a7c59] to-[#5a8a65] bg-clip-text text-transparent">
-                  {" "}BonusThoughts
+                  {" "}
                 </span>
               </h2>
               <p className="mx-auto max-w-3xl text-lg leading-relaxed text-[#D4C4B0]">
-                No assembly-line solutions. We build what you actually need, using the tools and processes you already have. Technology that adapts to your workflow, not the other way around.
+                We're not here to sell you a platform or follow a template. We understand your operation, see what's possible, and execute with focus.
               </p>
             </motion.div>
 
@@ -536,10 +539,9 @@ export default function Home() {
                     <div className="absolute inset-0 h-2 w-2 animate-ping rounded-full bg-[#4a7c59] opacity-75" />
                   </div>
                 </div>
-                <h3 className="mb-2 text-xl font-bold text-[#F4EDE4]">Selective Engagement</h3>
+                <h3 className="mb-2 text-xl font-bold text-[#F4EDE4]">Deep Engagement</h3>
                 <p className="text-[#D4C4B0]">
-                  Only a few clients at a time. Deep focus on what actually matters.
-                  Custom solutions, not templates.
+                  We take on select clients at a time. Full focus on moving your needle, not checking boxes.
                 </p>
               </div>
 
@@ -549,10 +551,9 @@ export default function Home() {
                     <div className="absolute inset-0 h-3 w-3 animate-ping rounded-full bg-cyan-400 opacity-75" />
                   </div>
                 </div>
-                <h3 className="mb-2 text-xl font-bold text-[#F4EDE4]">Using What You Have</h3>
+                <h3 className="mb-2 text-xl font-bold text-[#F4EDE4]">Build & Optimize</h3>
                 <p className="text-[#D4C4B0]">
-                  Your existing tools. Your team's current workflow. Your daily processes.
-                  We build on top of what's already working.
+                  Some leverage comes from connecting what you have. Some comes from building what's missing. We do both.
                 </p>
               </div>
 
@@ -563,11 +564,10 @@ export default function Home() {
                   </div>
                 </div>
                 <h3 className="mb-2 text-xl font-bold text-[#F4EDE4]">
-                  Proven Experience
+                  Proven in Complex Work
                 </h3>
                 <p className="text-[#D4C4B0]">
-                  Built systems for classified environments and production AI.
-                  TS/SCI cleared. SDVOSB certified. Real complexity.
+                  Built systems in classified environments. Directed AI programs at scale. SDVOSB certified. We know how to handle real constraints.
                 </p>
               </div>
             </motion.div>
@@ -575,7 +575,7 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* Pricing & Process Section */}
+      {/* Approach & Process Section */}
       <section id="innovation" className="relative z-10 px-0 py-16 sm:mx-auto sm:max-w-5xl sm:px-6 sm:py-32">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
@@ -603,56 +603,32 @@ export default function Home() {
 
           <div className="relative z-10">
             <h2 className="mb-6 text-center text-4xl font-bold text-[#F4EDE4] sm:text-5xl">
-              How We Work
+              The Process
             </h2>
 
             <p className="max-w-2xl mx-auto text-center text-lg text-[#D4C4B0] mb-10">
-              Custom solutions built around your existing workflow. Understand → Design → Build.
+              From conversation to execution. Clear thinking, then action.
             </p>
 
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
               <div className="rounded-xl border border-[#F4EDE4]/10 bg-[#F4EDE4]/0 p-6 backdrop-blur-sm sm:bg-[#F4EDE4]/5">
-                <p className="mb-4 text-2xl font-bold text-[#4a7c59]">Program Diagnostic</p>
-                <p className="text-sm text-[#D4C4B0] mb-2">2-week audit</p>
-                <ul className="text-sm text-[#D4C4B0] space-y-1">
-                  <li>• Full AI audit</li>
-                  <li>• 90-day roadmap</li>
-                  <li>• Hiring plan</li>
-                  <li>• Vendor recommendations</li>
-                </ul>
+                <p className="mb-4 text-2xl font-bold text-[#4a7c59]">1. Meet</p>
+                <p className="text-sm text-[#D4C4B0]">We come to understand your operation. What's working. What's broken. What's possible.</p>
               </div>
 
               <div className="rounded-xl border border-[#5a8a65]/20 bg-[#5a8a65]/0 p-6 backdrop-blur-sm sm:bg-[#5a8a65]/10">
-                <p className="mb-4 text-2xl font-bold text-[#5a8a65]">Director Retainer</p>
-                <p className="text-sm text-[#D4C4B0] mb-2">6–18 months</p>
-                <ul className="text-sm text-[#D4C4B0] space-y-1">
-                  <li>• Weekly syncs</li>
-                  <li>• Architecture decisions</li>
-                  <li>• Vendor negotiation</li>
-                  <li>• Team coaching</li>
-                </ul>
+                <p className="mb-4 text-2xl font-bold text-[#5a8a65]">2. Design</p>
+                <p className="text-sm text-[#D4C4B0]">We figure out what to build and what to optimize. Architecture. Approach. What success looks like.</p>
               </div>
 
               <div className="rounded-xl border border-[#00E5FF]/20 bg-[#00E5FF]/0 p-6 backdrop-blur-sm sm:bg-[#00E5FF]/5">
-                <p className="mb-4 text-2xl font-bold text-cyan-400">Outcome Guarantee</p>
-                <p className="text-sm text-[#D4C4B0] mb-2">Fixed-price delivery</p>
-                <ul className="text-sm text-[#D4C4B0] space-y-1">
-                  <li>• End-to-end program</li>
-                  <li>• Your team + my oversight</li>
-                  <li>• Weekly sprints</li>
-                  <li>• Production-ready AI</li>
-                </ul>
+                <p className="mb-4 text-2xl font-bold text-cyan-400">3. Build</p>
+                <p className="text-sm text-[#D4C4B0]">We execute. New systems, integrations, infrastructure modernization. Done right.</p>
               </div>
 
               <div className="rounded-xl border border-[#4a7c59]/20 bg-[#4a7c59]/0 p-6 backdrop-blur-sm sm:bg-[#4a7c59]/10">
-                <p className="mb-4 text-2xl font-bold text-[#5a8a65]">Business Infrastructure</p>
-                <p className="text-sm text-[#D4C4B0] mb-2">Full stack setup</p>
-                <ul className="text-sm text-[#D4C4B0] space-y-1">
-                  <li>• Website development</li>
-                  <li>• Google Workspace</li>
-                  <li>• Business tools & integrations</li>
-                  <li>• Operational foundation</li>
-                </ul>
+                <p className="mb-4 text-2xl font-bold text-[#5a8a65]">4. Scale</p>
+                <p className="text-sm text-[#D4C4B0]">Direct a team for ongoing programs, deliver MVPs for execs, or hand off to your team. Your choice.</p>
               </div>
             </div>
 
@@ -665,76 +641,67 @@ export default function Home() {
                 Start a Conversation →
               </Button>
               <p className="mt-4 text-sm text-[#D4C4B0]">
-                <span className="font-semibold text-[#5a8a65]">Exploratory conversation</span> · See if we're a fit · No obligations
+                <span className="font-semibold text-[#5a8a65]">In-person meetings available</span> · Let's understand your situation
               </p>
             </div>
           </div>
         </motion.div>
       </section>
 
-      {/* Case Studies Section */}
-      <section id="case-studies" className="relative z-10 mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-24">
+      {/* Philosophy Section */}
+      <section id="case-studies" className="relative z-10 mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-24">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="mb-16 text-center text-5xl font-bold">
+          <h2 className="mb-8 text-center text-5xl font-bold">
             <span className="bg-gradient-to-r from-[#4a7c59] to-[#5a8a65] bg-clip-text text-transparent">
-              Recent Work
+              What I Look For
             </span>
           </h2>
 
-          <div className="grid gap-6 sm:grid-cols-1 lg:grid-cols-3">
+          <div className="space-y-6 mb-12">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0 }}
-              className="rounded-xl border border-[#F4EDE4]/10 bg-gradient-to-br from-[#4a7c59]/10 to-[#5a8a65]/10 p-8 backdrop-blur-sm hover:border-[#4a7c59]/50 transition-all"
+              className="rounded-lg border border-[#F4EDE4]/10 bg-[#F4EDE4]/5 p-6 backdrop-blur-sm"
             >
-              <div className="mb-4 text-sm font-semibold text-[#4a7c59]">LOGISTICS & CRM</div>
-              <h3 className="mb-3 text-2xl font-bold text-[#F4EDE4]">Conversational AI Agents</h3>
-              <p className="mb-4 text-[#D4C4B0]">Phone agents replacing legacy IVR. CRM-integrated workflows. 80%+ pipeline completion without human touch.</p>
-              <p className="text-lg font-bold text-[#4a7c59]">Real customer impact</p>
-              <p className="text-sm text-[#3a5a47]">16-week engagement</p>
+              <h3 className="mb-2 text-xl font-bold text-[#4a7c59]">Complex Operational Challenges</h3>
+              <p className="text-[#D4C4B0]">Organizations where multiple systems aren't working together. Where the opportunity isn't obvious. That's where we can add the most value.</p>
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="rounded-xl border border-[#F4EDE4]/10 bg-gradient-to-br from-[#5a8a65]/10 to-[#5a6b3e]/10 p-8 backdrop-blur-sm hover:border-[#5a8a65]/50 transition-all"
+              className="rounded-lg border border-[#F4EDE4]/10 bg-[#F4EDE4]/5 p-6 backdrop-blur-sm"
             >
-              <div className="mb-4 text-sm font-semibold text-[#5a8a65]">GEOSPATIAL INTELLIGENCE</div>
-              <h3 className="mb-3 text-2xl font-bold text-[#F4EDE4]">Computer Vision for Intel</h3>
-              <p className="mb-4 text-[#D4C4B0]">Automated analysis of classified imagery. Real-time threat detection. Mission-critical insights at scale.</p>
-              <p className="text-lg font-bold text-[#5a8a65]">Proven in production</p>
-              <p className="text-sm text-[#3a5a47]">Ongoing engagement</p>
+              <h3 className="mb-2 text-xl font-bold text-[#5a8a65]">Teams Ready to Move</h3>
+              <p className="text-[#D4C4B0]">You've got the people and the commitment. You just need someone who can see the path forward and execute it with focus.</p>
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="rounded-xl border border-[#F4EDE4]/10 bg-gradient-to-br from-[#00E5FF]/10 to-cyan-400/10 p-8 backdrop-blur-sm hover:border-cyan-400/50 transition-all"
+              className="rounded-lg border border-[#F4EDE4]/10 bg-[#F4EDE4]/5 p-6 backdrop-blur-sm"
             >
-              <div className="mb-4 text-sm font-semibold text-cyan-400">DATA INTEGRITY</div>
-              <h3 className="mb-3 text-2xl font-bold text-[#F4EDE4]">Zero-Loss Data Pipelines</h3>
-              <p className="mb-4 text-[#D4C4B0]">Ground-truth reporting from source. No data loss across comms channels. Board-ready ROI dashboards.</p>
-              <p className="text-lg font-bold text-cyan-400">Trust & accuracy</p>
-              <p className="text-sm text-[#3a5a47]">Q1 2026 availability</p>
+              <h3 className="mb-2 text-xl font-bold text-cyan-400">Real Problems to Solve</h3>
+              <p className="text-[#D4C4B0]">Not vanity projects. Not "let's build something cool." Challenges that matter to your operation and have clear outcomes.</p>
             </motion.div>
           </div>
 
-          <div className="mt-12 text-center">
+          <div className="text-center">
             <p className="mb-6 text-lg text-[#D4C4B0]">
-              <span className="font-semibold text-[#F4EDE4]">Taking on select new clients</span>
+              <span className="font-semibold text-[#F4EDE4]">If this sounds like you,</span>
               <br />
-              Unique challenges that require thoughtful, custom solutions.
+              let's have a conversation about what's possible.
             </p>
             <Button
               size="lg"
@@ -743,9 +710,6 @@ export default function Home() {
             >
               Start a Conversation →
             </Button>
-            <p className="mt-4 text-sm text-[#D4C4B0]">
-              <span className="font-semibold text-[#5a8a65]">Exploratory conversation</span> · See if we're a fit · No obligations
-            </p>
           </div>
         </motion.div>
       </section>
@@ -776,7 +740,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mx-auto mb-8 max-w-2xl text-lg text-[#D4C4B0]"
           >
-            Download the <span className="font-semibold text-[#5a8a65]">C-Suite AI Playbook</span>: 7 MVPs that delivered 6-figure ROI in under 30 days. See the framework before committing to a call.
+            Download the <span className="font-semibold text-[#5a8a65]">Solution Playbook</span>: How to identify leverage points in your existing systems and build a roadmap for implementation.
           </motion.p>
 
           <motion.div
@@ -858,7 +822,7 @@ export default function Home() {
               </motion.a>
             </div>
             <p className="text-[#3a5a47] text-sm">
-              © 2025 BonusThoughts. Spatial technology solutions for complex challenges.
+              © 2025 BonusThoughts. Solution architect for complex operations.
             </p>
           </div>
         </div>
