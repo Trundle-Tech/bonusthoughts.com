@@ -3,14 +3,20 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { LeadMagnetModal } from "@/components/lead-magnet-modal";
 import { useEffect, useState } from "react";
-import { Route, DollarSign, Factory, Zap, Wheat, Rocket } from "lucide-react";
+import { Bot, Database, MessageSquare, Plug, Eye, Target, Users, Cpu, Receipt, GraduationCap, Play, Rocket, Terminal, Code2, Sparkles } from "lucide-react";
+import Link from "next/link";
+import { trackEmailClick, trackNavClick } from "@/lib/analytics";
+import { useScrollTracking } from "@/hooks/use-scroll-tracking";
+import { useTimeTracking } from "@/hooks/use-time-tracking";
 
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
-  const [isPlaybookModalOpen, setIsPlaybookModalOpen] = useState(false);
+
+  // Analytics tracking
+  useScrollTracking("homepage");
+  useTimeTracking("homepage");
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -27,7 +33,7 @@ export default function Home() {
     "name": "BonusThoughts",
     "url": "https://bonusthoughts.com",
     "logo": "https://bonusthoughts.com/logo.png",
-    "description": "AI Program Director for executive teams",
+    "description": "AI Development Agency with Forward Deployed Engineers",
     "sameAs": [
       "https://x.com/nlynch_ai"
     ],
@@ -42,84 +48,76 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Nick Lynch",
-    "jobTitle": "AI Program Director",
-    "description": "Former Intelligence Community architect. Built AI systems powering federal operations. Veteran-led AI Program Director.",
+    "jobTitle": "Founder & AI Engineer",
+    "description": "AI engineer specializing in agents, RAG systems, and LLM applications. Forward deployed approach to custom AI development.",
     "url": "https://bonusthoughts.com",
     "sameAs": "https://x.com/nlynch_ai",
     "credentials": [
-      "TS/SCI Security Clearance",
-      "SDVOSB Certified",
-      "SAM Registered"
+      "Production AI Systems",
+      "SDVOSB Certified"
     ]
   };
 
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "AI Program Direction",
-    "description": "Veteran-led AI program direction for executives with teams but no velocity. Direct your AI initiatives like military operations—10-16 weeks instead of 18 months.",
+    "name": "Custom AI Development & Training",
+    "description": "Forward deployed AI engineers who build your AI ideas. Plus on-site AI training for Claude, GPT-4, Gemini. Agents, RAG systems, LLM apps. 2-8 week delivery.",
     "provider": {
       "@type": "Organization",
       "name": "BonusThoughts",
       "url": "https://bonusthoughts.com"
     },
     "areaServed": "US",
-    "priceRange": "$25000-$500000",
-    "offers": [
-      {
-        "@type": "Offer",
-        "name": "Program Diagnostic",
-        "price": "25000",
-        "priceCurrency": "USD",
-        "description": "2-week AI audit + 90-day roadmap + hiring plan"
-      },
-      {
-        "@type": "Offer",
-        "name": "Director Retainer",
-        "price": "15000",
-        "priceCurrency": "USD",
-        "priceValidUntil": "2025-12-31",
-        "description": "Monthly retainer for ongoing AI program direction (6-18 months)"
-      }
+    "serviceType": [
+      "AI Agent Development",
+      "RAG System Development",
+      "LLM Application Development",
+      "AI Integration Services",
+      "Computer Vision Development",
+      "Corporate AI Training",
+      "Claude Training",
+      "GPT-4 Training",
+      "Gemini Training"
     ]
   };
 
   const capabilities = [
     {
-      name: "Strategy & Direction",
-      icon: Route,
+      name: "AI Agents",
+      icon: Bot,
       color: "from-[#4a7c59]/20 to-[#5a8a65]/20",
-      description: "What you're actually trying to achieve. What to prioritize. How to sequence the work. Aligned leadership, clear roadmap."
+      description: "Autonomous agents for research, outreach, data processing, and workflow automation. Claude, GPT-4, open-source models."
     },
     {
-      name: "System Integration",
-      icon: DollarSign,
+      name: "RAG Systems",
+      icon: Database,
       color: "from-[#5a6b3e]/20 to-[#6a9a75]/20",
-      description: "Your existing tools aren't talking. I connect them. APIs, automations, unified workflows. Leverage what you have."
+      description: "Search your documents and knowledge bases. Production-grade retrieval with proper chunking, embeddings, and evaluation."
     },
     {
-      name: "Custom Development",
-      icon: Factory,
+      name: "LLM Applications",
+      icon: MessageSquare,
       color: "from-[#4a7c59]/20 to-[#3a5a47]/20",
-      description: "When optimization isn't enough, I build. Agents, pipelines, analysis engines. Purpose-built for your operation."
+      description: "Chat interfaces, content generation, classification, summarization pipelines. Prompt engineering included."
     },
     {
-      name: "Data & Intelligence",
-      icon: Zap,
+      name: "AI Integrations",
+      icon: Plug,
       color: "from-[#6a9a75]/20 to-[#5a6b3e]/20",
-      description: "Extract insight from your data. Geospatial analysis, imagery intelligence, real-time processing. Proven in classified environments."
+      description: "Connect AI to Salesforce, Slack, internal databases, APIs. Make AI work where your team already works."
     },
     {
-      name: "Infrastructure Modernization",
-      icon: Wheat,
+      name: "Computer Vision",
+      icon: Eye,
       color: "from-[#3a5a47]/20 to-[#2d5945]/20",
-      description: "Outdated tools slow you down. I update your stack to current technologies and methodologies. Build on solid ground."
+      description: "Image classification, object detection, document processing. Manufacturing, medical, security applications."
     },
     {
-      name: "Team & Execution",
-      icon: Rocket,
+      name: "AI Training",
+      icon: GraduationCap,
       color: "from-[#4a7c59]/20 to-[#5a8a65]/20",
-      description: "Direct a small team for ongoing programs. Deliver MVPs for execs without fast-twitch IT. I scale with your needs."
+      description: "On-site courses for Claude, GPT-4, Gemini, and more. We train your team, set up accounts, and get everyone productive fast."
     },
   ];
 
@@ -172,14 +170,14 @@ export default function Home() {
                 href="#industries"
                 className="transition-colors hover:text-[#5a8a65]"
               >
-                Capabilities
+                What We Build
               </motion.a>
               <motion.a
                 whileHover={{ y: -2 }}
-                href="#innovation"
-                className="transition-colors hover:text-[#5a8a65]"
+                href="#training"
+                className="transition-colors hover:text-cyan-400"
               >
-                Approach
+                Training
               </motion.a>
               <motion.a
                 whileHover={{ y: -2 }}
@@ -209,11 +207,11 @@ export default function Home() {
           >
             <div className="relative">
               <h1 className="text-5xl font-black tracking-tight sm:text-7xl md:text-8xl lg:text-9xl">
-                <span className="bg-gradient-to-r from-[#4a7c59] via-[#5a8a65] to-[#5a6b3e] bg-clip-text text-transparent">
-                  Solution
-                </span>
+                <span className="text-[#F4EDE4]">We Build Your</span>
                 <br />
-                <span className="text-[#F4EDE4]">Artist.</span>
+                <span className="bg-gradient-to-r from-[#4a7c59] via-[#5a8a65] to-[#5a6b3e] bg-clip-text text-transparent">
+                  AI Ideas.
+                </span>
               </h1>
               <motion.div
                 className="absolute -inset-4 -z-10 rounded-3xl bg-gradient-to-r from-[#4a7c59]/30 to-[#5a6b3e]/30 blur-3xl"
@@ -236,9 +234,9 @@ export default function Home() {
             transition={{ duration: 1, delay: 0.8 }}
             className="mx-auto mb-8 max-w-2xl text-base text-[#D4C4B0] sm:text-xl md:text-2xl"
           >
-            Your systems work. They're just not optimized.
+            AI that takes action. Not just chatbots—systems that process, transact, and deliver.
             <br />
-            <span className="font-semibold text-[#5a8a65]">We embed, architect, and build what's missing.</span>
+            <span className="font-semibold text-[#5a8a65]">Forward deployed engineers who build alongside your team.</span>
           </motion.p>
 
           {/* Trust Signals */}
@@ -253,21 +251,21 @@ export default function Home() {
                 <div className="h-2 w-2 rounded-full bg-[#4a7c59]" />
                 <div className="absolute inset-0 h-2 w-2 animate-ping rounded-full bg-[#4a7c59] opacity-75" />
               </div>
-              <span className="font-medium text-[#F4EDE4]">SDVOSB Certified</span>
+              <span className="font-medium text-[#F4EDE4]">Forward Deployed Engineers</span>
             </div>
             <div className="flex items-center gap-2 rounded-full border border-[#F4EDE4]/20 bg-[#F4EDE4]/5 px-4 py-2 backdrop-blur-sm">
               <div className="relative">
                 <div className="h-2 w-2 rounded-full bg-cyan-400" />
                 <div className="absolute inset-0 h-2 w-2 animate-ping rounded-full bg-cyan-400 opacity-75" />
               </div>
-              <span className="font-medium text-[#D4C4B0]">People First Tech</span>
+              <span className="font-medium text-[#D4C4B0]">2-8 Week Delivery</span>
             </div>
             <div className="flex items-center gap-2 rounded-full border border-[#F4EDE4]/20 bg-[#F4EDE4]/5 px-4 py-2 backdrop-blur-sm">
               <div className="relative">
                 <div className="h-2 w-2 rounded-full bg-[#5a8a65]" />
                 <div className="absolute inset-0 h-2 w-2 animate-ping rounded-full bg-[#5a8a65] opacity-75" />
               </div>
-              <span className="font-medium text-[#D4C4B0]">SAM Registered</span>
+              <span className="font-medium text-[#D4C4B0]">Production AI</span>
             </div>
           </motion.div>
 
@@ -282,13 +280,16 @@ export default function Home() {
               className="group relative overflow-hidden bg-gradient-to-r from-[#4a7c59] to-[#5a8a65] px-6 py-4 text-base font-semibold text-[#191919] transition-all hover:scale-105 hover:shadow-2xl hover:shadow-[#4a7c59]/50 sm:px-8 sm:py-6 sm:text-lg"
               onMouseEnter={() => setIsHovering(true)}
               onMouseLeave={() => setIsHovering(false)}
-              onClick={() => window.open('https://calendly.com/nicklynch-bonusthoughts', '_blank')}
+              onClick={() => {
+                trackEmailClick('AI Project Inquiry', 'Describe Your Project', 'hero');
+                window.location.href = 'mailto:director@bonusthoughts.com?subject=AI%20Project%20Inquiry&body=Hi%2C%0A%0AI%27m%20interested%20in%20discussing%20an%20AI%20project.%0A%0AProject%20type%3A%20%0ATimeline%3A%20%0ABrief%20description%3A%20%0A%0ALooking%20forward%20to%20hearing%20from%20you.';
+              }}
             >
               <motion.span
                 className="relative z-10"
                 animate={{ x: isHovering ? 5 : 0 }}
               >
-                Start a Conversation →
+                Describe Your Project →
               </motion.span>
               <motion.div
                 className="absolute inset-0 bg-gradient-to-r from-[#5a8a65] to-[#4a7c59]"
@@ -303,7 +304,7 @@ export default function Home() {
               className="border-2 border-[#4a7c59]/40 bg-[#F4EDE4]/5 px-6 py-4 text-base font-semibold text-[#F4EDE4] backdrop-blur-sm transition-all hover:border-[#4a7c59]/70 hover:bg-[#F4EDE4]/10 sm:px-8 sm:py-6 sm:text-lg"
               onClick={() => document.getElementById('case-studies')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              See What We Build
+              See Our Builds
             </Button>
           </motion.div>
 
@@ -313,12 +314,12 @@ export default function Home() {
             transition={{ duration: 1, delay: 1.4 }}
             className="mt-4 text-center text-sm text-[#D4C4B0]"
           >
-            <span className="font-semibold text-[#5a8a65]">In-person embedding available</span> · Meet with our team · Let's explore what's possible
+            <span className="font-semibold text-[#5a8a65]">Free scoping call</span> · Fixed pricing · No fluff
           </motion.p>
         </motion.div>
       </section>
 
-      {/* About/Background Section */}
+      {/* Forward Deployed Engineers Section */}
       <section className="relative z-10 mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-24">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -328,10 +329,10 @@ export default function Home() {
           className="text-center"
         >
           <h2 className="mb-8 text-4xl font-bold text-[#F4EDE4] sm:text-5xl">
-            We Only Take Projects We're Genuinely Curious About
+            Engineers Who Build With You
           </h2>
           <p className="mx-auto max-w-3xl text-lg leading-relaxed text-[#D4C4B0] mb-8">
-            That means complex operational challenges where your existing systems have potential but aren't optimized. Where building new tools—alongside modernizing what you have—creates real velocity.
+            Not offshore. Not outsourced. Forward deployed to your team.
           </p>
 
           <div className="grid gap-6 md:grid-cols-3 mt-12">
@@ -342,8 +343,9 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0 }}
               className="rounded-lg border border-[#F4EDE4]/10 bg-[#F4EDE4]/5 p-6 backdrop-blur-sm"
             >
-              <h3 className="mb-2 text-xl font-bold text-[#4a7c59]">We Go In-Person</h3>
-              <p className="text-sm text-[#D4C4B0]">For full implementations, we embed in your operation. Understand your workflows, constraints, and opportunities firsthand.</p>
+              <Users className="h-8 w-8 text-[#4a7c59] mb-4" />
+              <h3 className="mb-2 text-xl font-bold text-[#4a7c59]">Embedded With Your Team</h3>
+              <p className="text-sm text-[#D4C4B0]">Our engineers join your Slack, attend your standups, and work your hours. Not consultants who disappear—builders who ship.</p>
             </motion.div>
 
             <motion.div
@@ -353,8 +355,9 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="rounded-lg border border-[#F4EDE4]/10 bg-[#F4EDE4]/5 p-6 backdrop-blur-sm"
             >
-              <h3 className="mb-2 text-xl font-bold text-[#5a8a65]">We See Connections</h3>
-              <p className="text-sm text-[#D4C4B0]">Your stack likely has tools that aren't talking. We find where optimization and new building create synergy.</p>
+              <Cpu className="h-8 w-8 text-[#5a8a65] mb-4" />
+              <h3 className="mb-2 text-xl font-bold text-[#5a8a65]">AI Specialists</h3>
+              <p className="text-sm text-[#D4C4B0]">We've deployed production AI across agents, RAG, computer vision, and LLM apps. We know the pitfalls and shortcuts.</p>
             </motion.div>
 
             <motion.div
@@ -364,8 +367,9 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="rounded-lg border border-[#F4EDE4]/10 bg-[#F4EDE4]/5 p-6 backdrop-blur-sm"
             >
-              <h3 className="mb-2 text-xl font-bold text-cyan-400">We Execute End-to-End</h3>
-              <p className="text-sm text-[#D4C4B0]">Build new systems, modernize existing ones, direct teams, deliver MVPs. Whatever your operation needs to move faster.</p>
+              <Receipt className="h-8 w-8 text-cyan-400 mb-4" />
+              <h3 className="mb-2 text-xl font-bold text-cyan-400">Fixed Scope, Fixed Price</h3>
+              <p className="text-sm text-[#D4C4B0]">After our scoping call, you get a concrete proposal with timeline and price. No hourly billing. No scope creep.</p>
             </motion.div>
           </div>
         </motion.div>
@@ -381,11 +385,11 @@ export default function Home() {
         >
           <h2 className="mb-16 text-center text-5xl font-bold">
             <span className="bg-gradient-to-r from-[#4a7c59] to-[#5a8a65] bg-clip-text text-transparent">
-              Where Efficiency Emerges
+              What We Build
             </span>
           </h2>
           <p className="text-center text-[#D4C4B0] max-w-2xl mx-auto mb-12">
-            Every operation is different. These are the kinds of leverage points we typically identify and build.
+            Production AI systems. Shipped in weeks, not quarters.
           </p>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -535,39 +539,33 @@ export default function Home() {
             >
               <div className="group rounded-2xl border border-[#F4EDE4]/10 bg-[#F4EDE4]/0 p-6 backdrop-blur-sm transition-all hover:border-[#4a7c59]/30 hover:bg-[#F4EDE4]/5 sm:bg-[#F4EDE4]/5 sm:hover:bg-[#F4EDE4]/10">
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#4a7c59]/10">
-                  <div className="relative h-2.5 w-2.5 rounded-full bg-[#4a7c59]">
-                    <div className="absolute inset-0 h-2 w-2 animate-ping rounded-full bg-[#4a7c59] opacity-75" />
-                  </div>
+                  <Users className="h-6 w-6 text-[#4a7c59]" />
                 </div>
-                <h3 className="mb-2 text-xl font-bold text-[#F4EDE4]">Deep Engagement</h3>
+                <h3 className="mb-2 text-xl font-bold text-[#F4EDE4]">Dedicated Engineers</h3>
                 <p className="text-[#D4C4B0]">
-                  We take on select clients at a time. Full focus on moving your needle, not checking boxes.
+                  1-2 engineers assigned to your project full-time until delivery. Not juggling five clients—focused on yours.
                 </p>
               </div>
 
               <div className="group rounded-2xl border border-[#F4EDE4]/10 bg-[#F4EDE4]/0 p-6 backdrop-blur-sm transition-all hover:border-cyan-400/30 hover:bg-[#F4EDE4]/5 sm:bg-[#F4EDE4]/5 sm:hover:bg-[#F4EDE4]/10">
-                <div className="mb-4 flex h-4 w-4 items-center justify-center rounded-full bg-cyan-400/20">
-                  <div className="relative h-3.5 w-3.5 rounded-full bg-cyan-400">
-                    <div className="absolute inset-0 h-3 w-3 animate-ping rounded-full bg-cyan-400 opacity-75" />
-                  </div>
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-cyan-400/20">
+                  <Play className="h-6 w-6 text-cyan-400" />
                 </div>
-                <h3 className="mb-2 text-xl font-bold text-[#F4EDE4]">Build & Optimize</h3>
+                <h3 className="mb-2 text-xl font-bold text-[#F4EDE4]">Weekly Demos</h3>
                 <p className="text-[#D4C4B0]">
-                  Some leverage comes from connecting what you have. Some comes from building what's missing. We do both.
+                  See progress every week. Give feedback. Course-correct early. No surprises at the end.
                 </p>
               </div>
 
               <div className="group rounded-2xl border border-[#F4EDE4]/10 bg-[#F4EDE4]/0 p-6 backdrop-blur-sm transition-all hover:border-[#5a8a65]/30 hover:bg-[#F4EDE4]/5 sm:bg-[#F4EDE4]/5 sm:hover:bg-[#F4EDE4]/10">
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#5a8a65]/20">
-                  <div className="relative h-3.5 w-3.5 rounded-full bg-[#5a8a65]">
-                    <div className="absolute inset-0 h-3 w-3 animate-ping rounded-full bg-[#5a8a65] opacity-20" />
-                  </div>
+                  <Rocket className="h-6 w-6 text-[#5a8a65]" />
                 </div>
                 <h3 className="mb-2 text-xl font-bold text-[#F4EDE4]">
-                  Proven in Complex Work
+                  Shipped AI at Scale
                 </h3>
                 <p className="text-[#D4C4B0]">
-                  Built systems in classified environments. Directed AI programs at scale. SDVOSB certified. We know how to handle real constraints.
+                  Production systems across finance, healthcare, legal, and operations. We've seen what works and what fails.
                 </p>
               </div>
             </motion.div>
@@ -612,23 +610,23 @@ export default function Home() {
 
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
               <div className="rounded-xl border border-[#F4EDE4]/10 bg-[#F4EDE4]/0 p-6 backdrop-blur-sm sm:bg-[#F4EDE4]/5">
-                <p className="mb-4 text-2xl font-bold text-[#4a7c59]">1. Meet</p>
-                <p className="text-sm text-[#D4C4B0]">We come to understand your operation. What's working. What's broken. What's possible.</p>
+                <p className="mb-4 text-2xl font-bold text-[#4a7c59]">1. Scope</p>
+                <p className="text-sm text-[#D4C4B0]">You describe the problem. We ask the right questions. You leave with project outline, timeline, and fixed price.</p>
               </div>
 
               <div className="rounded-xl border border-[#5a8a65]/20 bg-[#5a8a65]/0 p-6 backdrop-blur-sm sm:bg-[#5a8a65]/10">
-                <p className="mb-4 text-2xl font-bold text-[#5a8a65]">2. Design</p>
-                <p className="text-sm text-[#D4C4B0]">We figure out what to build and what to optimize. Architecture. Approach. What success looks like.</p>
+                <p className="mb-4 text-2xl font-bold text-[#5a8a65]">2. Deploy</p>
+                <p className="text-sm text-[#D4C4B0]">We assign engineers to your project. They join your Slack, attend your standups, work your hours.</p>
               </div>
 
               <div className="rounded-xl border border-[#00E5FF]/20 bg-[#00E5FF]/0 p-6 backdrop-blur-sm sm:bg-[#00E5FF]/5">
                 <p className="mb-4 text-2xl font-bold text-cyan-400">3. Build</p>
-                <p className="text-sm text-[#D4C4B0]">We execute. New systems, integrations, infrastructure modernization. Done right.</p>
+                <p className="text-sm text-[#D4C4B0]">Iterative development with weekly demos. You see progress, give feedback, no surprises.</p>
               </div>
 
               <div className="rounded-xl border border-[#4a7c59]/20 bg-[#4a7c59]/0 p-6 backdrop-blur-sm sm:bg-[#4a7c59]/10">
-                <p className="mb-4 text-2xl font-bold text-[#5a8a65]">4. Scale</p>
-                <p className="text-sm text-[#D4C4B0]">Direct a team for ongoing programs, deliver MVPs for execs, or hand off to your team. Your choice.</p>
+                <p className="mb-4 text-2xl font-bold text-[#5a8a65]">4. Ship</p>
+                <p className="text-sm text-[#D4C4B0]">We document everything, train your team, and hand off clean code. You own it.</p>
               </div>
             </div>
 
@@ -636,19 +634,22 @@ export default function Home() {
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-[#4a7c59] to-[#5a8a65] px-8 py-6 text-lg font-semibold text-[#191919] transition-all hover:scale-105 hover:shadow-2xl hover:shadow-[#4a7c59]/50"
-                onClick={() => window.open('https://calendly.com/nicklynch-bonusthoughts', '_blank')}
+                onClick={() => {
+                  trackEmailClick('AI Project Inquiry', 'Describe Your Project', 'process-section');
+                  window.location.href = 'mailto:director@bonusthoughts.com?subject=AI%20Project%20Inquiry&body=Hi%2C%0A%0AI%27m%20interested%20in%20discussing%20an%20AI%20project.%0A%0AProject%20type%3A%20%0ATimeline%3A%20%0ABrief%20description%3A%20%0A%0ALooking%20forward%20to%20hearing%20from%20you.';
+                }}
               >
-                Start a Conversation →
+                Describe Your Project →
               </Button>
               <p className="mt-4 text-sm text-[#D4C4B0]">
-                <span className="font-semibold text-[#5a8a65]">In-person meetings available</span> · Let's understand your situation
+                <span className="font-semibold text-[#5a8a65]">Free scoping call</span> · Get a fixed quote in 48 hours
               </p>
             </div>
           </div>
         </motion.div>
       </section>
 
-      {/* Philosophy Section */}
+      {/* Case Studies Section */}
       <section id="case-studies" className="relative z-10 mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-24">
         <motion.div
           initial={{ opacity: 0 }}
@@ -656,13 +657,16 @@ export default function Home() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="mb-8 text-center text-5xl font-bold">
+          <h2 className="mb-4 text-center text-5xl font-bold">
             <span className="bg-gradient-to-r from-[#4a7c59] to-[#5a8a65] bg-clip-text text-transparent">
-              What I Look For
+              AI Builds in Production
             </span>
           </h2>
+          <p className="text-center text-[#D4C4B0] mb-12">
+            Real systems. Real results. AI that takes action.
+          </p>
 
-          <div className="space-y-6 mb-12">
+          <div className="grid gap-6 md:grid-cols-3 mb-12">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -670,8 +674,10 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0 }}
               className="rounded-lg border border-[#F4EDE4]/10 bg-[#F4EDE4]/5 p-6 backdrop-blur-sm"
             >
-              <h3 className="mb-2 text-xl font-bold text-[#4a7c59]">Complex Operational Challenges</h3>
-              <p className="text-[#D4C4B0]">Organizations where multiple systems aren't working together. Where the opportunity isn't obvious. That's where we can add the most value.</p>
+              <span className="inline-block px-3 py-1 text-xs font-semibold bg-[#4a7c59]/20 text-[#4a7c59] rounded-full mb-4">Customer Operations</span>
+              <h3 className="mb-2 text-xl font-bold text-[#F4EDE4]">Conversational AI Platform</h3>
+              <p className="text-sm text-[#D4C4B0] mb-4">Inbound/outbound AI with tool access—collects payments, books appointments, handles inquiries 24/7.</p>
+              <p className="text-sm font-semibold text-[#4a7c59]">"AI that doesn't just talk—it transacts."</p>
             </motion.div>
 
             <motion.div
@@ -681,8 +687,10 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="rounded-lg border border-[#F4EDE4]/10 bg-[#F4EDE4]/5 p-6 backdrop-blur-sm"
             >
-              <h3 className="mb-2 text-xl font-bold text-[#5a8a65]">Teams Ready to Move</h3>
-              <p className="text-[#D4C4B0]">You've got the people and the commitment. You just need someone who can see the path forward and execute it with focus.</p>
+              <span className="inline-block px-3 py-1 text-xs font-semibold bg-[#5a8a65]/20 text-[#5a8a65] rounded-full mb-4">Document Intelligence</span>
+              <h3 className="mb-2 text-xl font-bold text-[#F4EDE4]">Tax Categorization Engine</h3>
+              <p className="text-sm text-[#D4C4B0] mb-4">OCR + LLM pipeline that automatically categorizes charges to appropriate tax categories.</p>
+              <p className="text-sm font-semibold text-[#5a8a65]">"Hours of manual work → seconds of AI processing."</p>
             </motion.div>
 
             <motion.div
@@ -692,29 +700,188 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="rounded-lg border border-[#F4EDE4]/10 bg-[#F4EDE4]/5 p-6 backdrop-blur-sm"
             >
-              <h3 className="mb-2 text-xl font-bold text-cyan-400">Real Problems to Solve</h3>
-              <p className="text-[#D4C4B0]">Not vanity projects. Not "let's build something cool." Challenges that matter to your operation and have clear outcomes.</p>
+              <span className="inline-block px-3 py-1 text-xs font-semibold bg-cyan-400/20 text-cyan-400 rounded-full mb-4">Sales Intelligence</span>
+              <h3 className="mb-2 text-xl font-bold text-[#F4EDE4]">AI-Enhanced CRM</h3>
+              <p className="text-sm text-[#D4C4B0] mb-4">Email content analysis that auto-updates pipeline, surfaces opportunities, keeps data fresh.</p>
+              <p className="text-sm font-semibold text-cyan-400">"Your CRM updates itself."</p>
             </motion.div>
           </div>
 
+          <p className="text-center text-sm text-[#D4C4B0] mb-8">
+            Also: Location intelligence platforms, audit-proof reporting systems, workflow automation, and more.
+          </p>
+
           <div className="text-center">
             <p className="mb-6 text-lg text-[#D4C4B0]">
-              <span className="font-semibold text-[#F4EDE4]">If this sounds like you,</span>
+              <span className="font-semibold text-[#F4EDE4]">Have an AI idea?</span>
               <br />
-              let's have a conversation about what's possible.
+              Let's talk about what's possible.
             </p>
             <Button
               size="lg"
               className="bg-gradient-to-r from-[#4a7c59] to-[#5a8a65] px-8 py-6 text-lg font-semibold text-[#191919] transition-all hover:scale-105 hover:shadow-2xl hover:shadow-[#4a7c59]/50"
-              onClick={() => window.open('https://calendly.com/nicklynch-bonusthoughts', '_blank')}
+              onClick={() => {
+                trackEmailClick('AI Project Inquiry', 'Describe Your Project', 'case-studies');
+                window.location.href = 'mailto:director@bonusthoughts.com?subject=AI%20Project%20Inquiry&body=Hi%2C%0A%0AI%27m%20interested%20in%20discussing%20an%20AI%20project.%0A%0AProject%20type%3A%20%0ATimeline%3A%20%0ABrief%20description%3A%20%0A%0ALooking%20forward%20to%20hearing%20from%20you.';
+              }}
             >
-              Start a Conversation →
+              Describe Your Project →
             </Button>
           </div>
         </motion.div>
       </section>
 
-      {/* Lead Magnet CTA Section */}
+      {/* AI Training Section */}
+      <section id="training" className="relative z-10 mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-24">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="relative overflow-hidden rounded-3xl border border-cyan-400/30 bg-gradient-to-br from-cyan-400/10 to-[#4a7c59]/10 p-6 backdrop-blur-xl sm:p-12 md:p-16"
+        >
+          {/* Background decoration */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-400/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#4a7c59]/20 rounded-full blur-3xl" />
+
+          <div className="relative z-10">
+            <div className="flex items-center justify-center mb-6">
+              <div className="flex items-center gap-3 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-2">
+                <GraduationCap className="h-5 w-5 text-cyan-400" />
+                <span className="text-sm font-semibold text-cyan-400">On-Site AI Training</span>
+              </div>
+            </div>
+
+            <h2 className="mb-6 text-center text-4xl font-bold text-[#F4EDE4] sm:text-5xl">
+              Get Your Team <span className="text-cyan-400">AI-Ready</span>
+            </h2>
+
+            <p className="mx-auto mb-10 max-w-2xl text-center text-lg text-[#D4C4B0]">
+              We come to you. Hands-on training on today's most powerful AI tools.
+              Your team leaves with accounts set up, workflows configured, and real skills—not just theory.
+            </p>
+
+            {/* AI Assistants */}
+            <div className="mb-8">
+              <h3 className="text-center text-sm font-semibold text-[#D4C4B0] uppercase tracking-wider mb-4">AI Assistants</h3>
+              <div className="grid gap-4 grid-cols-2 md:grid-cols-4">
+                <div className="rounded-xl border border-[#F4EDE4]/10 bg-[#F4EDE4]/5 p-4 text-center">
+                  <p className="text-xl font-bold text-cyan-400 mb-1">Claude</p>
+                  <p className="text-xs text-[#D4C4B0]">Anthropic</p>
+                </div>
+                <div className="rounded-xl border border-[#F4EDE4]/10 bg-[#F4EDE4]/5 p-4 text-center">
+                  <p className="text-xl font-bold text-[#4a7c59] mb-1">ChatGPT</p>
+                  <p className="text-xs text-[#D4C4B0]">OpenAI</p>
+                </div>
+                <div className="rounded-xl border border-[#F4EDE4]/10 bg-[#F4EDE4]/5 p-4 text-center">
+                  <p className="text-xl font-bold text-[#5a8a65] mb-1">Gemini</p>
+                  <p className="text-xs text-[#D4C4B0]">Google</p>
+                </div>
+                <div className="rounded-xl border border-[#F4EDE4]/10 bg-[#F4EDE4]/5 p-4 text-center">
+                  <p className="text-xl font-bold text-[#D4C4B0] mb-1">Grok</p>
+                  <p className="text-xs text-[#D4C4B0]">xAI</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Enterprise & Productivity */}
+            <div className="mb-8">
+              <h3 className="text-center text-sm font-semibold text-[#D4C4B0] uppercase tracking-wider mb-4">Enterprise & Productivity</h3>
+              <div className="grid gap-4 grid-cols-2 md:grid-cols-3">
+                <div className="rounded-xl border border-[#F4EDE4]/10 bg-[#F4EDE4]/5 p-4 text-center">
+                  <p className="text-xl font-bold text-cyan-400 mb-1">Microsoft Copilot</p>
+                  <p className="text-xs text-[#D4C4B0]">Office 365 Integration</p>
+                </div>
+                <div className="rounded-xl border border-[#F4EDE4]/10 bg-[#F4EDE4]/5 p-4 text-center">
+                  <p className="text-xl font-bold text-[#4a7c59] mb-1">Perplexity</p>
+                  <p className="text-xs text-[#D4C4B0]">Research & Citations</p>
+                </div>
+                <div className="rounded-xl border border-[#F4EDE4]/10 bg-[#F4EDE4]/5 p-4 text-center">
+                  <p className="text-xl font-bold text-[#5a8a65] mb-1">GitHub Copilot</p>
+                  <p className="text-xs text-[#D4C4B0]">Developer Productivity</p>
+                </div>
+              </div>
+            </div>
+
+            {/* AI-Powered IDEs & Agents */}
+            <div className="mb-8">
+              <h3 className="text-center text-sm font-semibold text-[#D4C4B0] uppercase tracking-wider mb-4">AI-Powered IDEs & Agents</h3>
+              <div className="grid gap-4 grid-cols-2 md:grid-cols-5">
+                <div className="rounded-xl border border-[#F4EDE4]/10 bg-[#F4EDE4]/5 p-4 text-center">
+                  <p className="text-xl font-bold text-cyan-400 mb-1">Claude Code</p>
+                  <p className="text-xs text-[#D4C4B0]">Agentic CLI & IDE</p>
+                </div>
+                <div className="rounded-xl border border-[#F4EDE4]/10 bg-[#F4EDE4]/5 p-4 text-center">
+                  <p className="text-xl font-bold text-cyan-400 mb-1">Claude Cowork</p>
+                  <p className="text-xs text-[#D4C4B0]">Desktop Agent</p>
+                </div>
+                <div className="rounded-xl border border-[#F4EDE4]/10 bg-[#F4EDE4]/5 p-4 text-center">
+                  <p className="text-xl font-bold text-[#4a7c59] mb-1">Cursor</p>
+                  <p className="text-xs text-[#D4C4B0]">AI-First IDE</p>
+                </div>
+                <div className="rounded-xl border border-[#F4EDE4]/10 bg-[#F4EDE4]/5 p-4 text-center">
+                  <p className="text-xl font-bold text-[#5a8a65] mb-1">Windsurf</p>
+                  <p className="text-xs text-[#D4C4B0]">Codeium IDE</p>
+                </div>
+                <div className="rounded-xl border border-[#F4EDE4]/10 bg-[#F4EDE4]/5 p-4 text-center">
+                  <p className="text-xl font-bold text-[#D4C4B0] mb-1">Antigravity</p>
+                  <p className="text-xs text-[#D4C4B0]">Google Agentic IDE</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Open Source & Specialized */}
+            <div className="mb-10">
+              <h3 className="text-center text-sm font-semibold text-[#D4C4B0] uppercase tracking-wider mb-4">Open Source & Specialized</h3>
+              <div className="grid gap-4 grid-cols-2 md:grid-cols-4">
+                <div className="rounded-xl border border-[#F4EDE4]/10 bg-[#F4EDE4]/5 p-4 text-center">
+                  <p className="text-xl font-bold text-cyan-400 mb-1">Llama 4</p>
+                  <p className="text-xs text-[#D4C4B0]">Meta (Open Source)</p>
+                </div>
+                <div className="rounded-xl border border-[#F4EDE4]/10 bg-[#F4EDE4]/5 p-4 text-center">
+                  <p className="text-xl font-bold text-[#4a7c59] mb-1">DeepSeek</p>
+                  <p className="text-xs text-[#D4C4B0]">Open Source Reasoning</p>
+                </div>
+                <div className="rounded-xl border border-[#F4EDE4]/10 bg-[#F4EDE4]/5 p-4 text-center">
+                  <p className="text-xl font-bold text-[#5a8a65] mb-1">Mistral</p>
+                  <p className="text-xs text-[#D4C4B0]">European Alternative</p>
+                </div>
+                <div className="rounded-xl border border-[#F4EDE4]/10 bg-[#F4EDE4]/5 p-4 text-center">
+                  <p className="text-xl font-bold text-[#D4C4B0] mb-1">Midjourney</p>
+                  <p className="text-xs text-[#D4C4B0]">Image Generation</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="text-center mb-8">
+              <p className="text-sm text-[#D4C4B0] mb-6">
+                <span className="font-semibold text-[#F4EDE4]">Half-day, full-day, or multi-day options</span> · Customized to your team's needs · Accounts set up before we leave
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <Button
+                  size="lg"
+                  className="bg-gradient-to-r from-cyan-500 to-cyan-400 px-8 py-6 text-lg font-semibold text-[#191919] transition-all hover:scale-105 hover:shadow-2xl hover:shadow-cyan-400/50"
+                  onClick={() => {
+                    trackEmailClick('AI Training Inquiry', 'Book a Training', 'training-section');
+                    window.location.href = 'mailto:director@bonusthoughts.com?subject=AI%20Training%20Inquiry&body=Hi%2C%0A%0AI%27m%20interested%20in%20AI%20training%20for%20my%20team.%0A%0ATeam%20size%3A%20%0ATools%20of%20interest%3A%20%0APreferred%20format%20(half-day%2Ffull-day%2Fmulti-day)%3A%20%0A%0ALooking%20forward%20to%20hearing%20from%20you.';
+                  }}
+                >
+                  Book a Training →
+                </Button>
+                <Link
+                  href="/training-guide"
+                  className="inline-flex items-center justify-center border-2 border-cyan-400/40 bg-[#F4EDE4]/5 px-8 py-6 text-lg font-semibold text-[#F4EDE4] backdrop-blur-sm transition-all hover:border-cyan-400/70 hover:bg-[#F4EDE4]/10 rounded-md"
+                  onClick={() => trackNavClick('/training-guide', 'homepage')}
+                >
+                  View Training Guide
+                </Link>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Final CTA Section */}
       <section className="relative z-10 mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-24">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -730,7 +897,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="mb-4 text-3xl font-bold text-[#F4EDE4] sm:text-4xl"
           >
-            Not ready to book yet?
+            Ready to get started?
           </motion.h2>
 
           <motion.p
@@ -740,7 +907,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mx-auto mb-8 max-w-2xl text-lg text-[#D4C4B0]"
           >
-            Download the <span className="font-semibold text-[#5a8a65]">Solution Playbook</span>: How to identify leverage points in your existing systems and build a roadmap for implementation.
+            Whether you need a custom AI system built or want to train your team on the latest tools—let's talk about what would move the needle for you.
           </motion.p>
 
           <motion.div
@@ -748,20 +915,31 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <Button
               size="lg"
               className="bg-gradient-to-r from-[#4a7c59] to-[#5a8a65] px-8 py-6 text-lg font-semibold text-[#191919] transition-all hover:scale-105 hover:shadow-2xl hover:shadow-[#4a7c59]/50"
-              onClick={() => setIsPlaybookModalOpen(true)}
+              onClick={() => {
+                trackEmailClick('AI Project Inquiry', 'Schedule a Call', 'final-cta');
+                window.location.href = 'mailto:director@bonusthoughts.com?subject=AI%20Project%20Inquiry&body=Hi%2C%0A%0AI%27m%20interested%20in%20discussing%20an%20AI%20project.%0A%0AProject%20type%3A%20%0ATimeline%3A%20%0ABrief%20description%3A%20%0A%0ALooking%20forward%20to%20hearing%20from%20you.';
+              }}
             >
-              Get Free Playbook →
+              Schedule a Call →
             </Button>
+            <Link
+              href="/training-guide"
+              className="inline-flex items-center justify-center border-2 border-[#4a7c59]/40 bg-[#F4EDE4]/5 px-8 py-6 text-lg font-semibold text-[#F4EDE4] backdrop-blur-sm transition-all hover:border-[#4a7c59]/70 hover:bg-[#F4EDE4]/10 rounded-md"
+              onClick={() => trackNavClick('/training-guide', 'homepage')}
+            >
+              View Training Guide
+            </Link>
           </motion.div>
         </motion.div>
       </section>
 
       {/* Footer */}
-      <footer className="relative z-10 border-t border-[#F4EDE4]/10 py-12">
+      <footer id="contact" className="relative z-10 border-t border-[#F4EDE4]/10 py-12">
         <div className="mx-auto max-w-7xl px-6">
           {/* Trust Signals */}
           <div className="mb-8 flex flex-wrap items-center justify-center gap-4 text-sm text-[#3a5a47]">
@@ -786,7 +964,7 @@ export default function Home() {
                 <div className="h-1.5 w-1.5 rounded-full bg-[#5a8a65]" />
                 <div className="absolute inset-0 h-1.5 w-1.5 animate-ping rounded-full bg-[#5a8a65] opacity-75" />
               </div>
-              <span>Active Security Clearances</span>
+              <span>Production AI</span>
             </div>
           </div>
 
@@ -795,12 +973,10 @@ export default function Home() {
             <div className="flex flex-wrap items-center justify-center gap-6 text-sm">
               <motion.a
                 whileHover={{ y: -2 }}
-                href="https://calendly.com/nicklynch-bonusthoughts"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="mailto:director@bonusthoughts.com?subject=AI%20Project%20Inquiry&body=Hi%2C%0A%0AI%27m%20interested%20in%20discussing%20an%20AI%20project.%0A%0AProject%20type%3A%20%0ATimeline%3A%20%0ABrief%20description%3A%20%0A%0ALooking%20forward%20to%20hearing%20from%20you."
                 className="transition-colors hover:text-[#5a8a65] font-semibold"
               >
-                Start a Conversation
+                Describe Your Project
               </motion.a>
               <span className="text-[#F4EDE4]/20">|</span>
               <motion.a
@@ -822,17 +998,11 @@ export default function Home() {
               </motion.a>
             </div>
             <p className="text-[#3a5a47] text-sm">
-              © 2025 BonusThoughts. Solution architect for complex operations.
+              © 2025 BonusThoughts. Custom AI development. Forward deployed engineers.
             </p>
           </div>
         </div>
       </footer>
-
-      {/* Lead Magnet Modal */}
-      <LeadMagnetModal
-        isOpen={isPlaybookModalOpen}
-        onClose={() => setIsPlaybookModalOpen(false)}
-      />
     </div>
   );
 }

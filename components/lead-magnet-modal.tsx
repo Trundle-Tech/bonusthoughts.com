@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";
@@ -11,6 +12,7 @@ interface LeadMagnetModalProps {
 }
 
 export function LeadMagnetModal({ isOpen, onClose }: LeadMagnetModalProps) {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -35,18 +37,19 @@ export function LeadMagnetModal({ isOpen, onClose }: LeadMagnetModalProps) {
 
       // Trigger PDF download
       const link = document.createElement("a");
-      link.href = "/playbooks/c-suite-ai-playbook-full.pdf";
-      link.download = "C-Suite-AI-Playbook-Full.pdf";
+      link.href = "/playbooks/ai-tools-training-guide.pdf";
+      link.download = "AI-Tools-Training-Guide.pdf";
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
 
-      // Close modal after 2 seconds
+      // Navigate to training guide page after brief delay
       setTimeout(() => {
         onClose();
         setSubmitted(false);
         setFormData({ name: "", email: "", company: "" });
-      }, 2000);
+        router.push("/training-guide");
+      }, 1500);
     }, 1000);
   };
 
@@ -87,7 +90,7 @@ export function LeadMagnetModal({ isOpen, onClose }: LeadMagnetModalProps) {
                   transition={{ delay: 0.1 }}
                   className="mb-2 text-2xl font-bold text-[#F4EDE4]"
                 >
-                  C-Suite AI Playbook
+                  AI Tools Training Guide
                 </motion.h2>
 
                 <motion.p
@@ -96,23 +99,23 @@ export function LeadMagnetModal({ isOpen, onClose }: LeadMagnetModalProps) {
                   transition={{ delay: 0.15 }}
                   className="mb-6 text-sm text-[#D4C4B0]"
                 >
-                  7 Proven MVPs That Delivered 6-Figure ROI in &lt;30 Days
+                  Which AI tool for which task—a practical guide for teams
                 </motion.p>
 
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 }}
-                  className="mb-6 rounded-lg border border-[#4a7c59]/20 bg-[#4a7c59]/10 p-4"
+                  className="mb-6 rounded-lg border border-cyan-400/20 bg-cyan-400/10 p-4"
                 >
-                  <p className="text-xs font-semibold text-[#4a7c59] mb-2">
-                    INSIDE THE PLAYBOOK:
+                  <p className="text-xs font-semibold text-cyan-400 mb-2">
+                    INSIDE THE GUIDE:
                   </p>
                   <ul className="text-xs text-[#D4C4B0] space-y-1">
-                    <li>✓ The 3 AI projects that move the needle for executives</li>
-                    <li>✓ When to build vs. buy (and how to decide in 48 hours)</li>
-                    <li>✓ Hiring roadmap for 10–16 week delivery</li>
-                    <li>✓ ROI calculator for board meetings</li>
+                    <li>✓ Claude vs ChatGPT vs Gemini—when to use each</li>
+                    <li>✓ Best AI tools by role (Sales, Dev, Research, etc.)</li>
+                    <li>✓ Prompt templates that actually work</li>
+                    <li>✓ Setup checklist for enterprise deployment</li>
                   </ul>
                 </motion.div>
 
@@ -180,7 +183,7 @@ export function LeadMagnetModal({ isOpen, onClose }: LeadMagnetModalProps) {
                   </motion.div>
 
                   <p className="text-xs text-[#3a5a47] text-center">
-                    We'll send the playbook + a follow-up on open slots.
+                    We'll send the guide + info on training availability.
                   </p>
                 </form>
               </div>
@@ -200,10 +203,10 @@ export function LeadMagnetModal({ isOpen, onClose }: LeadMagnetModalProps) {
                   </div>
                 </motion.div>
                 <h3 className="text-lg font-bold text-[#F4EDE4] mb-2">
-                  Check your inbox!
+                  You're in!
                 </h3>
                 <p className="text-sm text-[#D4C4B0]">
-                  Your playbook is downloading. We'll also send you available slots.
+                  PDF downloading... Opening the full guide now.
                 </p>
               </motion.div>
             )}

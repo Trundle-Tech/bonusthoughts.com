@@ -15,9 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AI Program Director | Executive Teams | BonusThoughts",
-  description: "Veteran-led AI Program Director for executives with teams but no velocity. Direct your AI initiatives like military operations—10-16 weeks instead of 18 months. Former NGA architect. TS/SCI cleared.",
-  keywords: ["AI program director", "AI consultant", "AI strategy", "executive AI", "AI implementation", "NGA", "SDVOSB", "veteran-owned"],
+  title: "AI Development & Training | Custom AI Solutions | BonusThoughts",
+  description: "Forward deployed AI engineers who build your AI ideas. Plus on-site AI training for Claude, GPT-4, Gemini. Agents, RAG systems, LLM apps. 2-8 week delivery.",
+  keywords: ["AI development agency", "custom AI solutions", "AI training", "Claude training", "GPT-4 training", "Gemini training", "AI agents development", "RAG system development", "LLM application development", "AI integration services", "forward deployed engineers", "corporate AI training"],
   authors: [{ name: "BonusThoughts" }],
   creator: "BonusThoughts",
   publisher: "BonusThoughts",
@@ -31,22 +31,22 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://bonusthoughts.com",
     siteName: "BonusThoughts",
-    title: "AI Program Director | Executive Teams",
-    description: "Veteran-led AI Program Director for executives with teams but no velocity. Direct your AI initiatives like military operations—10-16 weeks instead of 18 months.",
+    title: "AI Development Agency | Build Your AI Ideas",
+    description: "Forward deployed engineers who build custom AI solutions. Agents, RAG, LLM apps. 2-8 weeks.",
     images: [
       {
         url: "https://bonusthoughts.com/og-image.png",
         width: 1200,
         height: 630,
-        alt: "BonusThoughts - AI Program Director",
+        alt: "BonusThoughts - AI Development Agency",
         type: "image/png",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI Program Director | Executive Teams | BonusThoughts",
-    description: "Former NGA architect. Direct your AI initiatives like military operations. 10-16 weeks instead of 18 months.",
+    title: "AI Development Agency | Custom AI Solutions | BonusThoughts",
+    description: "Forward deployed AI engineers who build your AI ideas. Agents, RAG systems, LLM apps. 2-8 week delivery.",
     creator: "@nlynch_ai",
     images: ["https://bonusthoughts.com/og-image.png"],
   },
