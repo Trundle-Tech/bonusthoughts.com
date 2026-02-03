@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { useEffect, useState } from "react";
-import { Bot, Database, MessageSquare, Plug, Eye, Target, Users, Cpu, Receipt, GraduationCap, Play, Rocket, Terminal, Code2, Sparkles } from "lucide-react";
+import { Bot, Database, MessageSquare, Plug, Eye, Target, Users, Cpu, Receipt, GraduationCap, Play, Rocket, Terminal, Code2, Sparkles, ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { trackEmailClick, trackNavClick } from "@/lib/analytics";
 import { useScrollTracking } from "@/hooks/use-scroll-tracking";
@@ -37,6 +37,16 @@ export default function Home() {
     "sameAs": [
       "https://x.com/nlynch_ai"
     ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Dallas",
+      "addressRegion": "TX",
+      "addressCountry": "US"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "US"
+    },
     "contactPoint": {
       "@type": "ContactPoint",
       "email": "director@bonusthoughts.com",
@@ -68,6 +78,12 @@ export default function Home() {
       "name": "BonusThoughts",
       "url": "https://bonusthoughts.com"
     },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Dallas",
+      "addressRegion": "TX",
+      "addressCountry": "US"
+    },
     "areaServed": "US",
     "serviceType": [
       "AI Agent Development",
@@ -82,42 +98,198 @@ export default function Home() {
     ]
   };
 
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "BonusThoughts",
+    "url": "https://bonusthoughts.com",
+    "description": "Custom production AI development with forward-deployed engineers. AI agents, RAG systems, computer vision, and on-site AI training.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Dallas",
+      "addressRegion": "TX",
+      "addressCountry": "US"
+    },
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Dallas"
+      },
+      {
+        "@type": "Country",
+        "name": "US"
+      }
+    ],
+    "priceRange": "$$$$",
+    "serviceType": [
+      "AI Agent Development",
+      "RAG System Development",
+      "LLM Application Development",
+      "AI Integration Services",
+      "Computer Vision Development",
+      "Corporate AI Training"
+    ]
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does 'forward deployed' mean?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our engineers embed directly with your team—joining your Slack, attending your standups, and working your hours. Not offshore, not outsourced. We build alongside you until the project ships."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does fixed pricing work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "After a free scoping call, we deliver a fixed quote within 48 hours—covering timeline, deliverables, and price. No hourly billing, no scope creep. You know exactly what you're paying before we start."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What AI models do you use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We work with Claude, GPT-4, Gemini, and open-source models like Llama, Mistral, and DeepSeek. The right model depends on your use case—we recommend based on performance, cost, and privacy requirements."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does a typical project take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most projects ship in 2-8 weeks. Scope, complexity, and integrations determine the timeline—we nail this down during the initial scoping call."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer on-site AI training?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. We offer on-site AI training in Dallas and nationwide. Half-day, full-day, and multi-day formats available. We cover Claude, ChatGPT, Gemini, Copilot, and more—customized to your team's needs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What industries do you work with?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We work cross-industry: finance, healthcare, legal, operations, real estate, and more. Our forward-deployed approach means we learn your domain fast and build AI that fits your specific workflows."
+        }
+      }
+    ]
+  };
+
+  const howToSchema = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Get a Custom AI System Built",
+    "description": "Our four-step process from initial conversation to shipped AI system.",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Scope",
+        "text": "You describe the problem. We ask the right questions. You leave with a project outline, timeline, and fixed price."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "Deploy",
+        "text": "We assign engineers to your project. They join your Slack, attend your standups, and work your hours."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "Build",
+        "text": "Iterative development with weekly demos. You see progress, give feedback, no surprises."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 4,
+        "name": "Ship",
+        "text": "We document everything, train your team, and hand off clean code. You own it."
+      }
+    ]
+  };
+
+  const faqItems = [
+    {
+      question: "What does 'forward deployed' mean?",
+      answer: "Our engineers embed directly with your team—joining your Slack, attending your standups, and working your hours. Not offshore, not outsourced. We build alongside you until the project ships."
+    },
+    {
+      question: "How does fixed pricing work?",
+      answer: "After a free scoping call, we deliver a fixed quote within 48 hours—covering timeline, deliverables, and price. No hourly billing, no scope creep. You know exactly what you're paying before we start."
+    },
+    {
+      question: "What AI models do you use?",
+      answer: "We work with Claude, GPT-4, Gemini, and open-source models like Llama, Mistral, and DeepSeek. The right model depends on your use case—we recommend based on performance, cost, and privacy requirements."
+    },
+    {
+      question: "How long does a typical project take?",
+      answer: "Most projects ship in 2-8 weeks. Scope, complexity, and integrations determine the timeline—we nail this down during the initial scoping call."
+    },
+    {
+      question: "Do you offer on-site AI training?",
+      answer: "Yes. We offer on-site AI training in Dallas and nationwide. Half-day, full-day, and multi-day formats available. We cover Claude, ChatGPT, Gemini, Copilot, and more—customized to your team's needs."
+    },
+    {
+      question: "What industries do you work with?",
+      answer: "We work cross-industry: finance, healthcare, legal, operations, real estate, and more. Our forward-deployed approach means we learn your domain fast and build AI that fits your specific workflows."
+    }
+  ];
+
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
   const capabilities = [
     {
       name: "AI Agents",
       icon: Bot,
       color: "from-[#4a7c59]/20 to-[#5a8a65]/20",
-      description: "Autonomous agents for research, outreach, data processing, and workflow automation. Claude, GPT-4, open-source models."
+      description: "Autonomous agents for research, outreach, data processing, and workflow automation. Claude, GPT-4, open-source models.",
+      href: "/capabilities/ai-agents"
     },
     {
       name: "RAG Systems",
       icon: Database,
       color: "from-[#5a6b3e]/20 to-[#6a9a75]/20",
-      description: "Search your documents and knowledge bases. Production-grade retrieval with proper chunking, embeddings, and evaluation."
+      description: "Search your documents and knowledge bases. Production-grade retrieval with proper chunking, embeddings, and evaluation.",
+      href: "/capabilities/rag-systems"
     },
     {
       name: "LLM Applications",
       icon: MessageSquare,
       color: "from-[#4a7c59]/20 to-[#3a5a47]/20",
-      description: "Chat interfaces, content generation, classification, summarization pipelines. Prompt engineering included."
+      description: "Chat interfaces, content generation, classification, summarization pipelines. Prompt engineering included.",
+      href: "/capabilities/llm-applications"
     },
     {
       name: "AI Integrations",
       icon: Plug,
       color: "from-[#6a9a75]/20 to-[#5a6b3e]/20",
-      description: "Connect AI to Salesforce, Slack, internal databases, APIs. Make AI work where your team already works."
+      description: "Connect AI to Salesforce, Slack, internal databases, APIs. Make AI work where your team already works.",
+      href: "/capabilities/ai-integrations"
     },
     {
       name: "Computer Vision",
       icon: Eye,
       color: "from-[#3a5a47]/20 to-[#2d5945]/20",
-      description: "Image classification, object detection, document processing. Manufacturing, medical, security applications."
+      description: "Image classification, object detection, document processing. Manufacturing, medical, security applications.",
+      href: "/capabilities/computer-vision"
     },
     {
       name: "AI Training",
       icon: GraduationCap,
       color: "from-[#4a7c59]/20 to-[#5a8a65]/20",
-      description: "On-site courses for Claude, GPT-4, Gemini, and more. We train your team, set up accounts, and get everyone productive fast."
+      description: "On-site courses for Claude, GPT-4, Gemini, and more. We train your team, set up accounts, and get everyone productive fast.",
+      href: "/capabilities/ai-training"
     },
   ];
 
@@ -135,6 +307,18 @@ export default function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
 
       {/* Animated gradient background */}
@@ -236,7 +420,7 @@ export default function Home() {
           >
             AI that takes action. Not just chatbots—systems that process, transact, and deliver.
             <br />
-            <span className="font-semibold text-[#5a8a65]">Forward deployed engineers who build alongside your team.</span>
+            <span className="font-semibold text-[#5a8a65]">Dallas-based, forward deployed engineers who build alongside your team.</span>
           </motion.p>
 
           {/* Trust Signals */}
@@ -402,6 +586,7 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ y: -10, scale: 1.02 }}
               >
+                <Link href={industry.href} className="block h-full">
                 <Card
                   className={`group relative flex h-full min-h-[220px] sm:min-h-[280px] flex-col overflow-hidden border-[#F4EDE4]/10 bg-gradient-to-br ${industry.color} p-5 sm:p-8 backdrop-blur-sm transition-all hover:border-[#4a7c59]/50 hover:shadow-2xl hover:shadow-[#4a7c59]/20`}
                 >
@@ -489,6 +674,7 @@ export default function Home() {
                     transition={{ duration: 0.3 }}
                   />
                 </Card>
+                </Link>
               </motion.div>
             ))}
           </div>
@@ -727,6 +913,60 @@ export default function Home() {
             >
               Describe Your Project →
             </Button>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* FAQ Section */}
+      <section id="faq" className="relative z-10 mx-auto max-w-3xl px-4 py-12 sm:px-6 sm:py-24">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <h2 className="mb-4 text-center text-4xl font-bold text-[#F4EDE4] sm:text-5xl">
+            Common Questions
+          </h2>
+          <p className="text-center text-[#D4C4B0] mb-12">
+            Straight answers about how we work.
+          </p>
+
+          <div className="space-y-3">
+            {faqItems.map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
+              >
+                <button
+                  onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                  className="w-full rounded-lg border border-[#F4EDE4]/10 bg-[#F4EDE4]/5 p-5 text-left backdrop-blur-sm transition-all hover:border-[#4a7c59]/30 hover:bg-[#F4EDE4]/8"
+                >
+                  <div className="flex items-center justify-between gap-4">
+                    <span className="text-lg font-semibold text-[#F4EDE4]">{item.question}</span>
+                    <ChevronDown
+                      className={`h-5 w-5 shrink-0 text-[#4a7c59] transition-transform duration-200 ${
+                        openFaq === index ? "rotate-180" : ""
+                      }`}
+                    />
+                  </div>
+                  <motion.div
+                    initial={false}
+                    animate={{
+                      height: openFaq === index ? "auto" : 0,
+                      opacity: openFaq === index ? 1 : 0,
+                    }}
+                    transition={{ duration: 0.2, ease: "easeInOut" }}
+                    className="overflow-hidden"
+                  >
+                    <p className="mt-3 text-[#D4C4B0] leading-relaxed">{item.answer}</p>
+                  </motion.div>
+                </button>
+              </motion.div>
+            ))}
           </div>
         </motion.div>
       </section>
@@ -999,6 +1239,8 @@ export default function Home() {
             </div>
             <p className="text-[#3a5a47] text-sm">
               © 2025 BonusThoughts. Custom AI development. Forward deployed engineers.
+              <br />
+              Based in Dallas, TX
             </p>
           </div>
         </div>

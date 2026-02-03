@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "AI Development & Training | Custom AI Solutions | BonusThoughts",
-  description: "Forward deployed AI engineers who build your AI ideas. Plus on-site AI training for Claude, GPT-4, Gemini. Agents, RAG systems, LLM apps. 2-8 week delivery.",
+  description: "Custom production AI development with forward-deployed engineers. Build AI agents, RAG, computer vision & integrations in 2-8 weeks. On-site AI training in Dallas. Fixed-price scoping call.",
   keywords: ["AI development agency", "custom AI solutions", "AI training", "Claude training", "GPT-4 training", "Gemini training", "AI agents development", "RAG system development", "LLM application development", "AI integration services", "forward deployed engineers", "corporate AI training"],
   authors: [{ name: "BonusThoughts" }],
   creator: "BonusThoughts",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     url: "https://bonusthoughts.com",
     siteName: "BonusThoughts",
     title: "AI Development Agency | Build Your AI Ideas",
-    description: "Forward deployed engineers who build custom AI solutions. Agents, RAG, LLM apps. 2-8 weeks.",
+    description: "Custom production AI development with forward-deployed engineers. AI agents, RAG, computer vision & integrations in 2-8 weeks. On-site AI training in Dallas.",
     images: [
       {
         url: "https://bonusthoughts.com/og-image.png",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "AI Development Agency | Custom AI Solutions | BonusThoughts",
-    description: "Forward deployed AI engineers who build your AI ideas. Agents, RAG systems, LLM apps. 2-8 week delivery.",
+    description: "Custom production AI development with forward-deployed engineers. AI agents, RAG, computer vision & integrations in 2-8 weeks. On-site AI training in Dallas.",
     creator: "@nlynch_ai",
     images: ["https://bonusthoughts.com/og-image.png"],
   },
