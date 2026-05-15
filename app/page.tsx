@@ -391,7 +391,11 @@ export default function Home() {
           >
             <div className="relative">
               <h1 className="text-5xl font-black tracking-tight sm:text-7xl md:text-8xl lg:text-9xl">
-                <span className="text-[#F4EDE4]">Hi, Marlon</span>
+                <span className="text-[#F4EDE4]">We Build Your</span>
+                <br />
+                <span className="bg-gradient-to-r from-[#4a7c59] via-[#5a8a65] to-[#5a6b3e] bg-clip-text text-transparent">
+                  AI Ideas.
+                </span>
               </h1>
               <motion.div
                 className="absolute -inset-4 -z-10 rounded-3xl bg-gradient-to-r from-[#4a7c59]/30 to-[#5a6b3e]/30 blur-3xl"
