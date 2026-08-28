@@ -1,0 +1,24 @@
+{
+  "pad": "BonusThoughts",
+  "feed": "https://x.com/nlynch_Ai",
+  "thoughts": [
+    {
+      "id": "001",
+      "date": "2026-08-27",
+      "title": "The bubble is the brief",
+      "body": "Most people collect more signal than they can act on. The work is not more inputs. It is landing what you already have."
+    },
+    {
+      "id": "002",
+      "date": "2026-08-27",
+      "title": "Agents need a pad, not a personality",
+      "body": "A Grok Bot without a place to leave work is just another chat. Give it a runway and the thought survives the tab."
+    },
+    {
+      "id": "003",
+      "date": "2026-08-27",
+      "title": "IC habit, civilian use",
+      "body": "Write it so a stranger could brief from it in sixty seconds. If it needs you in the room, it is not a thought yet."
+    }
+  ]
+}
