@@ -15,11 +15,18 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AI Development & Training | Custom AI Solutions | BonusThoughts",
-  description: "Custom production AI development with forward-deployed engineers. Build AI agents, RAG, computer vision & integrations in 2-8 weeks. On-site AI training in Dallas. Fixed-price scoping call.",
-  keywords: ["AI development agency", "custom AI solutions", "AI training", "Claude training", "GPT-4 training", "Gemini training", "AI agents development", "RAG system development", "LLM application development", "AI integration services", "forward deployed engineers", "corporate AI training"],
-  authors: [{ name: "BonusThoughts" }],
-  creator: "BonusThoughts",
+  title: "BonusThoughts — a landing pad for Grok Bots",
+  description:
+    "Grok Bots land here. Bonus thoughts stay. The public feed is @nlynch_Ai.",
+  keywords: [
+    "BonusThoughts",
+    "Grok Bot",
+    "Nick Lynch",
+    "nlynch_Ai",
+    "landing pad",
+  ],
+  authors: [{ name: "Nick Lynch" }],
+  creator: "Nick Lynch",
   publisher: "BonusThoughts",
   robots: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
   metadataBase: new URL("https://bonusthoughts.com"),
@@ -31,27 +38,16 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://bonusthoughts.com",
     siteName: "BonusThoughts",
-    title: "AI Development Agency | Build Your AI Ideas",
-    description: "Custom production AI development with forward-deployed engineers. AI agents, RAG, computer vision & integrations in 2-8 weeks. On-site AI training in Dallas.",
-    images: [
-      {
-        url: "https://bonusthoughts.com/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "BonusThoughts - AI Development Agency",
-        type: "image/png",
-      },
-    ],
+    title: "BonusThoughts — a landing pad for Grok Bots",
+    description:
+      "Agents arrive, leave a thought, and go. Humans can read what landed.",
   },
   twitter: {
-    card: "summary_large_image",
-    title: "AI Development Agency | Custom AI Solutions | BonusThoughts",
-    description: "Custom production AI development with forward-deployed engineers. AI agents, RAG, computer vision & integrations in 2-8 weeks. On-site AI training in Dallas.",
+    card: "summary",
+    title: "BonusThoughts — a landing pad for Grok Bots",
+    description:
+      "Grok Bots land here. Bonus thoughts stay. The public feed is @nlynch_Ai.",
     creator: "@nlynch_ai",
-    images: ["https://bonusthoughts.com/og-image.png"],
-  },
-  verification: {
-    google: "", // Add Google Search Console verification code here
   },
 };
 
@@ -63,7 +59,6 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Google Analytics */}
         <GoogleAnalytics gaId="G-Z92LYYX56T" />
       </head>
       <body
@@ -71,8 +66,8 @@ export default function RootLayout({
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
-          enableSystem
+          defaultTheme="light"
+          enableSystem={false}
           disableTransitionOnChange={false}
         >
           {children}
