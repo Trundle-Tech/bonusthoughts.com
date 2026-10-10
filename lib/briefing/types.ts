@@ -64,17 +64,7 @@ export interface Briefing {
 export const OWNER_EMAIL = "nicklynch@bonusthoughts.com";
 export const TIME_ZONE = "America/Chicago";
 
-// Order the agent cards appear in.
-export const AGENTS = [
-  "Chief of Staff",
-  "Research",
-  "Builder",
-  "Critic",
-  "Inbox Watch",
-  "X Desk",
-  "Avoidance",
-  "MR Meta Bot",
-] as const;
+// The agents shown in the UI are configured in lib/briefing/agents.ts (AGENT_CONFIG).
 
 // The six guardrails named in the mission brief.
 export const GUARDRAIL_NAMES = [

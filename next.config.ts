@@ -6,6 +6,10 @@ const nextConfig: NextConfig = {
   output: "export",
   images: { unoptimized: true },
   trailingSlash: true,
+  // Always define the demo switch at build time ("0" when unset). Without this the
+  // variable is left as a runtime lookup when unset, and the example-data module
+  // cannot be dropped from the real build.
+  env: { NEXT_PUBLIC_BRIEFING_DEMO: process.env.NEXT_PUBLIC_BRIEFING_DEMO ?? "0" },
 };
 
 export default nextConfig;
