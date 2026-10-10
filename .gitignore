@@ -39,3 +39,15 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# secrets / credentials (never commit)
+secrets/
+**/secrets/
+service-account*.json
+*-service-account*.json
+*adminsdk*.json
+application_default_credentials.json
+*.key
+*.p12
+.firebase/
+node_modules/
