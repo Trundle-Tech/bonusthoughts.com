@@ -5,6 +5,11 @@
   publish = "site"
   command = ""
 
+# The repo still has the old Next.js app; skip the Next.js runtime plugin so
+# it does not try to build it for this static branch.
+[build.environment]
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
+
 # Don't serve internal tooling/config files that live inside site/.
 [[redirects]]
   from = "/push_briefing.mjs"
