@@ -6,19 +6,23 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "build:demo": "NEXT_PUBLIC_BRIEFING_DEMO=1 next build"
   },
   "dependencies": {
     "@next/third-parties": "^16.0.3",
     "@radix-ui/react-slot": "^1.2.4",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "date-fns": "^4.4.0",
     "firebase": "^12.6.0",
     "framer-motion": "^12.23.24",
     "lucide-react": "^0.553.0",
     "next": "^16.1.6",
     "next-themes": "^0.4.6",
+    "radix-ui": "^1.7.0",
     "react": "19.2.0",
+    "react-day-picker": "^10.0.2",
     "react-dom": "19.2.0",
     "tailwind-merge": "^3.4.0"
   },

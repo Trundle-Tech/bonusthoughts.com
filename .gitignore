@@ -51,3 +51,8 @@ application_default_credentials.json
 *.p12
 .firebase/
 node_modules/
+
+# local preview artifacts
+/out-demo/
+/screens/
+/netlify.toml.diff

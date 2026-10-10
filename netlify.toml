@@ -1,46 +1,17 @@
-# Netlify config for the briefing branch (briefing-build).
-# Publishes the static site/ directory with no build step. This overrides the
-# old Next.js build for any deploy of this branch.
+# Static export of the Next.js app (next.config.ts: output "export").
+# The site is plain HTML/JS/CSS in `out/`, so the Netlify Next.js runtime plugin
+# is not needed and stays skipped. The private briefing is at /briefing/ and reads
+# Firestore from the browser (Google sign-in, owner-only rules).
 [build]
-  publish = "site"
-  command = ""
+  command = "npm run build"
+  publish = "out"
 
-# The repo still has the old Next.js app; skip the Next.js runtime plugin so
-# it does not try to build it for this static branch.
-# The Firebase web config (apiKey etc.) is public by design (access is enforced
-# by Firebase Auth + Firestore rules), so exempt just those two files from the
-# secrets scanner.
 [build.environment]
+  NODE_VERSION = "22"
   NETLIFY_NEXT_PLUGIN_SKIP = "true"
-  SECRETS_SCAN_OMIT_PATHS = "site/app.js,site/firebase-config.json"
+  # Firebase web configs (apiKey etc.) are public by design; access is enforced by
+  # Firebase Auth + Firestore rules. Exempt them from the secrets scanner.
+  SECRETS_SCAN_OMIT_PATHS = "lib/firebase.ts,lib/briefing/firebase-config.json,site/app.js,site/firebase-config.json,out/_next/**"
 
-# Don't serve internal tooling/config files that live inside site/.
-[[redirects]]
-  from = "/push_briefing.mjs"
-  to = "/404.html"
-  status = 404
-  force = true
-
-[[redirects]]
-  from = "/firestore.rules"
-  to = "/404.html"
-  status = 404
-  force = true
-
-[[redirects]]
-  from = "/firestore.indexes.json"
-  to = "/404.html"
-  status = 404
-  force = true
-
-[[redirects]]
-  from = "/firebase.json"
-  to = "/404.html"
-  status = 404
-  force = true
-
-[[redirects]]
-  from = "/.firebaserc"
-  to = "/404.html"
-  status = 404
-  force = true
+# Internal tooling that lives in site/ is no longer published (publish dir is out/),
+# so the old 404 redirects for site/ files are not needed.
