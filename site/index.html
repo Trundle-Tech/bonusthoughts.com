@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Briefing · Bonus Thoughts</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main id="app">
+  <section id="view-loading" class="center"><p class="muted">Loading…</p></section>
+
+  <section id="view-signin" class="center" hidden>
+    <h1>Bonus Thoughts</h1>
+    <p class="muted">Private briefing. Sign in to continue.</p>
+    <button id="btn-signin" type="button">Sign in with Google</button>
+    <p id="signin-error" class="error" role="alert" hidden></p>
+  </section>
+
+  <section id="view-denied" class="center" hidden>
+    <h1>Not authorized</h1>
+    <p class="muted">This account can't view the briefing. You've been signed out.</p>
+    <button id="btn-retry" type="button">Use another account</button>
+  </section>
+
+  <section id="view-briefing" hidden>
+    <header class="top">
+      <div>
+        <h1>Briefing</h1>
+        <p id="generated" class="muted"></p>
+      </div>
+      <div class="actions">
+        <select id="history" aria-label="Earlier briefings" hidden></select>
+        <button id="btn-signout" type="button" class="ghost">Sign out</button>
+      </div>
+    </header>
+
+    <aside class="north" aria-label="OUE north star">
+      <strong>OUE north star.</strong>
+      Labor intensity (hours per MW-year) and cost intensity ($ per MW-year) are always shown separately, never blended.
+      Lower left is the target, with guardrails held.
+      <span class="legend">
+        <span class="badge sourced">sourced</span>
+        <span class="badge estimate">estimate</span>
+        <span class="badge inferred">inferred</span>
+      </span>
+    </aside>
+
+    <p id="data-error" class="error" role="alert" hidden></p>
+    <div id="cards"></div>
+
+    <section id="writing" hidden>
+      <h2>Writing</h2>
+      <div id="writing-list"></div>
+    </section>
+
+    <footer class="muted small" id="foot"></footer>
+  </section>
+</main>
+<script type="module" src="app.js"></script>
+</body>
+</html>
