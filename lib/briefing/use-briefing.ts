@@ -7,7 +7,7 @@ import {
   signInWithPopup,
   signOut,
 } from "firebase/auth";
-import { collection, documentId, limit, onSnapshot, orderBy, query } from "firebase/firestore";
+import { collection, doc, getDoc, getDocs, onSnapshot } from "firebase/firestore";
 import { briefingAuth, briefingDb } from "./firebase";
 import { dateIdChicago } from "./format";
 import { OWNER_EMAIL, type Briefing } from "./types";
@@ -134,12 +134,18 @@ export type DataState = {
   error: string | null;
   empty: boolean;
   example: boolean;
+  /** Full Firestore error (code + message chain) when loading failed, for the error screen. */
+  errorDetail: string | null;
+  /** Non-fatal notice, e.g. the live listener failed and a one-time read is shown instead. */
+  warning: string | null;
+  /** Re-run the load from scratch. */
+  retry: () => void;
   live: LiveStatus;
   /** When the last Firestore snapshot arrived. */
   syncedAt: Date | null;
 };
 
-// How many dated briefings to keep in the live listener (plus "latest").
+// How many dated briefings to keep (newest first, applied client-side; plus "latest").
 const HISTORY_DAYS = 30;
 
 type Store = {
@@ -147,20 +153,32 @@ type Store = {
   latestId: string | null;
   ready: boolean;
   error: string | null;
+  errorDetail: string | null;
+  warning: string | null;
   live: LiveStatus;
   syncedAt: Date | null;
 };
 
-const EMPTY_STORE: Store = { byDay: {}, latestId: null, ready: false, error: null, live: "connecting", syncedAt: null };
+const EMPTY_STORE: Store = {
+  byDay: {}, latestId: null, ready: false, error: null, errorDetail: null, warning: null, live: "connecting", syncedAt: null,
+};
+
+/** "code: message" for a Firestore (or any) error, never empty. */
+function describe(e: unknown): string {
+  const err = e as { code?: string; message?: string };
+  const code = err?.code ?? "unknown";
+  const msg = (err?.message ?? String(e)).replace(/\s+/g, " ").trim();
+  return msg && msg !== code ? `${code}: ${msg}` : code;
+}
 
 /** Fold raw docs ("latest" + dated ids) into one Briefing per calendar day. */
 function fold(docs: { id: string; data: Briefing }[]) {
   const byDay: Record<string, Briefing> = {};
   let latest: Briefing | null = null;
-  for (const d of docs) {
-    if (d.id === "latest") latest = d.data;
-    else if (/^\d{4}-\d{2}-\d{2}$/.test(d.id)) byDay[d.id] = d.data;
-  }
+  // Only "latest" and YYYY-MM-DD ids count; anything else in the collection is ignored.
+  const dated = docs.filter((d) => /^\d{4}-\d{2}-\d{2}$/.test(d.id)).sort((a, b) => b.id.localeCompare(a.id));
+  for (const d of dated.slice(0, HISTORY_DAYS)) byDay[d.id] = d.data;
+  for (const d of docs) if (d.id === "latest") latest = d.data;
   let latestId: string | null = null;
   if (latest) {
     latestId = dateIdChicago(latest.generated);
@@ -173,6 +191,8 @@ function fold(docs: { id: string; data: Briefing }[]) {
 export function useBriefingData(enabled: boolean): DataState {
   const [selected, setSelected] = React.useState("latest");
   const [store, setStore] = React.useState<Store>(EMPTY_STORE);
+  const [attempt, setAttempt] = React.useState(0);
+  const retry = React.useCallback(() => setAttempt((a) => a + 1), []);
 
   React.useEffect(() => {
     if (!enabled) return;
@@ -190,7 +210,12 @@ export function useBriefingData(enabled: boolean): DataState {
         const base = { ready: true, live: "example" as const, syncedAt: new Date() };
         if (mode === "empty") setStore({ ...EMPTY_STORE, ...base });
         else if (mode === "error")
-          setStore({ ...EMPTY_STORE, ...base, error: "Couldn't load the briefing (example error: permission-denied)." });
+          setStore({
+            ...EMPTY_STORE,
+            ...base,
+            error: "Couldn't load the briefing (example error: permission-denied).",
+            errorDetail: "listener: permission-denied: [Example] Missing or insufficient permissions.\ngetDocs: permission-denied: [Example] Missing or insufficient permissions.\ngetDoc(briefing/latest): permission-denied: [Example] Missing or insufficient permissions.",
+          });
         else if (mode === "sparse")
           setStore({ ...EMPTY_STORE, ...base, byDay: { "2026-01-04": DEMO_SPARSE }, latestId: "2026-01-04" });
         else if (mode === "single")
@@ -202,41 +227,78 @@ export function useBriefingData(enabled: boolean): DataState {
       };
     }
 
-    // Live listener: "latest" sorts after the dated ids when descending, so one
-    // query returns latest + the most recent days. Updates arrive as the push
-    // script writes them; no polling.
-    const q = query(collection(briefingDb(), "briefing"), orderBy(documentId(), "desc"), limit(HISTORY_DAYS + 1));
-    const unsub = onSnapshot(
-      q,
+    // Loading is layered so one failing method cannot blank the page. Plain reads
+    // (no orderBy / limit / where, so no index is involved) run first, like v1;
+    // the live listener is an upgrade on top:
+    //  1. one-time getDocs of the whole (small) collection;
+    //  2. if that fails, getDoc(briefing/latest) so at least the latest day renders;
+    //  3. in parallel, onSnapshot on the same collection for live updates;
+    //  4. only if every method fails does the error screen show, with each code + message.
+    const db = briefingDb();
+    const col = collection(db, "briefing");
+    let liveGot = false; // listener has delivered data
+    let anyData = false;
+    let listenerErr: unknown = null;
+    let unsub: () => void = () => {};
+
+    const apply = (docs: { id: string; data: Briefing }[], live: LiveStatus, warning: string | null) => {
+      if (cancelled) return;
+      const { byDay, latestId } = fold(docs);
+      anyData = true;
+      setStore({ byDay, latestId, ready: true, error: null, errorDetail: null, warning, live, syncedAt: new Date() });
+    };
+    const toDocs = (snap: { docs: { id: string; data: () => unknown }[] }) =>
+      snap.docs.map((d) => ({ id: d.id, data: d.data() as Briefing }));
+
+    const loadOnce = async () => {
+      const chain: string[] = [];
+      try {
+        const snap = await getDocs(col);
+        if (liveGot) return; // the listener already delivered fresher data
+        apply(toDocs(snap), listenerErr ? "offline" : "connecting", listenerErr ? `Live updates are unavailable (${describe(listenerErr)}). Showing a one-time read; use Retry to reconnect.` : null);
+        return;
+      } catch (e) {
+        console.error("briefing getDocs failed", e);
+        chain.push(`getDocs: ${describe(e)}`);
+      }
+      try {
+        const one = await getDoc(doc(db, "briefing", "latest"));
+        if (liveGot) return;
+        apply(
+          one.exists() ? [{ id: "latest", data: one.data() as Briefing }] : [],
+          "offline",
+          `Only the latest briefing could be read (${chain.join("; ")}). History is unavailable; use Retry to try again.`
+        );
+        return;
+      } catch (e) {
+        console.error("briefing getDoc(latest) failed", e);
+        chain.push(`getDoc(briefing/latest): ${describe(e)}`);
+      }
+      if (cancelled || liveGot || anyData) return;
+      if (listenerErr) chain.push(`listener: ${describe(listenerErr)}`);
+      setStore({ ...EMPTY_STORE, ready: true, live: "offline", error: "Couldn't load the briefing.", errorDetail: chain.join("\n") });
+    };
+
+    unsub = onSnapshot(
+      col,
       (snap) => {
-        if (cancelled) return;
-        const { byDay, latestId } = fold(snap.docs.map((d) => ({ id: d.id, data: d.data() as Briefing })));
-        setStore({
-          byDay,
-          latestId,
-          ready: true,
-          error: null,
-          live: snap.metadata.fromCache ? "connecting" : "live",
-          syncedAt: new Date(),
-        });
+        liveGot = true;
+        apply(toDocs(snap), snap.metadata.fromCache ? "connecting" : "live", null);
       },
       (e) => {
         if (cancelled) return;
-        console.error(e);
-        const err = e as { code?: string; message?: string };
-        setStore((s) => ({
-          ...s,
-          ready: true,
-          live: "offline",
-          error: `Couldn't load the briefing (${err.code ?? err.message ?? "unknown error"}).`,
-        }));
+        console.error("briefing listener failed", e);
+        listenerErr = e;
+        // Keep whatever is already showing; just mark it as no longer live.
+        if (anyData) setStore((s) => (s.error ? s : { ...s, live: "offline", warning: `Live updates stopped (${describe(e)}). Use Retry to reconnect.` }));
       }
     );
+    void loadOnce();
     return () => {
       cancelled = true;
       unsub();
     };
-  }, [enabled]);
+  }, [enabled, attempt]);
 
   const days = React.useMemo(() => Object.keys(store.byDay).sort().reverse(), [store.byDay]);
   const shownDay = selected === "latest" ? store.latestId : store.byDay[selected] ? selected : null;
@@ -251,6 +313,9 @@ export function useBriefingData(enabled: boolean): DataState {
     shownDay,
     loading: !store.ready,
     error: store.error,
+    errorDetail: store.errorDetail,
+    warning: store.warning,
+    retry,
     empty: store.ready && !store.error && !data,
     example: DEMO,
     live: store.live,

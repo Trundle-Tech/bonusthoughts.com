@@ -1,8 +1,9 @@
 "use client";
 
 import * as React from "react";
-import { FlaskConical, TriangleAlert } from "lucide-react";
+import { FlaskConical, RefreshCw, TriangleAlert } from "lucide-react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -123,7 +124,30 @@ function Dashboard({
                     <Alert variant="destructive">
                       <TriangleAlert className="size-4" />
                       <AlertTitle>Couldn&apos;t load</AlertTitle>
-                      <AlertDescription>{d.error}</AlertDescription>
+                      <AlertDescription className="space-y-2">
+                        <p>{d.error}</p>
+                        {d.errorDetail && (
+                          <pre className="bg-background/60 max-w-full overflow-x-auto rounded-md border p-2 font-mono text-[11px] leading-snug break-words whitespace-pre-wrap">
+                            {d.errorDetail}
+                          </pre>
+                        )}
+                        <Button variant="outline" size="sm" onClick={d.retry}>
+                          <RefreshCw /> Retry
+                        </Button>
+                      </AlertDescription>
+                    </Alert>
+                  )}
+
+                  {d.warning && !d.error && (
+                    <Alert className="border-amber-500/40 bg-amber-500/10 py-2">
+                      <TriangleAlert className="size-4" />
+                      <AlertTitle>Limited data</AlertTitle>
+                      <AlertDescription className="flex flex-wrap items-center gap-2">
+                        <span className="font-mono text-[11px] break-words">{d.warning}</span>
+                        <Button variant="outline" size="sm" onClick={d.retry}>
+                          <RefreshCw /> Retry
+                        </Button>
+                      </AlertDescription>
                     </Alert>
                   )}
 

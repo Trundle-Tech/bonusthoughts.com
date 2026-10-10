@@ -149,7 +149,17 @@ export const DEMO_DAYS: Record<string, Briefing> = Object.fromEntries(
 export const DEMO_LATEST = "2026-01-07";
 
 /** A sparse briefing: only what the current real push script produces (no oue, discoveries or writing). */
+// Like the real push today: no oue/discoveries, and sections for the whole 8-agent
+// roster, including the four agents hidden in the UI.
 export const DEMO_SPARSE: Briefing = {
   generated: "2026-01-04T07:00:00-06:00",
-  sections: build(3).sections.slice(0, 3),
+  sections: [
+    ...build(3).sections.slice(0, 3),
+    ...["Chief of Staff", "Builder", "Inbox Watch", "MR Meta Bot"].map((agent) => ({
+      agent,
+      status: "Example status: hidden agent",
+      items: [{ title: "[Example] Hidden-agent item", detail: LOREM, label: "inferred", date: "2026-01-04", source: "example://placeholder-source" }],
+    })),
+  ],
+  writing: [],
 };

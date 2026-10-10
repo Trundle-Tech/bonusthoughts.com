@@ -1,6 +1,6 @@
 import { initializeApp, getApps, getApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
+import { getFirestore, initializeFirestore, memoryLocalCache } from "firebase/firestore";
 import config from "./firebase-config.json";
 
 // The site's other Firebase app (lib/firebase.ts, project bonusthoughts-portal)
@@ -16,4 +16,14 @@ function app() {
 }
 
 export const briefingAuth = () => getAuth(app());
-export const briefingDb = () => getFirestore(app());
+// Memory cache only (no IndexedDB persistence, so no multi-tab conflicts) and
+// automatic long-polling fallback for networks that break the streaming transport.
+export const briefingDb = () => {
+  const a = app();
+  try {
+    return initializeFirestore(a, { localCache: memoryLocalCache(), experimentalAutoDetectLongPolling: true });
+  } catch {
+    // Already initialized for this app (e.g. hot reload): reuse it.
+    return getFirestore(a);
+  }
+};
