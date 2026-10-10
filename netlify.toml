@@ -7,8 +7,12 @@
 
 # The repo still has the old Next.js app; skip the Next.js runtime plugin so
 # it does not try to build it for this static branch.
+# The Firebase web config (apiKey etc.) is public by design (access is enforced
+# by Firebase Auth + Firestore rules), so exempt just those two files from the
+# secrets scanner.
 [build.environment]
   NETLIFY_NEXT_PLUGIN_SKIP = "true"
+  SECRETS_SCAN_OMIT_PATHS = "site/app.js,site/firebase-config.json"
 
 # Don't serve internal tooling/config files that live inside site/.
 [[redirects]]
